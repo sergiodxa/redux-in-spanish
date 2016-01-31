@@ -121,11 +121,59 @@ Así que ¿Qué estas esperando?
 Sí se gusto el curso, considera soportar a Egghead [comprando una suscripción](https://egghead.io/pricing). Los suscriptos tiene acceso al código fuentes de los ejemplos en cada uno los vídeos, así como un montón de lecciones avanzados en otros temas, incluyendo JavaScript en profundidad, React, Angular, y más. Muchas [profesores de Egghead](https://egghead.io/instructors) son también autores de librerías de código abierto, así que comprando una suscripción es una buena forma de ayudarlos por todo el trabajo que hicieron.
 
 ## Documentación
-* [Introducción](introduccion/README.md)
-* [Básico](basico/README.md)
-* [Avanzado](avanzado/README.md)
-* [Receptas](recetas/README.md)
-* [
+- [Introducción](introduccion/README.md)
+- [Básico](basico/README.md)
+- [Avanzado](avanzado/README.md)
+- [Receptas](recetas/README.md)
+- [Solución de problemas](solucion-de-problemas.md)
+- [Glosario](glosario.md)
+- [Referencia API](api/README.md)
+
+## Ejemplos
+- [Contador](https://github.com/rackt/redux/tree/master/examples/counter)
+- [TodoMVC](https://github.com/rackt/redux/tree/master/examples/todomvc)
+- [Todos con Deshacer](https://github.com/rackt/redux/tree/master/examples/todos-with-undo)
+- [Asíncrono](https://github.com/rackt/redux/tree/master/examples/async)
+- [Universal](https://github.com/rackt/redux/tree/master/examples/universal)
+- [Mundo real](https://github.com/rackt/redux/tree/master/examples/real-world)
+- [Carrito de compra](https://github.com/rackt/redux/tree/master/examples/shopping-cart)
+- [Vista de árbol](https://github.com/rackt/redux/tree/master/examples/tree-view)
+
+Si eres nuevo en el ecosistema de NPM y tiene problemas iniciando un proyecto, o no estas seguro de donde pegar el gist de arriba, revisa [simples-redux-example](https://github.com/jackielii/simplest-redux-example) que usa React junto a React y Browserify.
+
+## Discusiones
+Únete al canal [#redux](https://discord.gg/0ZcbPKXt5bZ6au5t) de la comunidad en Discord [Reactiflux](http://www.reactiflux.com/).
+
+## Agradecimientos
+- [The Elm Architecture](https://github.com/evancz/elm-architecture-tutorial) por una gran introducción al modelo de actualización de estado con reducers;
+- [Turning the database inside-out](http://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/) por explotarme la mente;
+- [Developing ClojureScript with Figwheel](https://www.youtube.com/watch?v=j-kj2qwJa_E) por convencerme que la re-evaluaciǿn debe "simplemente funcionar";
+- [Webpack](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack) por Hot Module Replacement;
+- [Flummox](https://github.com/acdlite/flummox) por enseñarme un enfoque a Flux sin boilerplate or singletons;
+- [disto](https://github.com/threepointone/disto) por la prueba de concepto de hot reloadable Stores;
+- [NuclearJS](https://github.com/optimizely/nuclear-js) por probar que esta arquitectua puede tener buen rendimiento;
+- [Om](https://github.com/omcljs/om) por popularizar la idea de un único Store;
+- [Cycle](https://github.com/cyclejs/cycle-core) por demostrar que tan común una función puede ser la mejor herramienta;
+- [React](https://github.com/facebook/react) por la innovación pragmática.
+
+Agradecimientos especiales a [Jamie Paton](http://jdpaton.github.io/) por liberar `redux` como nombre de módulo en NPM. 
+
+## Registro de cambios
+Este proyecto se adhiere al [Versionamiento Semántico](http://semver.org/).
+Cada lanzamiento, junto a sus instrucciones de migración, están documentados en la página de Github de [Lanzamientos](https://github.com/rackt/redux/releases).
+
+## Patrocinadores
+El trabajo con Redux fue [financiado por la comunidad](https://www.patreon.com/reactdx).
+
+Algunos de las compañías más destacadas que hicieron esto posible:
+
+- [Webflow](https://github.com/webflow)
+- [Chess iX](http://www.chess-ix.com/)
+ 
+[Ve la lista completa de patrocinadores de Redux.](http://redux.js.org/PATRONS.html)
+
+## Licencia
+MIT
 
 
 
