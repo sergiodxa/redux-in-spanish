@@ -13,7 +13,7 @@ Por convención, el estado a nivel superior es un objeto o algún tipo de colecc
 ```
 type Action = object
 ```
-Una acción es un objeto plano (POJO - Plan Old JavaScript Object) que representa una intencia de modificar el estado. Las acciones son la única forma en que los datos llegan al store. Cualquier dato, ya sean eventos de UI, callbacks de red, u otros recursos como WebSockets eventualmente van a ser despachados como acciones.
+Una acción es un objeto plano (POJO - Plan Old JavaScript Object) que representa una intención de modificar el estado. Las acciones son la única forma en que los datos llegan al store. Cualquier dato, ya sean eventos de UI, callbacks de red, u otros recursos como WebSockets eventualmente van a ser despachados como acciones.
 
 Las acciones deben tener un campo `type` que indica el tipo de acción a realizar. Los tipos pueden ser definidos como constantes e importados desde otro módulo Es mejor usar strings como tipos en vez de [Symbols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol) ya que los strings son serializables.
 
