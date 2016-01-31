@@ -1,5 +1,5 @@
 # Glosario
-Este es un glosario de los terminos principales en REdux, junto al tipo de datos. Los tipos están documentados usando la [notación Flow](http://flowtype.org/docs/quick-reference.html).
+Este es un glosario de los términos principales en REdux, junto al tipo de datos. Los tipos están documentados usando la [notación Flow](http://flowtype.org/docs/quick-reference.html).
 
 ## State
 ```
