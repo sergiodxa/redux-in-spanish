@@ -3,7 +3,7 @@
 Este un un lugar para compartir soluciones a problemas comunes.
 Los ejemplos usan React, pero deberías encontrarlos útiles incluso si usas otra cosa.
 
-## No ocurren nada el despachar una acción
+## No ocurre nada el despachar una acción
 Algunas veces, tratas de despachar una acción, pero la vista no se actualiza. ¿Por qué ocurre esto? Hay varias razons.
 
 ### Nunca modifiques los argumentos del reducer
