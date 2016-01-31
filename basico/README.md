@@ -1,5 +1,5 @@
 # Básico
-No te dejes engañar por charlas fancy sobre reducers, middlewares, store enhancers, etc. — Redux es increíblemente simple. Si alguna vez hiciste una aplicación Flux, te vas a sentir como en casa. Y si eres nuevo en Flux ¡también es fácil!
+No te dejes engañar por charlas fancy sobre reducers, middlewares, store enhancers, etc. — Redux es increíblemente simple. Si alguna vez hiciste una aplicación Flux, te vas a sentir como en casa. Y si eres nuevo en Flux ¡También es fácil!
 
 En este guía, vamos a recorrer el proceso de crear una aplicación de TODOs simple.
 
