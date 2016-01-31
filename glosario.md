@@ -1,13 +1,13 @@
 # Glosario
 Este es un glosario de los términos principales en Redux, junto a su tipo de dato. Los tipos están documentados usando la [notación Flow](http://flowtype.org/docs/quick-reference.html).
 
-## State
+## Estado
 ```
 type State = any
 ```
-State (también llamado árbol de estado) es un termino general, pero en la API de Redux normalmente se refiere al valor de estado único que es manejado por el Store y devuelto por [`getState()`](http://redux.js.org/docs/api/Store.html#getState). Representa el estado de tu aplicación de Redux, normalmente es un objeto con muchas anidaciones.
+Estado (también llamado árbol de estado) es un termino general, pero en la API de Redux normalmente se refiere al valor de estado único que es manejado por el Store y devuelto por [`getState()`](http://redux.js.org/docs/api/Store.html#getState). Representa el estado de tu aplicación de Redux, normalmente es un objeto con muchas anidaciones.
 
-Por convención, el estado a nivel superior es un objeto o algún tipo de colección llave-valor como un Map, pero técnicamente puede ser de cualquier tipo. Aun así, debes hacer tu mejor esfuerzo en mantener el state serializable. No pongas nada dentro que no puedas fácilmente convertirlo a un JSON.
+Por convención, el estado a nivel superior es un objeto o algún tipo de colección llave-valor como un Map, pero técnicamente puede ser de cualquier tipo. Aun así, debes hacer tu mejor esfuerzo en mantener el estado serializable. No pongas nada dentro que no puedas fácilmente convertirlo a un JSON.
 
 ## Acción
 ```
