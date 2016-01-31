@@ -26,6 +26,7 @@ Escribí Redux mientras trabajaba en mi charla de React Europe llamada ["Hot Rel
 
 ## Influencias
 Redux evoluciona las ideas de [Flux](http://facebook.github.io/flux/), pero evitando su complejidad tomando cosas de [Elm](https://github.com/evancz/elm-architecture-tutorial/).
+
 Ya sea que los hayas usado o no, solo toma unos minutos para empezar a usar Redux.
 
 ## Instalación
@@ -45,6 +46,7 @@ Si todavía no usas [npm](https://www.npmjs.com/) o algún empaquetador de módu
 ## El Gist
 Todo el estado de tu aplicación esta almacenado en un único árbol dentro de un único *store*.
 La única forma de cambiar el árbol de estado es emitiendo una *acción*, un objeto describiendo que ocurrió.
+
 Para especificar como las acciones transforman el árbol de estado, usas *reducers* puros.
 
 ¡Eso es todo!
@@ -160,6 +162,7 @@ Agradecimientos especiales a [Jamie Paton](http://jdpaton.github.io/) por libera
 
 ## Registro de cambios
 Este proyecto se adhiere al [Versionamiento Semántico](http://semver.org/).
+
 Cada lanzamiento, junto a sus instrucciones de migración, están documentados en la página de Github de [Lanzamientos](https://github.com/rackt/redux/releases).
 
 ## Patrocinadores
@@ -170,7 +173,7 @@ Algunos de las compañías más destacadas que hicieron esto posible:
 - [Webflow](https://github.com/webflow)
 - [Chess iX](http://www.chess-ix.com/)
  
-[Ve la lista completa de patrocinadores de Redux.](http://redux.js.org/PATRONS.html)
+[Ve la lista completa de patrocinadores de Redux.](PATRONS.md)
 
 ## Licencia
 MIT
