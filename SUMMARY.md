@@ -26,6 +26,7 @@
     * [Reduciendo el Boilerplate](recetas/reduciendo-boilerplate.md)
     * [Render en el Servidor](recetas/render-en-el-servidor.md)
     * [Escribiendo pruebas](recetas/escribiendo-pruebas.md)
+    * [Calculando Datos Obtenidos](recetas/calculando-datos-obtenidos.md)
     * [Implementando Deshacer](recetas/implementando-deshacer.md)
 * [Solución de problemas](solucion-de-problemas.md)
 * [Glosario](glosario.md)
