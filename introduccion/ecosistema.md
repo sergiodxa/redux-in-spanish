@@ -7,7 +7,7 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 
 ## Aprendiendo Redux (en inglés)
 ### Vídeos
-- [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) - Aprende los conceptos básicos de Redux directamente de su creador (30 vídeos gratuitos), en inglés
+- [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) - Aprende los conceptos básicos de Redux directamente de su creador (30 vídeos gratuitos)
 
 ### Aplicaciones de ejemplo
 - [SoundRedux](https://github.com/andrewngu/sound-redux) - Un cliente de SoundCloud hecho con Redux
@@ -31,22 +31,22 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 
 ## Usando Redux
 ### Conexiones
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
+- [react-redux](https://github.com/gaearon/react-redux) — React
+- [ng-redux](https://github.com/wbuchwalter/ng-redux) — Angular
+- [ng2-redux](https://github.com/wbuchwalter/ng2-redux) — Angular 2
+- [backbone-redux](https://github.com/redbooth/backbone-redux) — Backbone
+- [redux-falcor](https://github.com/ekosz/redux-falcor) — Falcor
+- [deku-redux](https://github.com/troch/deku-redux) — Deku
 
 ### Middleware
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
+- [redux-thunk](http://github.com/gaearon/redux-thunk) — 
+- [redux-promise](https://github.com/acdlite/redux-promise) — 
+- [redux-rx](https://github.com/acdlite/redux-rx) — 
+- [redux-logger](https://github.com/fcomb/redux-logger) — 
+- [redux-immutable-state-invariant](https://github.com/leoasis/redux-immutable-state-invariant) — 
+- [redux-analytics](https://github.com/markdalgleish/redux-analytics) — 
+- [redux-gen](https://github.com/weo-edu/redux-gen) — 
+- [redux-saga](https://github.com/yelouafi/redux-saga) — 
 
 ### Ruteo
 - []() — 
