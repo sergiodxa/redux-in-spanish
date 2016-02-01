@@ -1,7 +1,7 @@
 # Introducción
 
-* [Motivación](introduccion/motivacion.md)
-* [Tres Principios](introduccion/tres-principios.md)
-* [Herencia](introduccion/herencia.md)
-* [Ecosistema](introduccion/ecosistema.md)
-* [Ejemplos](introduccion/ejemplos.md)
+* [Motivación](motivacion.md)
+* [Tres Principios](tres-principios.md)
+* [Herencia](herencia.md)
+* [Ecosistema](ecosistema.md)
+* [Ejemplos](ejemplos.md)
