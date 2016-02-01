@@ -39,14 +39,14 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [deku-redux](https://github.com/troch/deku-redux) — Deku
 
 ### Middleware
-- [redux-thunk](http://github.com/gaearon/redux-thunk) — 
-- [redux-promise](https://github.com/acdlite/redux-promise) — 
-- [redux-rx](https://github.com/acdlite/redux-rx) — 
-- [redux-logger](https://github.com/fcomb/redux-logger) — 
-- [redux-immutable-state-invariant](https://github.com/leoasis/redux-immutable-state-invariant) — 
-- [redux-analytics](https://github.com/markdalgleish/redux-analytics) — 
-- [redux-gen](https://github.com/weo-edu/redux-gen) — 
-- [redux-saga](https://github.com/yelouafi/redux-saga) — 
+- [redux-thunk](http://github.com/gaearon/redux-thunk) — La forma más fácil de trabajar con acciones asíncronas
+- [redux-promise](https://github.com/acdlite/redux-promise) — Middleware de promesas compatible con [FSA](https://github.com/acdlite/flux-standard-action)
+- [redux-rx](https://github.com/acdlite/redux-rx) — Utilidades de RxJS para Redux, inlcuye un middleware para Observables
+- [redux-logger](https://github.com/fcomb/redux-logger) — Registra cada acción de Redux y el siguiente estado
+- [redux-immutable-state-invariant](https://github.com/leoasis/redux-immutable-state-invariant) — Advierto sobre modificaciones al estado en desarrollo
+- [redux-analytics](https://github.com/markdalgleish/redux-analytics) — Middleware de analiticas para Redux
+- [redux-gen](https://github.com/weo-edu/redux-gen) — Middleware de generadores para Redux
+- [redux-saga](https://github.com/yelouafi/redux-saga) — Un modelo alternativo para efectos secundarios en aplicaciones de Redux
 
 ### Ruteo
 - []() — 
