@@ -22,11 +22,3 @@ Tu proceso debería ser algo como esto:
  
 ## Desde Backbone
 La capa de modelos de Backbone es bastante diferente de Redux, así que no recomendamos combinarlos. Si es posible, lo mejor es reescribir la capa de modelos de tu aplicación desde cero en vez de conectar Backbone a Redux. Igualmente, si no es posible reescribirlo, capaz debería usar [backbone-redux](https://github.com/redbooth/backbone-redux) para migrar gradualmente, y mantener tu Store de Redux sincronizado con los modelos y colecciones de Backbone.
-
-
-
-
-
-
-
-
