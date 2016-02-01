@@ -58,6 +58,12 @@ Llamar un creador de acciones solo produce una acción, no la despacha. Necesita
 
 Si un creador de acciones necesita leer el estado actual, hacer una llamada al API, o causar un efecto secundario, como una transición de rutas, debe retornas una [acción asíncrona](#accion-asincrona) en vez de una acción.
 
+## Acción asíncrona
+```
+type AsyncAction = any
+```
+Una *acción asíncrona* es un valor que es enviado a una función despachadora, pero todavía no esta listo para ser consumido por el reducer. Debe ser transformada por un [middleware](#middleware) en una acción (o una serie de acciones) antes de ser enviada a la función [`dispatch()`](../api/store.md#dispatch) base. Las acciones asíncronas pueden ser de diferentes tipos, dependiendo del middleware que uses. Normalmente son primitivos asíncronos como una promesa o un thunk, que no son enviados inmediatamente a un reducer, pero despachan una acción cuando una operación se completa.
+
 
 
 
