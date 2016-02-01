@@ -1,2 +1,105 @@
 # Ecosistema
+Redux es una librería pequeña, pero su API fue elegida cuidadosamente para permitir un ecosistema de herramientas y extensiones.
+
+Para una lista completa de todo lo relacionado a Redux, recomendamos [Awesome Redux](https://github.com/xgrommx/awesome-redux). Contiene ejemplos, boilerplates, middlewares, librerías utilitarias y más.
+
+En esta página solo mostramos algunas de ellas que los colaboradores de Redux han seleccionado personalmente ¡No dejes que eso te desaliente a probar el resto! El ecosistema esta creciendo muy rápido, y tenemos un tiempo limitado para ver y probar todo. Considera estas como "elegidas por el staff", y no dudes en enviar un PR si haces algo increible con Redux.
+
+## Aprendiendo Redux (en inglés)
+### Vídeos
+- [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) - Aprende los conceptos básicos de Redux directamente de su creador (30 vídeos gratuitos), en inglés
+
+### Aplicaciones de ejemplo
+- [SoundRedux](https://github.com/andrewngu/sound-redux) - Un cliente de SoundCloud hecho con Redux
+- [Shopping Cart (Flux Comparison)](https://github.com/voronianski/flux-comparison/tree/master/redux) - Un ejemplo de carrito de completo de [Flux Comparison](https://github.com/voronianski/flux-comparison)
+
+### Tutoriales y artículos
+- [Redux Tutorial](https://github.com/happypoulp/redux-tutorial) — Aprende a usar Redux paso a paso
+- [Redux Egghead Course Notes](https://github.com/tayiorbeii/egghead.io_redux_course_notes) — Notas del [curso en vídeo de Egghead](https://egghead.io/series/getting-started-with-redux)
+- [What the Flux?! Let's Redux.](https://blog.andyet.com/2015/08/06/what-the-flux-lets-redux) — Una introducción a Redux
+- [A cartoon intro to Redux](https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6) — Una explicación visual del flujo de datos de Redux
+- [Understanding Redux](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container) — Aprende los conceptos básicos de Redux
+- [Handcrafting an Isomorphic Redux Application (With Love)](https://medium.com/@bananaoomarang/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4) — Una guía para crear aplicaciones universales con rutas y data fetching
+- [Full-Stack Redux Tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) — Una guía completa de desarrollo TDD con Redux, React e Immutable
+- [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a#.l033pyr02) — Una guía en profundidad de como implementar middlewares de Redux
+- [A Simple Way to Route with Redux](http://jlongster.com/A-Simple-Way-to-Route-with-Redux) — Una introducción a Redux Simple Router
+
+### Charlas
+- [Live React: Hot Reloading and Time Travel ](http://youtube.com/watch?v=xsSnOQynTHs) — Ve como las restricciones impuestas por Redux hacen hot reloading con time travel fácil
+- [Cleaning the Tar: Using React within the Firefox Developer Tools](https://www.youtube.com/watch?v=qUlRpybs7_c) — Aprender como gradualmente migrar una aplicación MVC existente a Redux
+- [Redux: Simplifying Application State](https://www.youtube.com/watch?v=okdC5gcD-dM) — Una introducción a la arquitectura de Redux
+
+## Usando Redux
+### Conexiones
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+
+### Middleware
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+
+### Ruteo
+- []() — 
+- []() — 
+
+### Componentes
+- []() — 
+- []() — 
+
+### Enhancers
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+
+### Utilidades
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+- []() — 
+
+### Herramientas de desarrollo
+- []() — 
+- []() — 
+
+### Convenciones de la Comunidad
+- [Flux Standard Action](https://github.com/acdlite/flux-standard-action) — Un estándar de acciones de Flux amigable con humanos
+- [Canonical Reducer Composition](https://github.com/gajus/canonical-reducer-composition) — Un estándar opinionado para combinar reducers anidados
+- [Ducks: Redux Reduer Bundles](https://github.com/erikras/ducks-modular-redux) — Una propuesta para empaquetar reducers, acciones y sus tipos
+
+### Traducciones
+- [Redux](http://redux.js.org/) — Inglés
+- [中文文档]() — Chino
+- [繁體中文文件]() — Chino Trandicional
+- [Redux in Russian]() — Ruso
+
+## Más
+[Awesome Redux](https://github.com/xgrommx/awesome-redux) es una lista más completa de repositorios relacionados con Redux.
+
+
+
+
+
+
+
 
