@@ -88,7 +88,18 @@ Un store es un objeto que mantiene el árbol de estado de la aplicación.
 
 Solo debe haber un único store en una aplicación de Redux, ya que la composición ocurre en los reducers.
 
-* 
+- [dispatch(action)](api/store.md#dispatch) es la función dispatch base descrita arriba.
+- [getState()](api/store.md#getState) devuelve el estado actual de la aplicación.
+- [subscribe(listener)](api/store.md#subscribe) registra una función para que se ejecute en cada cambio de estado.
+- [replaceReducer(nextReducer)](api/store.md#replaceReducer) puede ser usada para implementar hot reloading y code splitting. Normalmente no la vas a usar.
+
+Revisa la [referencia API del Store](api/store.md) completa para más detalles.
+
+## Creador de store
+```
+type StoreCreator = (reducer: Reducer, initialState: ?State) => Store
+```
+Un creador de store es una función que crea un store de Redux. Al igual que la función despachante, debemos separar un creador de stores base, [`createStore(reducer, initialState)`](api/create-store.md) exportado por Redux, por los creadores de store devueltos por los 
 
 
 
