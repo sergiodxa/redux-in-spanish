@@ -3,9 +3,9 @@ No te dejes engañar por charlas fancy sobre reducers, middlewares, store enhanc
 
 En este guía, vamos a recorrer el proceso de crear una aplicación de TODOs simple.
 
-* [Acciones](basico/acciones.md)
-* [Reducers](basico/reducers.md)
-* [Store](basico/store.md)
-* [Flujo de datos](basico/flujo-de-datos.md)
-* [Uso con React](basico/uso-con-react.md)
-* [Ejemplo: Lista de TODOs](basico/ejemplo-todos.md)
+* [Acciones](acciones.md)
+* [Reducers](reducers.md)
+* [Store](store.md)
+* [Flujo de datos](flujo-de-datos.md)
+* [Uso con React](uso-con-react.md)
+* [Ejemplo: Lista de TODOs](ejemplo-todos.md)
