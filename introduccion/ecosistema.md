@@ -79,8 +79,8 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - []() — 
 
 ### Herramientas de desarrollo
-- []() — 
-- []() — 
+- [Redux DevTools](http://github.com/gaearon/redux-devtools) — Un logger de acciones con una UI para time travel, hot reloading y manejo de errores para reducers, [mostrada por primera vez en React Europe](https://www.youtube.com/watch?v=xsSnOQynTHs)
+- [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension) — Una extensión de Chrome que envuelve las Redux DevTools y provee funcionalidades adicionales
 
 ### Convenciones de la Comunidad
 - [Flux Standard Action](https://github.com/acdlite/flux-standard-action) — Un estándar de acciones de Flux amigable con humanos
