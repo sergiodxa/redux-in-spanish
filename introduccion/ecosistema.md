@@ -95,11 +95,3 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 
 ## Más
 [Awesome Redux](https://github.com/xgrommx/awesome-redux) es una lista más completa de repositorios relacionados con Redux.
-
-
-
-
-
-
-
-
