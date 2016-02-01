@@ -99,18 +99,16 @@ Revisa la [referencia API del Store](api/store.md) completa para más detalles.
 ```
 type StoreCreator = (reducer: Reducer, initialState: ?State) => Store
 ```
-Un creador de store es una función que crea un store de Redux. Al igual que la función despachante, debemos separar un creador de stores base, [`createStore(reducer, initialState)`](api/create-store.md) exportado por Redux, por los creadores de store devueltos por los 
+Un creador de store es una función que crea un store de Redux. Al igual que la función despachante, debemos separar un creador de stores base, [`createStore(reducer, initialState)`](api/create-store.md) exportado por Redux, por los creadores de store devueltos por los potenciadores de store. 
 
+## Potenciador de store
+```
+type StoreEnhancer = (next: StoreCreator) => StoreCreator
+```
+Un potenciador de store es una función de orden superior que toma un creador de store y devuelve una versión potenciada del creador de store. Es similar a un middleware ya que te permite alterar la interfaz de un store de manera componible.
 
+Los potenciadores de store son casi el mismo concepto que los componentes de orden superior de React, que ocasionalmente se los llamada "potenciadores de componentes".
 
+Debido a que store no es una instancia, sino una colección de funciones en un objeto plano, es posible crear copias facilmente y modificarlas sin modificar el store original. Hay un ejemplo en la documentación de [`compose`](api/compose.md) demostrandolo.
 
-
-
-
-
-
-
-
-
-
-
+Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que esta ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](api/apply-middleware.md) es un potenciad de store.
