@@ -35,11 +35,28 @@ Los reducers son el concepto más importante en Redux.
 
 *No hagas peticiones a APIs en los reducers.*
 
-## Función `dispatch`
+## Función despachadora
 ```
 type BaseDispatch = (a: Action) => Action
 type Dispatch = (a: Action | AsyncAction) => any
 ```
+La *función despachadora* (o simplemente *función dispatch*) es una función que acepta una acción o una [acción asíncrona](#accion-asincrona.md); entonces puede o no despachar una o más acciones al store.
+
+Debemos distinguir entre una función despachadora en general y la función base [`dispatch](../api/store.md#dispatch) provista por la instancia del store sin ningún middleware.
+
+La función base dispatch *siempre* envía sincronamente acciones al reducer del store, junto al estado anterior devuelto por el store, para calcular el nuevo estado. Espera que las acciones sean objetos planos listos para ser consumidos por el reducer.
+
+Los [middlewares](#middleware) envuelven la función dispatch base. Le permiten a la función dispatch manejar [acciones asíncronas](#accion-asincrona) además de las acciones. Un middleware puede transformar, retrasar, ignorar o interpretar de cualquier forma una acción o acción asíncrona antes de pasarla al siguiente middleware. Lea más abajo para más información.
+
+## Creador de acciones
+```
+type ActionCreator = (...args: any) => Action | AsyncAction
+```
+Un *creador de acciones* es, simplemente, una función que devuelve una acción. No confunda los dos terminos — otra vez, una acción es un pedazo de información, y los creadores de acciones son fabricas que crean esas acciones.
+
+Llamar un creador de acciones solo produce una acción, no la despacha. Necesitas llama al método [`dispatch`](../api/store.md#dispatch) del store para causar una modificación. Algunas veces decimos *creador de acciones conectado*, esto es una función que ejecuta un creador de acciones e inmediatamente despacha el resultado a una instancia del store específica.
+
+Si un creador de acciones necesita leer el estado actual, hacer una llamada al API, o causar un efecto secundario, como una transición de rutas, debe retornas una [acción asíncrona](#accion-asincrona) en vez de una acción.
 
 
 
