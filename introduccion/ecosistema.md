@@ -49,34 +49,34 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [redux-saga](https://github.com/yelouafi/redux-saga) — Un modelo alternativo para efectos secundarios en aplicaciones de Redux
 
 ### Ruteo
-- []() — 
-- []() — 
+- [react-router-redux](https://github.com/rackt/react-router-redux) — Manten React Router y Redux sincronizados fácilmente
+- [redux-router](https://github.com/acdlite/redux-router) — Conecta Redux con React Router
 
 ### Componentes
-- []() — 
-- []() — 
+- [redux-form](https://github.com/erikras/redux-form) — Mantén el estado de los formularios de React en Redux
+- [react-redux-form](https://github.com/davidkpiano/react-redux-form) — Crea formularios facilmente en React con Redux
 
-### Enhancers
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
+### Potenciadores
+- [redux-batched-subscribe](https://github.com/tappleby/redux-batched-subscribe) — Customiza batching y debouncing a los suscriptos al store
+- [redux-history-transitions](https://github.com/johanneslumpe/redux-history-transitions) — Transiciones basadas en History en acciones arbitrarias
+- [redux-optimist](https://github.com/ForbesLindesay/redux-optimist) — Aplicac acciones que luego pueden ser revertidas
+- [redux-undo](https://github.com/omnidan/redux-undo) — Historial de acciones y deshacer/rehacer sin esfuerzo
+- [redux-ignore](https://github.com/omnidan/redux-ignore) — Ignora acciones de Redux
+- [redux-recycle](https://github.com/omnidan/redux-recycle) — Reinicia el estado de Redux en ciertas acciones
+- [redux-batched-actions](https://github.com/tshelburne/redux-batched-actions) — Despacha varias acciones con una sola notificación a los suscriptos
+- [redux-search](https://github.com/treasure-data/redux-search) — Automáticamente indexa recursos en un web worker y busca en ellos sin bloquear la aplicación
+- [redux-electron-store](https://github.com/samiskin/redux-electron-store) — Sincroniza el store de Redux entre varios procesos de Electron
+- [redux-loop](https://github.com/raisemarketplace/redux-loop) — Ejecuta acciones de forma secuencial retornandolas desde tus reducers
 
 ### Utilidades
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
-- []() — 
+- [reselect](https://github.com/faassen/reselect) — Selector de datos derivados eficiente inspirado por NuclearJS
+- [normalizr](https://github.com/gaearon/normalizr) — Normaliza respuestas de API anidades para consumirlas facilmente desde un reducer
+- [redux-actions](https://github.com/acdlite/redux-actions) — Disminuye el boilerplate al escribir reducers y creadores de acciones
+- [redux-act](https://github.com/pauldijou/redux-act) — Una librería opinionada para crear acciones y reducers
+- [redux-transducers](https://github.com/acdlite/redux-transducers) — Utilidades de transductores para Redux
+- [redux-immutable](https://github.com/gajus/redux-immutable) — Usado para crear un equivalente a la funcíon `combineReducers` que funcione con un estado de Immutable.js
+- [redux-tcomb](https://github.com/gcanti/redux-tcomb) — Estado y acciones immutable y tipadas
+- [redux-mock-store](https://github.com/arnaudbenard/redux-mock-store) — Simula un store de Redux para probar tu aplicación
 
 ### Herramientas de desarrollo
 - [Redux DevTools](http://github.com/gaearon/redux-devtools) — Un logger de acciones con una UI para time travel, hot reloading y manejo de errores para reducers, [mostrada por primera vez en React Europe](https://www.youtube.com/watch?v=xsSnOQynTHs)
