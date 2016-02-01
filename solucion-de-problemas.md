@@ -177,5 +177,3 @@ Puedes pasar `dispatch` a otros componentes manualmente, si quieres.
 ## Algo más no funciona
 Pregunta en el canal #redux con [Reactiflux](http://reactiflux.com/), o [crea un issue](https://github.com/rackt/redux/issues).
 Si lo descubre, [modifica este documento](https://github.com/rackt/redux/edit/master/docs/Troubleshooting.md) como cortesía a la siguiente persona con el mismo problema.
-
-
