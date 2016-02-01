@@ -89,9 +89,9 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 
 ### Traducciones
 - [Redux](http://redux.js.org/) — Inglés
-- [中文文档]() — Chino
-- [繁體中文文件]() — Chino Trandicional
-- [Redux in Russian]() — Ruso
+- [中文文档](http://camsong.github.io/redux-in-chinese/) — Chino
+- [繁體中文文件](https://github.com/chentsulin/redux) — Chino Trandicional
+- [Redux in Russian](https://github.com/rajdee/redux-in-russian) — Ruso
 
 ## Más
 [Awesome Redux](https://github.com/xgrommx/awesome-redux) es una lista más completa de repositorios relacionados con Redux.
