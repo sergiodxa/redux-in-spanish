@@ -75,8 +75,20 @@ Los middlewares son combinable usando funciones. Son útiles para registrar acci
 
 Revisa [`applyMiddleware(...middlewares)`](api/apply-middleware.md) para más detalles de los middlewares.
 
+## Store
+```
+type Store = {
+  dispatch: Dispatch
+  getState: () => State
+  subscribe: (listener: () => void) => () => void
+  replaceReducer: (reducer: Reducer) => void
+}
+```
+Un store es un objeto que mantiene el árbol de estado de la aplicación.
 
+Solo debe haber un único store en una aplicación de Redux, ya que la composición ocurre en los reducers.
 
+* 
 
 
 
