@@ -35,32 +35,32 @@ Ten en cuenta que que incluso si tu librería inmutable soporta punteros, no deb
 
 ### Baobab
 
-[Baobab](https://github.com/Yomguithereal/baobab) is another popular library implementing immutable API for updating plain JavaScript objects. While you can use it with Redux, there is little benefit in using them together.
+[Baobab](https://github.com/Yomguithereal/baobab) es otra popular librería para implementar inmutabilidad para actualizar objetos planos en JavaScript. Aunque puedes usarlo con Redux, hay muy pocos beneficios de usarlos juntos.
 
-Most of the functionality Baobab provides is related to updating the data with cursors, but Redux enforces that the only way to update the data is to dispatch an action. Therefore they solve the same problem differently, and don’t complement each other.
+La mayorías de las funcionalidades que provee Baobab están relacionados con actualizar los datos con punteros, pero Redux impone que la única forma de actualizar los datos es despachando acciones. Por lo tanto, resuelven el mismo problema de forma diferente, y no se complementar uno con otro.
 
-Unlike Immutable, Baobab doesn’t yet implement any special efficient data structures under the hood, so you don’t really win anything from using it together with Redux. It’s easier to just use plain objects in this case.
+A diferencia de Immutable, Baobab todavía no implemente ninguna estructura de datos especialmente eficiente, así que no ganas nada realmente por usarlo junto a Redux. Es más fácil simplemente usar objetos planos en su lugar.
 
 ### Rx
 
-[Reactive Extensions](https://github.com/Reactive-Extensions/RxJS) (and their undergoing [modern rewrite](https://github.com/ReactiveX/RxJS)) are a superb way to manage the complexity of asynchronous apps. In fact [there is an effort to create a library that models human-computer interaction as interdependent observables](http://cycle.js.org).
+[Reactive Extensions](https://github.com/Reactive-Extensions/RxJS) (y su [reescritura moderna](https://github.com/ReactiveX/RxJS) en proceso) es una formas magnífica de manejar la complejidad de aplicaciones asíncronas. De hecho [hay un esfuerzo de crear una librería para controlar la interacción entre humano y computadora como observables independientes](http://cycle.js.org).
 
-Does it make sense to use Redux together with Rx? Sure! They work great together. For example, it is easy to expose a Redux store as an observable:
+¿Tiene sentido usar Redux junto con Rx? ¡Seguro! Funcionan genial juntos. Por ejemplo, es fácil exponer el store de Redux como un observable:
 
-```js
+```javascript
 function toObservable(store) {
   return {
     subscribe({ onNext }) {
-      let dispose = store.subscribe(() => onNext(store.getState()))
-      onNext(store.getState())
-      return { dispose }
-    }
-  }
+      let dispose = store.subscribe(() => onNext(store.getState()));
+      onNext(store.getState());
+      return { dispose };
+    },
+  };
 }
 ```
 
-Similarly, you can compose different asynchronous streams to turn them into actions before feeding them to `store.dispatch()`.
+De forma similar, puedes componer diferentes streams asíncronos para convertirlos en acciones antes de enviarlos al `store.dispatch()`.
 
-The question is: do you really need Redux if you already use Rx? Maybe not. It’s not hard to [re-implement Redux in Rx](https://github.com/jas-chen/rx-redux). Some say it’s a two-liner using Rx `.scan()` method. It may very well be!
+La pregunta es: de verdad necesitas REdux si ya usar Rx? Probablemente no. No es dificil [reimplementar Redux en Rx](https://github.com/jas-chen/rx-redux). Algunos dicen, que son solo 2 líneas usando el método `.scan()` de Rx. ¡Y probablemente lo sea!
 
-If you’re in doubt, check out the Redux source code (there isn’t much going on there), as well as its ecosystem (for example, [the developer tools](https://github.com/gaearon/redux-devtools)). If you don’t care too much about it and want to go with the reactive data flow all the way, you might want to explore something like [Cycle](http://cycle.js.org) instead, or even combine it with Redux. Let us know how it goes!
+Si tienes dudas, revisa el código fuente de Redux (no hay mcuho ahí), así como su ecosistema (por ejemplo, [las herramientas de desarrolladores](https://github.com/gaearon/redux-devtools)). Si no te interesa tanto eso y quieres que los datos reactivos simplemente fluyan, probablemente quieras usar algo como [Cycle](http://cycle.js.org) en su lugar, o incluso combinarlos con Redux. ¡Déjanos saber como resulta eso!
