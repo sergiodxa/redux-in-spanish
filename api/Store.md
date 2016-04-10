@@ -81,25 +81,26 @@ store.dispatch(addTodo('Read about the middleware'))
 
 ### <a id='subscribe'></a>[`subscribe(listener)`](#subscribe)
 
-Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call [`getState()`](#getState) to read the current state tree inside the callback.
+Agregar una función que escucha los cambios. Va a ser ejecutada cada vez que una acción es despachada y algunas partes del árbol de estado puedan potencialmente haber cambiado. Probablemente quieras llamar a [`getState()`](#getState) para leer el árbol de estado actual dentro del callback.
 
-You may call [`dispatch()`](#dispatch) from a change listener, with the following caveats:
+Probablemente quieras llamar a [`dispatch()`](#dispatch) desde el callback, siguiente las siguientes advertencias:
 
-1. The subscriptions are snapshotted just before every [`dispatch()`](#dispatch) call. If you subscribe or unsubscribe while the listeners are being invoked, this will not have any effect on the [`dispatch()`](#dispatch) that is currently in progress. However, the next [`dispatch()`](#dispatch) call, whether nested or not, will use a more recent snapshot of the subscription list.
+1. Las suscripciones son ejecutadas justo después de cada llamada de [`dispatch()`](#dispatch). Si te suscribes o desuscribes mientras un listener esta siendo invocado, no va a tener ningún efecto en el [`dispatch()`](#dispatch) actualmente en progreso. De todas formas, la siguiente llamada a [`dispatch()`](#dispatch), ya sea anidada o no, va a usar la más reciente versión de la lista de suscripciones.
 
-2. The listener should not expect to see all state changes, as the state might have been updated multiple times during a nested [`dispatch()`](#dispatch) before the listener is called. It is, however, guaranteed that all subscribers registered before the [`dispatch()`](#dispatch) started will be called with the latest state by the time it exits.
+2. Los listeners no deben esperar ver todos los cambios de estado, ya que el estado puede haber sido actualizado multiples veces durante los [`dispatch()`](#dispatch) anidados antes de que los listeners sean llamados. De todas formas, es seguro que todos los listeners registrados antes de que [`dispatch()`](#dispatch) sea ejecutado van a ser llamados con el último estado existente en ese momento.
 
-It is a low-level API. Most likely, instead of using it directly, you’ll use React (or other) bindings. If you feel that the callback needs to be invoked with the current state, you might want to [convert the store to an Observable or write a custom `observeStore` utility instead](https://github.com/reactjs/redux/issues/303#issuecomment-125184409).
+Es una API de bajo nivel. Comunmente, en vez de usarla directamente, vas a usar conexiones para React (u otros). Si sientes que necesitas que el callback sea invocado con el estado actual, probablemente quieras [convertir el store en un Obersavle o escribir un `observeStore` personalizado](https://github.com/reactjs/redux/issues/303#issuecomment-125184409)
 
+Para desuscribir un listener invoca la función devuetla por `subscribe`.
 To unsubscribe the change listener, invoke the function returned by `subscribe`.
 
 #### Arguments
 
-1. `listener` (*Function*): The callback to be invoked any time an action has been dispatched, and the state tree might have changed. You may call [`getState()`](#getState) inside this callback to read the current state tree. It is reasonable to expect that the store’s reducer is a pure function, so you may compare references to some deep path in the state tree to learn whether its value has changed.
+1. `listener` (*Función*): El callback que va a ser invocado cada vez que una acción es despachada y el árbol de estado puede haber cambiado. Probablemente quieras usar [`getState()`](#getState) dentro de este callback para obtener el árbol de estado actual. 
 
-##### Returns
+##### Regresa
 
-(*Function*): A function that unsubscribes the change listener.
+(*Funciǿn*): Una función para desuscribir el listener.
 
 ##### Ejemplo
 
