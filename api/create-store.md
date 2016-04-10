@@ -6,7 +6,7 @@ Crea un [store](../glosario.md#Store) de Redux que mantiene el árbol de estado 
 
 2. [`initialState`] *(cualquier cosa)*: El estado inicial. Puedes opcionalmente especificarlo para hidratar la aplicación con el estado del servidor en aplicaciones universales, o restaurar una sesión anterior serializada. Si crear el `reducer` con [`combineReducers`](combine-reducers.md), este debe ser un objeto plano con la misma forma usada ahí. De otra forma, eres libre de pasar cualquier cosa que el `reducer` pueda entender.
 
-3. [`enhancer`] *(Función)*: El mejorador del store. Puedes opcionalmente espeificarlo para mejorar el store con funcionalidad de terceros como los middlewares, time travel, persistencia, etc. El único mejorador de store que viene con Redux es [`applyMiddleware()`](./apply-middleware.md).
+3. [`enhancer`] *(Función)*: El potenciador del store. Puedes opcionalmente especificarlo para mejorar el store con funcionalidad de terceros como los middlewares, time travel, persistencia, etc. El único potenciador de store que viene con Redux es [`applyMiddleware()`](./apply-middleware.md).
 
 #### Regresa
 
@@ -49,5 +49,5 @@ console.log(store.getState())
 
 * Cuanod un store es creado, Redux despacha una acción falsa para que tu reducer llene el store con su estado inicial. No se supone que manejes esa acción directamente. solo recuerda que tu reducer debe devolver alguna clase de estado inicial si el estado provisto como primer argumento es `undefined`, y ya esta listo.
 
-* Para aplicar multiples mejoradores de stores, probablemente quieras usar [`compose()`](./compose.md).
+* Para aplicar multiples potenciadores de stores, probablemente quieras usar [`compose()`](./compose.md).
 
