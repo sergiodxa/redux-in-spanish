@@ -101,7 +101,7 @@ To unsubscribe the change listener, invoke the function returned by `subscribe`.
 
 (*Function*): A function that unsubscribes the change listener.
 
-##### Example
+##### Ejemplo
 
 ```js
 function select(state) {
@@ -122,14 +122,14 @@ let unsubscribe = store.subscribe(handleChange)
 handleChange()
 ```
 
-<hr>
+---
 
 ### <a id='replaceReducer'></a>[`replaceReducer(nextReducer)`](#replaceReducer)
 
-Replaces the reducer currently used by the store to calculate the state.
+Reemplaza el reducer actualmente usado en el store para calcular el estado.
 
-It is an advanced API. You might need this if your app implements code splitting, and you want to load some of the reducers dynamically. You might also need this if you implement a hot reloading mechanism for Redux.
+Es una API avanzada. Probablemente lo necesitas si tu aplicación implementa separación de código y quieres cargas algunos reducers dinamicamente. Además necesitas esto si implementas mecanismos como hot-reloading en Redux.
 
-#### Arguments
+#### Argumentos
 
-1. `reducer` (*Function*) The next reducer for the store to use.
+1. `reducer` (*Función*) El nuevo reducer a ser usado en el store.
