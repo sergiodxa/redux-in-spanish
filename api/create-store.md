@@ -47,7 +47,7 @@ console.log(store.getState())
 
 * En aplicaciones universales que corren en el servidor, crea una instancia del store en cada petición de forma que estén aisladas. Despacha unas pocas acciones para obtener datos a la instancia del store y espera que se completen antes de renderizar la aplicación en el servidor.
 
-* Cuanod un store es creado, Redux despacha una acción falsa para que tu reducer llene el store con su estado inicial. No se supone que manejes esa acción directamente. solo recuerda que tu reducer debe devolver alguna clase de estado inicial si el estado provisto como primer argumento es `undefined`, y ya esta listo.
+* Cuando un store es creado, Redux despacha una acción falsa para que tu reducer llene el store con su estado inicial. No se supone que manejes esa acción directamente. solo recuerda que tu reducer debe devolver alguna clase de estado inicial si el estado provisto como primer argumento es `undefined`, y ya esta listo.
 
 * Para aplicar multiples potenciadores de stores, probablemente quieras usar [`compose()`](./compose.md).
 
