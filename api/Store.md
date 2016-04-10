@@ -33,7 +33,7 @@ Es igual al último valor regresado por los reducers del store.
 
 ### <a id='dispatch'></a>[`dispatch(action)`](#dispatch)
 
-Despacha una acciǿn. Esta es la única forma de realizar un cambio de estado.
+Despacha una acción. Esta es la única forma de realizar un cambio de estado.
 
 La función función reductora es ejecutada por el resultado de [`getState()`](#getState) y el `action` indicado de forma síncrona. El valor devuelto es considerado el siguiente estado. Va a ser devuelto por [`getState()`](#getState) desde ahora, y las funciones escuchando los cambios van a ser inmediatamente notificadas.
 
