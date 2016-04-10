@@ -32,7 +32,7 @@
 * [Glosario](glosario.md)
 * [Referencia API](api/README.md)
    * [createStore](api/create-store.md)
-   * [Store](api/store.md)
+   * [Store](api/Store.md)
    * [combineReducers](api/combine-reducers.md)
    * [applyMiddleware](api/apply-middleware.md)
    * [bindActionCreators](api/bind-action-creators.md)
