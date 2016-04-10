@@ -42,9 +42,9 @@ type Dispatch = (a: Action | AsyncAction) => any
 ```
 La *función despachadora* (o simplemente *función dispatch*) es una función que acepta una acción o una [acción asíncrona](#acción-asíncrona); entonces puede o no despachar una o más acciones al store.
 
-Debemos distinguir entre una función despachadora en general y la función base [`dispatch](api/store.md#dispatch) provista por la instancia del store sin ningún middleware.
+Debemos distinguir entre una función despachadora en general y la función base [`dispatch`](api/store.md#dispatch) provista por la instancia del store sin ningún middleware.
 
-La función base dispatch *siempre* envía sincronamente acciones al reducer del store, junto al estado anterior devuelto por el store, para calcular el nuevo estado. Espera que las acciones sean objetos planos listos para ser consumidos por el reducer.
+La función base dispatch *siempre* envía síncronamente acciones al reducer del store, junto al estado anterior devuelto por el store, para calcular el nuevo estado. Espera que las acciones sean objetos planos listos para ser consumidos por el reducer.
 
 Los [middlewares](#middleware) envuelven la función dispatch base. Le permiten a la función dispatch manejar [acciones asíncronas](#acción-asíncrona) además de las acciones. Un middleware puede transformar, retrasar, ignorar o interpretar de cualquier forma una acción o acción asíncrona antes de pasarla al siguiente middleware. Lea más abajo para más información.
 
@@ -71,7 +71,7 @@ type Middleware = (api: MiddlewareAPI) => (next: Dispatch) => Dispatch
 ```
 Un middleware es una función de orden superior que toma una [función despachadora](#función-despachadora) y devuelve una nueva función despachadora. A menudo convierten [acciones asíncronas](#acción-asíncrona) en acciones.
 
-Los middlewares son combinable usando funciones. Son útiles para registrar acciones, realizar efectos secundarios como ruteo, o convertir una llamada asíncrona a una API en una serie de acciones síncronas.
+Los middlewares son combinables usando funciones. Son útiles para registrar acciones, realizar efectos secundarios como ruteo, o convertir una llamada asíncrona a una API en una serie de acciones síncronas.
 
 Revisa [`applyMiddleware(...middlewares)`](api/apply-middleware.md) para más detalles de los middlewares.
 
@@ -105,10 +105,10 @@ Un creador de store es una función que crea un store de Redux. Al igual que la 
 ```
 type StoreEnhancer = (next: StoreCreator) => StoreCreator
 ```
-Un potenciador de store es una función de orden superior que toma un creador de store y devuelve una versión potenciada del creador de store. Es similar a un middleware ya que te permite alterar la interfaz de un store de manera componible.
+Un potenciador de store es una función de orden superior que toma un creador de store y devuelve una versión potenciada del creador de store. Es similar a un middleware ya que te permite alterar la interfaz de un store de manera combinable.
 
 Los potenciadores de store son casi el mismo concepto que los componentes de orden superior de React, que ocasionalmente se los llamada "potenciadores de componentes".
 
-Debido a que store no es una instancia, sino una colección de funciones en un objeto plano, es posible crear copias fácilmente y modificarlas sin modificar el store original. Hay un ejemplo en la documentación de [`compose`](api/compose.md) demostrándolo.
+Debido a que el store no es una instancia, sino una colección de funciones en un objeto plano, es posible crear copias fácilmente y modificarlas sin modificar el store original. Hay un ejemplo en la documentación de [`compose`](api/compose.md) demostrándolo.
 
 Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que esta ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](api/apply-middleware.md) es un potenciad de store.
