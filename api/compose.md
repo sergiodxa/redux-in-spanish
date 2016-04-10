@@ -15,7 +15,7 @@ Probablemente la quieras usar para aplicar múltiples [potenciadores de store](.
 
 #### Ejemplo
 
-Este ejemplo demuestra como usar `compose` para potenciar el [store](store.md) con [`applyMiddleware`](./apply-middleware.md) y algunas pocas herramientas de desarrollo de [redux-devtools](https://github.com/gaearon/redux-devtools).
+Este ejemplo demuestra como usar `compose` para potenciar el [store](./Store.md) con [`applyMiddleware`](./apply-middleware.md) y algunas pocas herramientas de desarrollo de [redux-devtools](https://github.com/gaearon/redux-devtools).
 
 ```js
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
