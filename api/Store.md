@@ -83,7 +83,7 @@ store.dispatch(addTodo('Read about the middleware'))
 
 Agregar una función que escucha los cambios. Va a ser ejecutada cada vez que una acción es despachada y algunas partes del árbol de estado puedan potencialmente haber cambiado. Probablemente quieras llamar a [`getState()`](#getState) para leer el árbol de estado actual dentro del callback.
 
-Probablemente quieras llamar a [`dispatch()`](#dispatch) desde el callback, siguiente las siguientes advertencias:
+Probablemente quieras llamar a [`dispatch()`](#dispatch) desde el callback, siguiendo las siguientes advertencias:
 
 1. Las suscripciones son ejecutadas justo después de cada llamada de [`dispatch()`](#dispatch). Si te suscribes o desuscribes mientras un listener esta siendo invocado, no va a tener ningún efecto en el [`dispatch()`](#dispatch) actualmente en progreso. De todas formas, la siguiente llamada a [`dispatch()`](#dispatch), ya sea anidada o no, va a usar la más reciente versión de la lista de suscripciones.
 
@@ -91,8 +91,7 @@ Probablemente quieras llamar a [`dispatch()`](#dispatch) desde el callback, sigu
 
 Es una API de bajo nivel. Comunmente, en vez de usarla directamente, vas a usar conexiones para React (u otros). Si sientes que necesitas que el callback sea invocado con el estado actual, probablemente quieras [convertir el store en un Obersavle o escribir un `observeStore` personalizado](https://github.com/reactjs/redux/issues/303#issuecomment-125184409)
 
-Para desuscribir un listener invoca la función devuetla por `subscribe`.
-To unsubscribe the change listener, invoke the function returned by `subscribe`.
+Para desuscribir un listener invoca la función devuelta por `subscribe`.
 
 #### Arguments
 
