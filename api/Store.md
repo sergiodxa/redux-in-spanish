@@ -1,7 +1,7 @@
 # Store
 
 El store contiene todo el [árbol de estado](../glosario.md#estado) de tu aplicación.
-La única forma de cambiar el estado que contiene es despachando una [acción](../glosario.md#acción].
+La única forma de cambiar el estado que contiene es despachando una [acción](../glosario.md#acción).
 
 El store no es una clase. Es solo un objeto con unos pócos métodos.
 Para crearlo, pasa tu principal [función reductora](../glosario.md#reducer) a [`createStore`](./create-store.md).
