@@ -1,38 +1,39 @@
 # Store
 
-A store holds the whole [state tree](../Glossary.md#state) of your application.  
-The only way to change the state inside it is to dispatch an [action](../Glossary.md#action) on it.  
+El store contiene todo el [árbol de estado](../glosario.md#estado) de tu aplicación.
+La única forma de cambiar el estado que contiene es despachando una [acción](../glosario.md#acción].
 
-A store is not a class. It’s just an object with a few methods on it.  
-To create it, pass your root [reducing function](../Glossary.md#reducer) to [`createStore`](createStore.md).
+El store no es una clase. Es solo un objeto con unos pócos métodos.
+Para crearlo, pasa tu principal [función reductora](../glosario.md#reducer) a [`createStore`](./create-store.md).
 
->##### A Note for Flux Users
+>##### Una nota para usuarios de Flux
 
->If you’re coming from Flux, there is a single important difference you need to understand. Redux doesn’t have a Dispatcher or support many stores. **Instead, there is just a single store with a single root [reducing function](../Glossary.md#reducer).** As your app grows, instead of adding stores, you split the root reducer into smaller reducers independently operating on the different parts of the state tree. You can use a helper like [`combineReducers`](combineReducers.md) to combine them. This is similar to how there is just one root component in a React app, but it is composed out of many small components.
+> Si vienes de Flux, hay una importante diferencias que necesitas entender.
+Redux no tiene un Dispatcher o soporta múltiples stores. **En cambio, hay un único store con una única [función reductora](../glosario.md#reducer).** Mientras tu aplicación crece, en vez de añadir stores, puedes dividir tu reducer en varios reducer independientes que operan en diferentes partes del árbolde estado. Puedes usar función como [`combineReducers`](./combine-reducers.md) para combinarlo. Esto es similar a como hay un único componente raíz en aplicaciones de React, pero esta compuesto de muchos componentes pequeños.
 
-### Store Methods
+### Métodos del Store(#metodos-store)
 
 - [`getState()`](#getState)
 - [`dispatch(action)`](#dispatch)
 - [`subscribe(listener)`](#subscribe)
 - [`replaceReducer(nextReducer)`](#replaceReducer)
 
-## Store Methods
+## Métodos del Store
 
 ### <a id='getState'></a>[`getState()`](#getState)
 
-Returns the current state tree of your application.  
-It is equal to the last value returned by the store’s reducer.
+Regresa el actual árbol de estado de tu aplicación.
+Es igual al último valor regresado por los reducers del store.
 
-#### Returns
+#### Regresa
 
-*(any)*: The current state tree of your application.
+*(any)*: El actual árbol de estado de tu aplicación.
 
-<hr>
+---
 
 ### <a id='dispatch'></a>[`dispatch(action)`](#dispatch)
 
-Dispatches an action. This is the only way to trigger a state change.
+Despacha una acciǿn. Esta es la única forma de realizar un cambio de estado.
 
 The store’s reducing function will be called with the current [`getState()`](#getState) result and the given `action` synchronously. Its return value will be considered the next state. It will be returned from [`getState()`](#getState) from now on, and the change listeners will immediately be notified.
 
