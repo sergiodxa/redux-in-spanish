@@ -38,29 +38,29 @@ Despacha una acciǿn. Esta es la única forma de realizar un cambio de estado.
 La función función reductora es ejecutada por el resultado de [`getState()`](#getState) y el `action` indicado de forma síncrona. El valor devuelto es considerado el siguiente estado. Va a ser devuelto por [`getState()`](#getState) desde ahora, y las funciones escuchando los cambios van a ser inmediatamente notificadas.
 
 >##### Una nota para usuarios de Flux
->If you attempt to call `dispatch` from inside the [reducer](../Glossary.md#reducer), it will throw with an error saying “Reducers may not dispatch actions.” This is similar to “Cannot dispatch in a middle of dispatch” error in Flux, but doesn’t cause the problems associated with it. In Flux, a dispatch is forbidden while Stores are handling the action and emitting updates. This is unfortunate because it makes it impossible to dispatch actions from component lifecycle hooks or other benign places.
+>Si intentas llamar a `dispatch` desde dentro de un [reducer](../glosario.md#reducer), va a tirar un error diciendo "Los reducers no deben despachar acciones." Esto es similar al error de Flux de "No se puede despachar en medio de un despacheo", pero no causa los problemas asociados con este. En Flux, despachar esta prohibido mientras los Store están manejando las acciones y emitiendo las actualizaciones. Esto es una lástima porque hace imposible despachar acciones desde el ciclo de vida del componente u otras partes benignas.
 
->In Redux, subscriptions are called after the root reducer has returned the new state, so you *may* dispatch in the subscription listeners. You are only disallowed to dispatch inside the reducers because they must have no side effects. If you want to cause a side effect in response to an action, the right place to do this is in the potentially async [action creator](../Glossary.md#action-creator).
+>En Redux, los suscriptores se ejecutan luego de que el reducer principal devuelve el nuevo estado, así *quizás* quieras despachar dentro de ellos. Solo no puedes despachar dentro de reducers porque no pueden tener efectos secundarios. Si quieres causar un efecto secundario en respuesta a una acción, el mejor lugar para hacer eso es [creadores de acciones](../glosario.md#creador-de-acciones) asíncronas.
 
-#### Arguments
+#### Argumentos
 
-1. `action` (*Object*<sup>†</sup>): A plain object describing the change that makes sense for your application. Actions are the only way to get data into the store, so any data, whether from the UI events, network callbacks, or other sources such as WebSockets needs to eventually be dispatched as actions. Actions must have a `type` field that indicates the type of action being performed. Types can be defined as constants and imported from another module. It’s better to use strings for `type` than [Symbols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol) because strings are serializable. Other than `type`, the structure of an action object is really up to you. If you’re interested, check out [Flux Standard Action](https://github.com/acdlite/flux-standard-action) for recommendations on how actions could be constructed.
+1. `action` (*Objeto*<sup>†</sup>): Un objeto plano describiendo las cambios necesarios para tu aplicación. Las acciones son la única forma de enviar datos al store, así que cualquier dato, ya sea de eventos de la UI, callbacks de peticiones, o cualquier otra fuente como WebSocket va a necesitar eventualmente ser despachada como acciones. Las acciones deben tener un campo `type` que indique el tipo de acción que se esta realizando. Los tipos pueden ser definidos como constantes e importados desde otros módulos. Es mejor usar strings para el `type` en vez de [Symbols](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol) porque los strings son serializables. Aparte de `type`, la estructura de los objetos de acciones son controlador por tí. Si estás interesado, revisa [Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de como armas acciones.
 
-#### Returns
+#### Regresa
 
-(Object<sup>†</sup>): The dispatched action (see notes).
+(Objeto<sup>†</sup>): La acción despachada (revisa las notas).
 
-#### Notes
+#### Notas
 
-<sup>†</sup> The “vanilla” store implementation you get by calling [`createStore`](createStore.md) only supports plain object actions and hands them immediately to the reducer.
+<sup>†</sup> La implementación "vainilla" del store que obtienes al llamar [`createStore`](./createStore.md) solo soporta objetos planos como acciones y las maneja inmediatamento en los reducers.
 
-However, if you wrap [`createStore`](createStore.md) with [`applyMiddleware`](applyMiddleware.md), the middleware can interpret actions differently, and provide support for dispatching [async actions](../Glossary.md#async-action). Async actions are usually asynchronous primitives like Promises, Observables, or thunks.
+De todas formas, si envuelves [`createStore`](./create-store.md) con [`applyMiddleware`](./apply-middleware.md), el middleware puede interpretar acciones de otra forma, y proveer soporta para despachar [acciones asíncronas](../glosario.md#acción-asíncrona). Las acciones asíncronas normalmente son Promises, Observables, o thunks.
 
-Middleware is created by the community and does not ship with Redux by default. You need to explicitly install packages like [redux-thunk](https://github.com/gaearon/redux-thunk) or [redux-promise](https://github.com/acdlite/redux-promise) to use it. You may also create your own middleware.
+Los middlewares son creador por la comunidad y no vienen incluidos en Redux por defecto. Necesitas explícitamente instalar paquetes como [redux-thunk](https://github.com/gaearon/redux-thunk) o [redux-promise](https://github.com/acdlite/redux-promise) para usarlos. Probablemente también crees tus propios middlewares.
 
-To learn how to describe asynchronous API calls, read the current state inside action creators, perform side effects, or chain them to execute in a sequence, see the examples for [`applyMiddleware`](applyMiddleware.md).
+Para aprender como describir llamadas asíncronas a un API, leer el estado actual dentro de creadores de acciones o realizar efectos secundarios, mira los ejemplos de [`applyMiddleware`](./applyMiddleware.md).
 
-#### Example
+#### Ejemplo
 
 ```js
 import { createStore } from 'redux'
@@ -77,7 +77,7 @@ store.dispatch(addTodo('Read the docs'))
 store.dispatch(addTodo('Read about the middleware'))
 ```
 
-<hr>
+---
 
 ### <a id='subscribe'></a>[`subscribe(listener)`](#subscribe)
 
