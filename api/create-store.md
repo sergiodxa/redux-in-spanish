@@ -37,7 +37,7 @@ console.log(store.getState())
 // [ 'Use Redux', 'Read the docs' ]
 ```
 
-#### Concejos
+#### Consejos
 
 * ¡No crees más de un Store en la aplicación! En cambio, usa [`combineReducers`](./combine-reducers.md) un solo reducer principal a partir de varios..
 
