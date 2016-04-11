@@ -116,7 +116,6 @@ console.log(store.getState())
 
 #### Consejos
 
-* 
-* This helper is just a convenience! You can write your own `combineReducers` that [works differently](https://github.com/acdlite/reduce-reducers), or even assemble the state object from the child reducers manually and write a root reducing function explicitly, like you would write any other function.
+* ¡Esta función para por conveniencia! Puedes crear tu propio `combineReducers` que [funcione diferente](https://github.com/acdlite/reduce-reducers), o incluso armar el objeto del estado en base a los reducers hijos manualmente y crear la función reductora principal explicitamente, como harías con cualquier otra función.
 
-* You may call `combineReducers` at any level of the reducer hierarchy. It doesn’t have to happen at the top. In fact you may use it again to split the child reducers that get too complicated into independent grandchildren, and so on.
+* Puedes llamar `combineReducers` en cualquier punto de la jerarquía de reducers. No tiene que ocurrir al nivel superior. De hecho puedes usarlo para separar los reducers hijos que se volvieron muy complicados en reducers nietos independientes.
