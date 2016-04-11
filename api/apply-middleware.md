@@ -10,13 +10,13 @@ Los middlewares no vienen incluidos en [`createStore`](createStore.md) y no son 
 
 #### Argumentos
 
-* `...middlewares` (*arguments*): Functions that conform to the Redux *middleware API*. Each middleware receives [`Store`](Store.md)’s [`dispatch`](Store.md#dispatch) and [`getState`](Store.md#getState) functions as named arguments, and returns a function. That function will be given the `next` middleware’s dispatch method, and is expected to return a function of `action` calling `next(action)` with a potentially different argument, or at a different time, or maybe not calling it at all. The last middleware in the chain will receive the real store’s [`dispatch`](Store.md#dispatch) method as the `next` parameter, thus ending the chain. So, the middleware signature is `({ getState, dispatch }) => next => action`.
+* `...middlewares` (*argumentos*): Funciones que se ajustan la *API de middlewares* de Redux. Cada middleware recibe [`dispatch`](./Store.md#dispatch) y el [`getState`](./Store.md#getState) del [`Store`](./Store.md) como argumentos, y regresa una función. Esa función va a recibir el método para despachar el siguiente middleware, y se espera que devuelva una función que recibe `action` y llame `next(action)`. El último middleware de la cadena va a recibir el verdadero método [`dispatch`](./Store.md#dispatch) del store como parámetro `next`, terminando la cadena. Así, la forma de un middleware sería `({ getState, dispatch }) => next => action`.
 
-#### Returns
+#### Regresa
 
-(*Function*) A store enhancer that applies the given middleware. The store enhancer signature is `createStore => createStore'` but the easiest way to apply it is to pass it to [`createStore()`](./createStore.md) as the last `enhancer` argument.
+(*Función*) Un potenciador de store que aplican los middlewares. El potenciador de store tiene el siguiente formato `createStore => createStore`, pero es más fácil de aplicar si lo envias a [`createStore()`](./create-store.md) como el último argumento `enhancer`.
 
-#### Example: Custom Logger Middleware
+#### Ejemplo: Middleware de Logging Personalizado
 
 ```js
 import { createStore, applyMiddleware } from 'redux'
@@ -26,13 +26,13 @@ function logger({ getState }) {
   return (next) => (action) => {
     console.log('will dispatch', action)
 
-    // Call the next dispatch method in the middleware chain.
+    // Llama al siguiente método dispatch en la cadena de middlewares
     let returnValue = next(action)
 
     console.log('state after dispatch', getState())
 
-    // This will likely be the action itself, unless
-    // a middleware further in chain changed it.
+    // Este seguramente sera la acción, excepto
+    // que un middleware anterior la haya modificado.
     return returnValue
   }
 }
@@ -47,12 +47,12 @@ store.dispatch({
   type: 'ADD_TODO',
   text: 'Understand the middleware'
 })
-// (These lines will be logged by the middleware:)
+// (Esta lineas son registradas por el middleware:)
 // will dispatch: { type: 'ADD_TODO', text: 'Understand the middleware' }
 // state after dispatch: [ 'Use Redux', 'Understand the middleware' ]
 ```
 
-#### Example: Using Thunk Middleware for Async Actions
+#### Ejemplo: Usando el Middleware Thunk para Acciones Asíncronas
 
 ```js
 import { createStore, combineReducers, applyMiddleware } from 'redux'
@@ -214,9 +214,9 @@ export default connect(
 )(SandwichShop)
 ```
 
-#### Tips
+#### Consejos
 
-* Middleware only wraps the store’s [`dispatch`](Store.md#dispatch) function. Technically, anything a middleware can do, you can do manually by wrapping every `dispatch` call, but it’s easier to manage this in a single place and define action transformations on the scale of the whole project.
+* Los middlewares solo envuelvan la función [`dispatch`](./Store.md#dispatch). Técnicamente, cualquier cosa que podrías hacer un middleware, puede hacerse envolviendo manualmente la llamada a `dispatch`, pero es más fácil manejar esto en un solo lugar y definir las transformaciones de acciones a una escala de todo el proyecto.
 
 * If you use other store enhancers in addition to `applyMiddleware`, make sure to put `applyMiddleware` before them in the composition chain because the middleware is potentially asynchronous. For example, it should go before [redux-devtools](https://github.com/gaearon/redux-devtools) because otherwise the DevTools won’t see the raw actions emitted by the Promise middleware and such.
 
