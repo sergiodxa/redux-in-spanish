@@ -218,9 +218,9 @@ export default connect(
 
 * Los middlewares solo envuelvan la función [`dispatch`](./Store.md#dispatch). Técnicamente, cualquier cosa que podrías hacer un middleware, puede hacerse envolviendo manualmente la llamada a `dispatch`, pero es más fácil manejar esto en un solo lugar y definir las transformaciones de acciones a una escala de todo el proyecto.
 
-* If you use other store enhancers in addition to `applyMiddleware`, make sure to put `applyMiddleware` before them in the composition chain because the middleware is potentially asynchronous. For example, it should go before [redux-devtools](https://github.com/gaearon/redux-devtools) because otherwise the DevTools won’t see the raw actions emitted by the Promise middleware and such.
+* Si usas otros potenciadores de store además de `applyMiddleware`, asegurate de poner `applyMiddleware` antes de ellos, porque los middlewares son potenciamente asíncronos. Por ejemplo, si debería ir antes de [redux-devtools](https://github.com/gaearon/redux-devtools) porque de otra forma las DevTools no van a ver las acciones puras emitidas por un middleware de promesas.
 
-* If you want to conditionally apply a middleware, make sure to only import it when it’s needed:
+* Si necesitas aplicar un middleware condicionalmente, asegurate de solo importarlo cuando sea necesario:
 
   ```js
   let middleware = [ a, b ]
@@ -236,11 +236,11 @@ export default connect(
     applyMiddleware(...middleware)
   )
   ```
+  
+  Esto hace más fácil para herramientas de empaquetado cortar los módulos no necesarios y reducir el tamaño de los paquetes.
 
-  This makes it easier for bundling tools to cut out unneeded modules and reduces the size of your builds.
+* ¿Algunas vez te preguntantes que es `applyMiddleware`? Debería ser un mecanismo de extensión más poderoso que los mismos middleware. En efecto, `applyMiddleware` es un ejemplo de el mecanismo más poderoso para extender Redux llamado [potenciadores de store](../glosario.md#potenciador-de-store). Es muy poco probable que alguna vez quieras escribir tu propio potenciador de store. Otro ejemplo de un potenciador de store son las [redux-devtools](https://github.com/gaearon/redux-devtools). Los middlewares son menos poderosos que un potenciador de store, pero son más fáciles de escribir.
 
-* Ever wondered what `applyMiddleware` itself is? It ought to be an extension mechanism more powerful than the middleware itself. Indeed, `applyMiddleware` is an example of the most powerful Redux extension mechanism called [store enhancers](../Glossary.md#store-enhancer). It is highly unlikely you’ll ever want to write a store enhancer yourself. Another example of a store enhancer is [redux-devtools](https://github.com/gaearon/redux-devtools). Middleware is less powerful than a store enhancer, but it is easier to write.
+* Los middlewares suenan mucho más complicados de lo que en realidad son. La única forma de entenderlos de verdad es ver como un middleware existente funciona, y tratar de escribir uno propio. La anidación de funciones parece intimidante, pero la mayoría de los middlewares que puedas encontrar son, de hecho, menos de 10 líneas y la anidación y combinanción es lo que hace al sistema de middlewares poderosos.
 
-* Middleware sounds much more complicated than it really is. The only way to really understand middleware is to see how the existing middleware works, and try to write your own. The function nesting can be intimidating, but most of the middleware you’ll find are, in fact, 10-liners, and the nesting and composability is what makes the middleware system powerful.
-
-* To apply multiple store enhancers, you may use [`compose()`](./compose.md).
+* Para aplicar múltiples potenciadores de store, probablemente quieras usar [`compose()`](./compose.md).
