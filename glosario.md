@@ -111,4 +111,4 @@ Los potenciadores de store son casi el mismo concepto que los componentes de ord
 
 Debido a que el store no es una instancia, sino una colección de funciones en un objeto plano, es posible crear copias fácilmente y modificarlas sin modificar el store original. Hay un ejemplo en la documentación de [`compose`](api/compose.md) demostrándolo.
 
-Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que esta ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](api/apply-middleware.md) es un potenciad de store.
+Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que esta ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](api/apply-middleware.md) es un potenciador de store.
