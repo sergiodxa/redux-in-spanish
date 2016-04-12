@@ -126,7 +126,7 @@ Sí se gusto el curso, considera soportar a Egghead [comprando una suscripción]
 - [Introducción](introduccion/README.md)
 - [Básico](basico/README.md)
 - [Avanzado](avanzado/README.md)
-- [Receptas](recetas/README.md)
+- [Recetas](recetas/README.md)
 - [Solución de problemas](solucion-de-problemas.md)
 - [Glosario](glosario.md)
 - [Referencia API](api/README.md)
