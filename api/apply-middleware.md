@@ -60,16 +60,16 @@ import thunk from 'redux-thunk'
 import * as reducers from './reducers'
 
 let reducer = combineReducers(reducers)
-// applyMiddleware supercharges createStore with middleware:
+// applyMiddleware sobrecarga createStore con middlewares:
 let store = createStore(reducer, applyMiddleware(thunk))
 
 function fetchSecretSauce() {
   return fetch('https://www.google.com/search?q=secret+sauce')
 }
 
-// These are the normal action creators you have seen so far.
-// The actions they return can be dispatched without any middleware.
-// However, they only express “facts” and not the “async flow”.
+// Estos son los creadores normales que haz visto hasta ahora.
+// Las acciones que devuelven pueden ser despachadas sin middlewares.
+// De todas formas, ellos expresan "hechos" y no "flujos asíncronos".
 
 function makeASandwich(forPerson, secretSauce) {
   return {
@@ -95,21 +95,21 @@ function withdrawMoney(amount) {
   }
 }
 
-// Even without middleware, you can dispatch an action:
+// Incluso sin middlewares, puedes despachar una acción:
 store.dispatch(withdrawMoney(100))
 
-// But what do you do when you need to start an asynchronous action,
-// such as an API call, or a router transition?
+// ¿Pero que haces cuando quieres iniciar una acción asíncrona,
+// como un llamado a un API, o una transición de rutas?
 
-// Meet thunks.
-// A thunk is a function that returns a function.
-// This is a thunk.
+// Conoce a thunks.
+// Un thunk es una función que devuelve una función.
+// Esto es un thnk
 
 function makeASandwichWithSecretSauce(forPerson) {
 
-  // Invert control!
-  // Return a function that accepts `dispatch` so we can dispatch later.
-  // Thunk middleware knows how to turn thunk async actions into actions.
+  // ¡Control invertido!
+  // Devuelve una función que acepta `dispatch` así podemos despacharlas luego.
+  // El middleware thunk sabe como convertír acciones asíncronas con thunks en acciones.
 
   return function (dispatch) {
     return fetchSecretSauce().then(
@@ -119,15 +119,15 @@ function makeASandwichWithSecretSauce(forPerson) {
   }
 }
 
-// Thunk middleware lets me dispatch thunk async actions
-// as if they were actions!
+// ¡El middleware thunk te deja despachar acciones asíncronas
+// como si fuesen acciones!
 
 store.dispatch(
   makeASandwichWithSecretSauce('Me')
 )
 
-// It even takes care to return the thunk’s return value
-// from the dispatch, so I can chain Promises as long as I return them.
+// Incluso se asegura de regresas el valor de devuelve el thunk
+// en el despacho, así puedo anidar promesas.
 
 store.dispatch(
   makeASandwichWithSecretSauce('My wife')
@@ -135,22 +135,22 @@ store.dispatch(
   console.log('Done!')
 })
 
-// In fact I can write action creators that dispatch
-// actions and async actions from other action creators,
-// and I can build my control flow with Promises.
+// De hecho, podría crear creadores de acciones que despachan
+// acciones y acciones asíncronas desde otros creadores de acciones,
+// y así crear mi propio flujo de control con promesas.
 
 function makeSandwichesForEverybody() {
   return function (dispatch, getState) {
     if (!getState().sandwiches.isShopOpen) {
 
-      // You don’t have to return Promises, but it’s a handy convention
-      // so the caller can always call .then() on async dispatch result.
+      // No necesitas devolver promesas, pero es una convención común
+      // así siempre se puede llamar `.then()` como resultado.
 
       return Promise.resolve()
     }
 
-    // We can dispatch both plain object actions and other thunks,
-    // which lets us compose the asynchronous actions in a single flow.
+    // Podemos despachar acciones tanto objetos planos como thunks,
+    // lo que nos deja componer las acciones asíncronas en un único flujo.
 
     return dispatch(
       makeASandwichWithSecretSauce('My Grandma')
@@ -170,8 +170,8 @@ function makeSandwichesForEverybody() {
   }
 }
 
-// This is very useful for server side rendering, because I can wait
-// until data is available, then synchronously render the app.
+// Esto es muy útil para renderizado en el servidor, ya que puedo esperar
+// hasta que los datos estén disponibles, entonces síncronamente renderizar la app.
 
 import { renderToString } from 'react-dom/server'
 
@@ -181,8 +181,8 @@ store.dispatch(
   response.send(renderToString(<MyApp store={store} />))
 )
 
-// I can also dispatch a thunk async action from a component
-// any time its props change to load the missing data.
+// También puedes despachar una acción asínrona desde un componente
+// cada vez que los props cambian para cargar los datos faltantes.
 
 import { connect } from 'react-redux'
 import { Component } from 'react'
