@@ -47,11 +47,11 @@ Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype
 * Realizar tareas con efectos secundarios como llamas a un API o transiciones de rutas.
 * Llamar una función no pura, por ejemplo `Date.now()` o `Math.random()`.
 
-We’ll explore how to perform side effects in the [advanced walkthrough](../advanced/README.md). For now, just remember that the reducer must be pure. **Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.**
+En la [guía avanzada](../avanzado/README.md) vamos a ver como realizar efectos secundarios. Por ahora, solo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
 
-With this out of the way, let’s start writing our reducer by gradually teaching it to understand the [actions](Actions.md) we defined earlier.
+Con esto dicho, vamos a empezar a escribir nuestro reducer gradualmente enseñandole como entender las [acciones](../acciones.md) que definimos antes.
 
-We’ll start by specifying the initial state. Redux will call our reducer with an `undefined` state for the first time. This is our chance to return the initial state of our app:
+Vamos a empezar por especificar el estado inicial. Redux va a llamar a nuestros reducers con `undefined` como valor del estado la primera vez. Esta es nuestra oportunidad de devolver el estado inicial de nuestra applicación.
 
 ```js
 import { VisibilityFilters } from './actions'
@@ -66,23 +66,23 @@ function todoApp(state, action) {
     return initialState
   }
 
-  // For now, don’t handle any actions
-  // and just return the state given to us.
+  // Por ahora, no maneja ninguna acción
+  // y solo devuelve el estado que recibimos.
   return state
 }
 ```
 
-One neat trick is to use the [ES6 default arguments syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/default_parameters) to write this in a more compact way:
+Un estupendo truco es usar la [sintáxis de parámetros por defecto de ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Parametros_por_defecto) para hacer lo anterior de forma más compacta:
 
 ```js
 function todoApp(state = initialState, action) {
-  // For now, don’t handle any actions
-  // and just return the state given to us.
+  // Por ahora, no maneja ninguna acción
+  // y solo devuelve el estado que recibimos.
   return state
 }
 ```
 
-Now let’s handle `SET_VISIBILITY_FILTER`. All it needs to do is to change `visibilityFilter` on the state. Easy:
+Ahora vamos a manejar `SET_VISIBILITY_FILTER`. Todo lo que necesitamos hacer es cambiar la propiedad `visibilityFilter` en el estado. Fácil:
 
 ```js
 function todoApp(state = initialState, action) {
@@ -97,25 +97,25 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Note that:
+Nota que:
 
-1. **We don’t mutate the `state`.** We create a copy with [`Object.assign()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign). `Object.assign(state, { visibilityFilter: action.filter })` is also wrong: it will mutate the first argument. You **must** supply an empty object as the first parameter. You can also enable the [object spread operator proposal](../recipes/UsingObjectSpreadOperator.md) to write `{ ...state, ...newState }` instead.
+1. **No modificamos el `state`.** Creamos una copia con [`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign). `Object.assign(state, { visibilityFilter: action.filter })` también estaría mal: esto modificaría el primero argumento. **Debes** mandar un objeto vacío como primer parámetro. También puedes activar la [propuesta del operador spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator) para escribir `{ ...state, ...newState }`.
 
-2. **We return the previous `state` in the `default` case.** It’s important to return the previous `state` for any unknown action.
+2. **Devolvemos el anterior `state` en el caso `default`**. Es importarte devolver el anterior `state` por cualquier acción desconocida.
 
->##### Note on `Object.assign`
+>##### Nota sobre `Object.assign`
 
->[`Object.assign()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) is a part of ES6, but is not implemented by most browsers yet. You’ll need to either use a polyfill, a [Babel plugin](https://www.npmjs.com/package/babel-plugin-object-assign), or a helper from another library like [`_.assign()`](https://lodash.com/docs#assign).
+>[`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign) es parte de ES6, pero no esta implementado en la mayoría de los navegadores todavía. Vas a necesitar usar ya sea un polyfill,  el [plugin de Babel](https://www.npmjs.com/package/babel-plugin-object-assign), o alguna otra función como [`_.assign()`](https://lodash.com/docs#assign).
 
->##### Note on `switch` and Boilerplate
+>##### Nota sobre `switch` y Boilerplate
 
->The `switch` statement is *not* the real boilerplate. The real boilerplate of Flux is conceptual: the need to emit an update, the need to register the Store with a Dispatcher, the need for the Store to be an object (and the complications that arise when you want a universal app). Redux solves these problems by using pure reducers instead of event emitters.
+>La sentencia `switch` no es verdadero boilerplate. El verdadero boilerplate de Flux es conceptual: la necesidad de emitir una actualización, la necesidad de registrar el Store con el Dispatcher, la necesidad de que el Store sea un objeto (y las complicaciones que existen para hacer aplicaciones universales). Redux resuelve estos problemas usando reducers puros en vez de emisores de eventos.
 
->It’s unfortunate that many still choose a framework based on whether it uses `switch` statements in the documentation. If you don’t like `switch`, you can use a custom `createReducer` function that accepts a handler map, as shown in [“reducing boilerplate”](../recipes/ReducingBoilerplate.md#reducers).
+>Desafortunadamente muchos todavía eligen un framework basados en si usan `switch` en su documentación. Si no te gusta `switch`, puedes usar alguna función `createReducer` personalizada que acepte un mapa, como se ve en ["Reduciendo el Boilerplate"](../recetas/reduciendo-el-boilerplate.md#reducers).
 
-## Handling More Actions
+## Manejando más acciones
 
-We have two more actions to handle! Let’s extend our reducer to handle `ADD_TODO`.
+¡Todavía tenemos dos acciones más que manejar! Vamos a extender nuestro reducer para manejar `ADD_TODO`.
 
 ```js
 function todoApp(state = initialState, action) {
@@ -140,9 +140,9 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Just like before, we never write directly to `state` or its fields, and instead we return new objects. The new `todos` is equal to the old `todos` concatenated with a single new item at the end. The fresh todo was constructed using the data from the action.
+Tal cual como antes, nunca modificamos directamente `state` o sus propiedades, en cambio devolvemos un nuevo objeto. El nuevo `todos` es igual al viejo `todos` agregándole un único objeto nuevo al final. La tarea más nueva es creada usando los datos de la acción.
 
-Finally, the implementation of the `COMPLETE_TODO` handler shouldn’t come as a complete surprise:
+Finalmente, la implementación de `COMPLETE_TODO` no va a venir con ninguna una sorpresa:
 
 ```js
 case COMPLETE_TODO:
@@ -158,11 +158,12 @@ case COMPLETE_TODO:
   })
 ```
 
-Because we want to update a specific item in the array without resorting to mutations, we have to create a new array with the same items except the item at the index. If you find yourself often writing such operations, it’s a good idea to use a helper like [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), or even a library like [Immutable](http://facebook.github.io/immutable-js/) that has native support for deep updates. Just remember to never assign to anything inside the `state` unless you clone it first.
+Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Solo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primeor.
 
-## Splitting Reducers
+## Separando Reducers
 
-Here is our code so far. It is rather verbose:
+Este es nuestro código hasta ahora. Es algo 
+Here is our code so far. It is rather verboso:
 
 ```js
 function todoApp(state = initialState, action) {
@@ -198,7 +199,7 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Is there a way to make it easier to comprehend? It seems like `todos` and `visibilityFilter` are updated completely independently. Sometimes state fields depend on one another and more consideration is required, but in our case we can easily split updating `todos` into a separate function:
+¿Hay alguna forma de hacerlo más fácil de entender? Parece que `todos` y `visibilityFilter` se actualizan de forma completamente separadas. Algunas veces campos del estado dependen uno de otro y hay que tener en cuenta más cosas, pero ne nuestro caso podemos facilmente actualizar `todos` en una función separada:
 
 ```js
 function todos(state = [], action) {
@@ -242,9 +243,9 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Note that `todos` also accepts `state`—but it’s an array! Now `todoApp` just gives it the slice of the state to manage, and `todos` knows how to update just that slice. **This is called *reducer composition*, and it’s the fundamental pattern of building Redux apps.**
+Fijate que `todos` acepta `state`—¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
 
-Let’s explore reducer composition more. Can we also extract a reducer managing just `visibilityFilter`? We can:
+Vamos a explorar la composición de reducers un poco más. ¿Podemos extraer a otro reducer el control de `visibilityFilter`? Podemos:
 
 ```js
 function visibilityFilter(state = SHOW_ALL, action) {
@@ -257,7 +258,7 @@ function visibilityFilter(state = SHOW_ALL, action) {
 }
 ```
 
-Now we can rewrite the main reducer as a function that calls the reducers managing parts of the state, and combines them into a single object. It also doesn’t need to know the complete initial state anymore. It’s enough that the child reducers return their initial state when given `undefined` at first.
+Ahora podemos reescribir el reducer principal como una función que llama a los reducers que controlan distintas partes del estado, y los combina en un solo objeto. Ni siquiera necesita saber el estado inicial. Es suficiente con que los reducers hijos devuelvan su estado inicial cuando reciben `undefined` la primera vez.
 
 ```js
 function todos(state = [], action) {
@@ -301,11 +302,11 @@ function todoApp(state = {}, action) {
 }
 ```
 
-**Note that each of these reducers is managing its own part of the global state. The `state` parameter is different for every reducer, and corresponds to the part of the state it manages.**
+**Nota que cada uno de estos reducers esta manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
 
-This is already looking good! When the app is larger, we can split the reducers into separate files and keep them completely independent and managing different data domains.
+¡Esto ya se esta viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
 
-Finally, Redux provides a utility called [`combineReducers()`](../api/combineReducers.md) that does the same boilerplate logic that the `todoApp` above currently does. With its help, we can rewrite `todoApp` like this:
+Por último, Redux viene con una utilidad llamada [`combineReducers()`](../api/combine-reducers.md) que realiza la misma lógica que usa `todoApp` arriba. Con su ayuda, podemos reescribir `todoApp` de esta forma.
 
 ```js
 import { combineReducers } from 'redux'
@@ -318,7 +319,7 @@ const todoApp = combineReducers({
 export default todoApp
 ```
 
-Note that this is completely equivalent to:
+Fijate que esto es exactamente lo mismo que:
 
 ```js
 export default function todoApp(state = {}, action) {
@@ -329,7 +330,7 @@ export default function todoApp(state = {}, action) {
 }
 ```
 
-You could also give them different keys, or call functions differently. These two ways to write a combined reducer are completely equivalent:
+Además puedes darles diferentes nombres, o llamar funciones diferentes. Estas dos formas de combinar reducers son exactamente lo mismo:
 
 ```js
 const reducer = combineReducers({
@@ -349,11 +350,11 @@ function reducer(state = {}, action) {
 }
 ```
 
-All [`combineReducers()`](../api/combineReducers.md) does is generate a function that calls your reducers **with the slices of state selected according to their keys**, and combining their results into a single object again. [It’s not magic.](https://github.com/reactjs/redux/issues/428#issuecomment-129223274)
+Todo lo que [`combineReducers()`](../api/combine-reducers.md) hace es generar una función que llama a tus reducers **con la parte del estado seleccionada de acuerdo a su propiedad**, y combinar sus resultados en un único objeto. [It’s not magic.](https://github.com/reactjs/redux/issues/428#issuecomment-129223274).
 
->##### Note for ES6 Savvy Users
+>##### Nota para expertos de ES6
 
->Because `combineReducers` expects an object, we can put all top-level reducers into a separate file, `export` each reducer function, and use `import * as reducers` to get them as an object with their names as the keys:
+>Ya que `combineReducers` espera un objeto, podemos poner todos nuestros reducers en un archivo separado, `export` cada función reductora, y usar `import * as reducers` para obtenerlos todos juntos como objetos con sus nombres como propiedades.
 
 >```javascript
 >import { combineReducers } from 'redux'
@@ -362,9 +363,9 @@ All [`combineReducers()`](../api/combineReducers.md) does is generate a function
 >const todoApp = combineReducers(reducers)
 ```
 
->Because `import *` is still new syntax, we don’t use it anymore in the documentation to avoid [confusion](https://github.com/reactjs/redux/issues/428#issuecomment-129223274), but you may encounter it in some community examples.
+>Ya que `import *` es todavía una sintaxis nueva, no la usamos más en la documentación para evitar [confusiones](https://github.com/reactjs/redux/issues/428#issuecomment-129223274), pero probalemente te encuentro con algunos ejemplos en la comunidad.
 
-## Source Code
+## Código fuente
 
 #### `reducers.js`
 
@@ -414,6 +415,6 @@ const todoApp = combineReducers({
 export default todoApp
 ```
 
-## Next Steps
+## Siguientes pasos
 
-Next, we'll explore how to [create a Redux store](Store.md) that holds the state and takes care of calling your reducer when you dispatch an action.
+A continuación, vamos a ver como [crear un store de Redux](./store.md) que contenga todo el estado y se encargue de llamar a nuestro reducer cuando se despache una acción.
