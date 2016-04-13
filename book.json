@@ -7,10 +7,13 @@
   "pluginsConfig": {
     "edit-link": {
       "base": "https://github.com/sergiodxa/redux-documentacion/tree/master",
-      "label": "Edita Esta Página"
+      "label": "Contribuye"
     },
     "github": {
       "url": "https://github.com/sergiodxa/redux-documentacion/"
+    },
+    "ga": {
+      "token": "UA-48432002-3"
     }
   }
 }
