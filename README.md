@@ -123,13 +123,13 @@ Así que ¿Qué estas esperando?
 Sí se gusto el curso, considera soportar a Egghead [comprando una suscripción](https://egghead.io/pricing). Los suscriptos tiene acceso al código fuentes de los ejemplos en cada uno los vídeos, así como un montón de lecciones avanzados en otros temas, incluyendo JavaScript en profundidad, React, Angular, y más. Muchas [profesores de Egghead](https://egghead.io/instructors) son también autores de librerías de código abierto, así que comprando una suscripción es una buena forma de ayudarlos por todo el trabajo que hicieron.
 
 ## Documentación
-- [Introducción](introduccion/README.md)
-- [Básico](basico/README.md)
-- [Avanzado](avanzado/README.md)
-- [Recetas](recetas/README.md)
-- [Solución de problemas](solucion-de-problemas.md)
-- [Glosario](glosario.md)
-- [Referencia API](api/README.md)
+- [Introducción](docs/introduccion/README.md)
+- [Básico](docs/basico/README.md)
+- [Avanzado](docs/avanzado/README.md)
+- [Recetas](docs/recetas/README.md)
+- [Solución de problemas](docs/solucion-de-problemas.md)
+- [Glosario](docs/glosario.md)
+- [Referencia API](docs/api/README.md)
 
 ## Ejemplos
 - [Contador](https://github.com/rackt/redux/tree/master/examples/counter)
@@ -158,7 +158,7 @@ Si eres nuevo en el ecosistema de NPM y tiene problemas iniciando un proyecto, o
 - [Cycle](https://github.com/cyclejs/cycle-core) por demostrar que tan común una función puede ser la mejor herramienta;
 - [React](https://github.com/facebook/react) por la innovación pragmática.
 
-Agradecimientos especiales a [Jamie Paton](http://jdpaton.github.io/) por liberar `redux` como nombre de módulo en NPM. 
+Agradecimientos especiales a [Jamie Paton](http://jdpaton.github.io/) por liberar `redux` como nombre de módulo en NPM.
 
 ## Registro de cambios
 Este proyecto se adhiere al [Versionamiento Semántico](http://semver.org/).
@@ -172,13 +172,8 @@ Algunos de las compañías más destacadas que hicieron esto posible:
 
 - [Webflow](https://github.com/webflow)
 - [Chess iX](http://www.chess-ix.com/)
- 
-[Ve la lista completa de patrocinadores de Redux.](PATRONS.md)
+
+[Ve la lista completa de patrocinadores de Redux.](docs/PATRONS.md)
 
 ## Licencia
 MIT
-
-
-
-
-
