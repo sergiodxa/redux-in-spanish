@@ -1,18 +1,18 @@
 {
-  "name": "redux-documentacion",
+  "name": "redux-in-spanish",
   "version": "1.0.0",
   "description": "Documentación de Redux en español",
   "main": "README.md",
   "scripts": {
     "clean": "rimraf _book",
     "prepare": "gitbook install",
-    "build": "npm run prepare && gitbook build -g sergiodxa/redux-documentacion",
+    "build": "npm run prepare && gitbook build -g sergiodxa/redux-in-spanish",
     "watch": "gitbook serve",
-    "publish": "npm run clean && npm run build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push https://github.com/sergiodxa/redux-documentacion.git gh-pages --force"
+    "publish": "npm run clean && npm run build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push https://github.com/sergiodxa/redux-in-spanish.git gh-pages --force"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergiodxa/redux-documentacion.git"
+    "url": "git+https://github.com/sergiodxa/redux-in-spanish.git"
   },
   "keywords": [
     "redux",
@@ -22,7 +22,7 @@
   "author": "Sergio Daniel Xalambrí <sergio@xalambri.com.ar> (http://sergio.xalambri.com.ar/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sergiodxa/redux-documentacion/issues"
+    "url": "https://github.com/sergiodxa/redux-in-spanish/issues"
   },
   "homepage": "https://es.redux.js.org",
   "dependencies": {
