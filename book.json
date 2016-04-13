@@ -10,11 +10,11 @@
   "plugins": ["edit-link", "prism", "-highlight", "github", "anker-enable"],
   "pluginsConfig": {
     "edit-link": {
-      "base": "https://github.com/sergiodxa/redux-documentacion/tree/master",
+      "base": "https://github.com/sergiodxa/redux-in-spanish/tree/master",
       "label": "Contribuye"
     },
     "github": {
-      "url": "https://github.com/sergiodxa/redux-documentacion/"
+      "url": "https://github.com/sergiodxa/redux-in-spanish/"
     },
     "ga": {
       "token": "UA-48432002-3"
