@@ -1,0 +1,16 @@
+{
+  "gitbook": "2.6.7",
+  "structure": {
+    "summary": "docs/README.md"
+  },
+  "plugins": ["edit-link", "prism", "-highlight", "github", "anker-enable"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/sergiodxa/redux-documentacion/tree/master",
+      "label": "Edita Esta Página"
+    },
+    "github": {
+      "url": "https://github.com/sergiodxa/redux-documentacion/"
+    }
+  }
+}
