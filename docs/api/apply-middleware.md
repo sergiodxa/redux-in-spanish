@@ -6,7 +6,7 @@ El uso más común de los middlewares es soportar acciones asíncronas sin demas
 
 Por ejemplo, [redux-thunk](https://github.com/gaearon/redux-thunk) permite a los creadores de acciones invertír el control despachando funciones. Van a recibir [`dispatch`](./Store.md#dispatch) como argumento y capaz llamarlo asíncronamente. Estas funciones son llamadas *thunks*. Otro ejemplo de middleware es [redux-promise](https://github.com/acdlite/redux-promise). Este te deja despachar una [Promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa) como una acción asíncrona, y despachar una acción normal cuando la Promesa se resuelve.
 
-Los middlewares no vienen incluidos en [`createStore`](createStore.md) y no son una parte fundamental de la arquitectua de Redux, pero los consideramos suficientemente útiles para soportarlos directamente. De esta forma, hay una única forma estandarizada de extender [`dispatch`](./Store.md#dispatch) y diferentes middlewares probablemente compitan en expresividad y utilidad.
+Los middlewares no vienen incluidos en [`createStore`](./create-store.md) y no son una parte fundamental de la arquitectua de Redux, pero los consideramos suficientemente útiles para soportarlos directamente. De esta forma, hay una única forma estandarizada de extender [`dispatch`](./Store.md#dispatch) y diferentes middlewares probablemente compitan en expresividad y utilidad.
 
 #### Argumentos
 
@@ -236,7 +236,7 @@ export default connect(
     applyMiddleware(...middleware)
   )
   ```
-  
+
   Esto hace más fácil para herramientas de empaquetado cortar los módulos no necesarios y reducir el tamaño de los paquetes.
 
 * ¿Algunas vez te preguntantes que es `applyMiddleware`? Debería ser un mecanismo de extensión más poderoso que los mismos middleware. En efecto, `applyMiddleware` es un ejemplo de el mecanismo más poderoso para extender Redux llamado [potenciadores de store](../glosario.md#potenciador-de-store). Es muy poco probable que alguna vez quieras escribir tu propio potenciador de store. Otro ejemplo de un potenciador de store son las [redux-devtools](https://github.com/gaearon/redux-devtools). Los middlewares son menos poderosos que un potenciador de store, pero son más fáciles de escribir.

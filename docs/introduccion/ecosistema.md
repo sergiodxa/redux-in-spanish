@@ -5,6 +5,15 @@ Para una lista completa de todo lo relacionado a Redux, recomendamos [Awesome Re
 
 En esta página solo mostramos algunas de ellas que los colaboradores de Redux han seleccionado personalmente ¡No dejes que eso te desaliente a probar el resto! El ecosistema esta creciendo muy rápido, y tenemos un tiempo limitado para ver y probar todo. Considera estas como "elegidas por el staff", y no dudes en enviar un PR si haces algo increible con Redux.
 
+## Aprendiendo Redux (en español)
+- [Introducción a Redux.js](https://medium.com/react-redux/introducci%C3%B3n-a-redux-js-8bdf4fe0751e) - Introducción a conceptos de Redux.js
+- [Combinando React.js y Redux.js](https://medium.com/react-redux/combinando-react-js-y-redux-js-7b45a9dc39ac) - Explicación de como usar conjuntamente estas dos tecnologías.
+- [Middlewares en Redux.js](https://medium.com/react-redux/middlewares-en-redux-js-88081fcd6c91) - Explicación de como hacer middlewares propios para Redux.js
+- [Pruebas unitarias en Redux.js](https://medium.com/react-redux/pruebas-unitarias-en-redux-js-d7285c013123) - Ejemplos de como hacer pruebas a nuestro código de Redux.js.
+- [Ruteo en aplicaciones de Redux y React.js](https://medium.com/react-redux/ruteo-en-aplicaciones-de-redux-y-react-js-d62de452bf1b) - Explicación de como manejar las rutas de una aplicación hecha con Redux y React.js.
+- [Estructura de archivos Ducks para Redux.js](https://medium.com/react-redux/estructura-de-archivos-ducks-para-redux-js-36bb56a70cb3#.z7qq00d55) - Buena práctica de como organizar creadores de acciones, reducers y tipos de acciones en módulos.
+- [Glosario de términos de Redux](https://medium.com/react-redux/glosario-de-términos-de-redux-c2bca005ca69) - Colección de términos usados en Redux junto a su explicación.
+
 ## Aprendiendo Redux (en inglés)
 ### Vídeos
 - [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) - Aprende los conceptos básicos de Redux directamente de su creador (30 vídeos gratuitos)
@@ -85,7 +94,7 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 ### Convenciones de la Comunidad
 - [Flux Standard Action](https://github.com/acdlite/flux-standard-action) — Un estándar de acciones de Flux amigable con humanos
 - [Canonical Reducer Composition](https://github.com/gajus/canonical-reducer-composition) — Un estándar opinionado para combinar reducers anidados
-- [Ducks: Redux Reduer Bundles](https://github.com/erikras/ducks-modular-redux) — Una propuesta para empaquetar reducers, acciones y sus tipos
+- [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux) — Una propuesta para empaquetar reducers, acciones y sus tipos
 
 ### Traducciones
 - [Redux](http://redux.js.org/) — Inglés

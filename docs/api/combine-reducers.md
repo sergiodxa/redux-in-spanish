@@ -2,11 +2,11 @@
 
 Mientras tu aplicación se vuelve más compleja, vas a querer separar tus [funciones reductoras](../glosario.md#reducer) en funciones separadas, cada una manejando partes independientes del [estado](../glosario.md#estado).
 
-La función `combineReducers` devuelve un objeto cuyos valores son diferentes funciones reductoras en una única función reductora que puedes enviar a [`createStore`](createStore.md).
+La función `combineReducers` devuelve un objeto cuyos valores son diferentes funciones reductoras en una única función reductora que puedes enviar a [`createStore`](./create-store.md).
 
 El reducer resultante llama cada reducer interno, y junta sus resultados en un único objeto de estado. **La forma del objeto de estado es igual a las llaves enviadas a `reducers`**.
 
-Consecuentemente, el objeto de estado luciría así: 
+Consecuentemente, el objeto de estado luciría así:
 
 ```
 {

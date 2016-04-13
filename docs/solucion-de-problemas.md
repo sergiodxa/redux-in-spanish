@@ -81,7 +81,7 @@ return update(state, {
   },
 });
 ```
-Por último, para actualizar objeto, vas a necesitar algo como `_.extend` de Lodash o mejor, un polyfill de [`Object.assign](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
+Por último, para actualizar objeto, vas a necesitar algo como `_.extend` de Lodash o mejor, un polyfill de [`Object.assign](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign).
 
 Asegurate de que usas `Object.assign` correctamente. Por ejemplo, en vez de devolver algo como `Object.assign(state, newData)` en tus reducers, devuelve `Object.assign({}, state, newData)`. De estas forma no vas a modificar el `state` anterior.
 
@@ -105,7 +105,7 @@ return [
 ```
 Ten en cuenta que las funciones experimentales estás sujetas a cambios, y no es bueno depender de ellas en grandes cantidades de código.
 
-### No olvides llamar [`dispatch(action)`](http://redux.js.org/docs/api/Store.html#dispatch)
+### No olvides llamar [`dispatch(action)`](./api/Store.md#dispatch)
 Sí defines un creador de acciones, ejecutándolo *no* va a despachar tus acciones automáticamente. Por ejemplo, este código no hace nada:
 
 #### **`TodoActions.js`**
@@ -137,7 +137,7 @@ class AddTodo extends Component {
 ```
 No funciona ya que el creador de acciones es solo una función que *devuelve* una acción. Pero depende de vos despacharla.No podemos conectar tu creador de acciones a una instancia específica del Store durante su definición ya que las aplicaciones que renderizas en el servidor necesitas un store de Redux para cada petición.
 
-Esto se arreglar ejecutando el método [`dispatch()`](http://redux.js.org/docs/api/Store.html#dispatch) de la instancia del [store](http://redux.js.org/docs/api/Store.html):
+Esto se arreglar ejecutando el método [`dispatch()`](./api/Store.md#dispatch) de la instancia del [store](./api/Store.md):
 ```javascript
 handleClick() {
   // ¡Funciona! (pero debes obtener el store de alguna forma)
