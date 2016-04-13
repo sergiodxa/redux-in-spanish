@@ -25,7 +25,7 @@ import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
 
 >##### Nota
 
->No necesitas definir tus tipos de acciones constantes en un archivo separado, o incluso definirlas. Para proyectos pequeños, probablemente sea más fácil usar strings directamente para los tipos de acciones. De todas formas, hay algunos beneficios explícitos en declarar constantes en grandes bloques de código. Lee [Reduciendo el Boilerplate](../recipes/reducing-boilerplate.md) para más consejos prácticos sobre como mantener tu código limpio.
+>No necesitas definir tus tipos de acciones constantes en un archivo separado, o incluso definirlas. Para proyectos pequeños, probablemente sea más fácil usar strings directamente para los tipos de acciones. De todas formas, hay algunos beneficios explícitos en declarar constantes en grandes bloques de código. Lee [Reduciendo el Boilerplate](../recetas/reduciendo-el-boilerplate.md) para más consejos prácticos sobre como mantener tu código limpio.
 
 Además del `type`, el resto de la estructura de los objetos de acciones depende de tí. Si estas interesado, revisa[Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de como una acción debe armarse.
 
