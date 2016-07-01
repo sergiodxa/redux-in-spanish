@@ -1,6 +1,6 @@
 # Reducers
 
-Las [acciones](./acciones.md) describen que *algo paso*, pero no especifican como el estado de la aplicación cambio en respuesta. Esto es trabajo de los reducers.
+Las [acciones](./acciones.md) describen que *algo pasó*, pero no especifican cómo el estado de la aplicación cambió en respuesta. Esto es trabajo de los reducers.
 
 ## Diseñando la forma del estado
 
@@ -11,7 +11,7 @@ Para nuestra aplicación de tareas, vamos a querer guardar dos cosas diferentes:
 * El filtro de visibilidad actualmente seleccionado;
 * La lista actual de tareas.
 
-Algunas veces vas a ver que necesitas almacenar algunos datos, así como el estado de la UI, en el árbol de estado. Esto esta bien, pero trata de mantener los datos separado del estado de la UI.
+Algunas veces vas a ver que necesitas almacenar algunos datos, así como el estado de la UI, en el árbol de estado. Esto está bien, pero trata de mantener los datos separado del estado de la UI.
 
 ```js
 {
@@ -35,7 +35,7 @@ Algunas veces vas a ver que necesitas almacenar algunos datos, así como el esta
 
 ## Manejando Acciones
 
-Ahora que decidimos como se va a ver nuestro objeto de estado, estamos listos para escribir nuestro reducer. El reducer es una función pura que toma el estado anterior y una acción, y devuelve en nuevo estado.
+Ahora que decidimos cómo se va a ver nuestro objeto de estado, estamos listos para escribir nuestro reducer. El reducer es una función pura que toma el estado anterior y una acción, y devuelve en nuevo estado.
 
 ```js
 (previousState, action) => newState
@@ -47,7 +47,7 @@ Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype
 * Realizar tareas con efectos secundarios como llamas a un API o transiciones de rutas.
 * Llamar una función no pura, por ejemplo `Date.now()` o `Math.random()`.
 
-En la [guía avanzada](../avanzado/README.md) vamos a ver como realizar efectos secundarios. Por ahora, solo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
+En la [guía avanzada](../avanzado/README.md) vamos a ver cómo realizar efectos secundarios. Por ahora, solo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
 
 Con esto dicho, vamos a empezar a escribir nuestro reducer gradualmente enseñandole como entender las [acciones](../acciones.md) que definimos antes.
 
@@ -105,7 +105,7 @@ Nota que:
 
 >##### Nota sobre `Object.assign`
 
->[`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign) es parte de ES6, pero no esta implementado en la mayoría de los navegadores todavía. Vas a necesitar usar ya sea un polyfill,  el [plugin de Babel](https://www.npmjs.com/package/babel-plugin-object-assign), o alguna otra función como [`_.assign()`](https://lodash.com/docs#assign).
+>[`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign) es parte de ES6, pero no está implementado en la mayoría de los navegadores todavía. Vas a necesitar usar ya sea un polyfill,  el [plugin de Babel](https://www.npmjs.com/package/babel-plugin-object-assign), o alguna otra función como [`_.assign()`](https://lodash.com/docs#assign).
 
 >##### Nota sobre `switch` y Boilerplate
 
@@ -243,7 +243,7 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Fijate que `todos` acepta `state`—¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
+Fíjate que `todos` acepta `state`—¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
 
 Vamos a explorar la composición de reducers un poco más. ¿Podemos extraer a otro reducer el control de `visibilityFilter`? Podemos:
 
@@ -302,9 +302,9 @@ function todoApp(state = {}, action) {
 }
 ```
 
-**Nota que cada uno de estos reducers esta manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
+**Nota que cada uno de estos reducers está manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
 
-¡Esto ya se esta viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
+¡Esto ya se está viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
 
 Por último, Redux viene con una utilidad llamada [`combineReducers()`](../api/combine-reducers.md) que realiza la misma lógica que usa `todoApp` arriba. Con su ayuda, podemos reescribir `todoApp` de esta forma.
 
@@ -319,7 +319,7 @@ const todoApp = combineReducers({
 export default todoApp
 ```
 
-Fijate que esto es exactamente lo mismo que:
+Fíjate que esto es exactamente lo mismo que:
 
 ```js
 export default function todoApp(state = {}, action) {
@@ -417,4 +417,4 @@ export default todoApp
 
 ## Siguientes pasos
 
-A continuación, vamos a ver como [crear un store de Redux](./store.md) que contenga todo el estado y se encargue de llamar a nuestro reducer cuando se despache una acción.
+A continuación, vamos a ver cómo [crear un store de Redux](./store.md) que contenga todo el estado y se encargue de llamar a nuestro reducer cuando se despache una acción.
