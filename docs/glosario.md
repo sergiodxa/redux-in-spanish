@@ -17,7 +17,7 @@ Una acción es un objeto plano (POJO - Plan Old JavaScript Object) que represent
 
 Las acciones deben tener un campo `type` que indica el tipo de acción a realizar. Los tipos pueden ser definidos como constantes e importados desde otro módulo Es mejor usar strings como tipos en vez de [Symbols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol) ya que los strings son serializables.
 
-Aparte del `type`, la estructura de una acción depende de vos. Si estás interesado, revisa [Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de como deberías estar estructurado una acción.
+Aparte del `type`, la estructura de una acción depende de vos. Si estás interesado, revisa [Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de cómo deberías estar estructurado una acción.
 
 Revisa [acción asíncrona](#acción-asíncrona) debajo.
 
@@ -29,7 +29,7 @@ Un *reducer* (también llamado *función reductora*) es una función que acepta 
 
 Los reducers no son únicos de Redux — son un concepto principal de la programación funcional. Incluso muchos lenguajes no funcionales, como JavaScript, tienen una API para reducción. En JavaScript, es [`Array.prototype.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce).
 
-En Redux, el valor acumulado es el árbol de estado, y los valores que están siendo acumulados son acciones. Los reducers calculan el nuevo estado en base al anterior estado y la acción. Deben ser *funciones puras* — funciones que devuelven el mismo valor dados los mismos argumentos. Deben estar libres de efectos secundarios. Esto es lo que permite características increíbles como hot reloading y time travel.
+En Redux, el valor acumulado es el árbol de estado, y los valores que están siendo acumulados son acciones. Los reducers calculan el nuevo estado con base al anterior estado y la acción. Deben ser *funciones puras* — funciones que devuelven el mismo valor dados los mismos argumentos. Deben estar libres de efectos secundarios. Esto es lo que permite características increíbles como hot reloading y time travel.
 
 Los reducers son el concepto más importante en Redux.
 
@@ -54,7 +54,7 @@ type ActionCreator = (...args: any) => Action | AsyncAction
 ```
 Un *creador de acciones* es, simplemente, una función que devuelve una acción. No confunda los dos términos — otra vez, una acción es un pedazo de información, y los creadores de acciones son fabricas que crean esas acciones.
 
-Llamar un creador de acciones solo produce una acción, no la despacha. Necesitas llama al método [`dispatch`](./api/Store.md#dispatch) del store para causar una modificación. Algunas veces decimos *creador de acciones conectado*, esto es una función que ejecuta un creador de acciones e inmediatamente despacha el resultado a una instancia del store específica.
+Llamar un creador de acciones solo produce una acción, no la despacha. Necesitas llamar al método [`dispatch`](./api/Store.md#dispatch) del store para causar una modificación. Algunas veces decimos *creador de acciones conectado*, esto es una función que ejecuta un creador de acciones e inmediatamente despacha el resultado a una instancia del store específica.
 
 Si un creador de acciones necesita leer el estado actual, hacer una llamada al API, o causar un efecto secundario, como una transición de rutas, debe retornas una [acción asíncrona](#acción-asíncrona) en vez de una acción.
 
@@ -62,7 +62,7 @@ Si un creador de acciones necesita leer el estado actual, hacer una llamada al A
 ```
 type AsyncAction = any
 ```
-Una *acción asíncrona* es un valor que es enviado a una función despachadora, pero todavía no esta listo para ser consumido por el reducer. Debe ser transformada por un [middleware](#middleware) en una acción (o una serie de acciones) antes de ser enviada a la función [`dispatch()`](./api/Store.md#dispatch) base. Las acciones asíncronas pueden ser de diferentes tipos, dependiendo del middleware que uses. Normalmente son primitivos asíncronos como una promesa o un thunk, que no son enviados inmediatamente a un reducer, pero despachan una acción cuando una operación se completa.
+Una *acción asíncrona* es un valor que es enviado a una función despachadora, pero todavía no está listo para ser consumido por el reducer. Debe ser transformada por un [middleware](#middleware) en una acción (o una serie de acciones) antes de ser enviada a la función [`dispatch()`](./api/Store.md#dispatch) base. Las acciones asíncronas pueden ser de diferentes tipos, dependiendo del middleware que uses. Normalmente son primitivos asíncronos como una promesa o un thunk, que no son enviados inmediatamente a un reducer, pero despachan una acción cuando una operación se completa.
 
 ## Middleware
 ```
@@ -111,4 +111,4 @@ Los potenciadores de store son casi el mismo concepto que los componentes de ord
 
 Debido a que el store no es una instancia, sino una colección de funciones en un objeto plano, es posible crear copias fácilmente y modificarlas sin modificar el store original. Hay un ejemplo en la documentación de [`compose`](./api/compose.md) demostrándolo.
 
-Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que esta ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](./api/apply-middleware.md) es un potenciador de store.
+Normalmente nunca vas a escribir un potenciador de store, pero capaz uses el que provee las [herramientas de desarrollo](https://github.com/gaearon/redux-devtools). Es lo que permite que el time travel sea posible sin que la aplicación se entere de que está ocurriendo. Curiosamente, la forma de [implementar middleware en Redux](./api/apply-middleware.md) es un potenciador de store.
