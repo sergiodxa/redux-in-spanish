@@ -1,6 +1,6 @@
 # Reducers
 
-Las [acciones](./acciones.md) describen que *algo paso*, pero no especifican como el estado de la aplicación cambio en respuesta. Esto es trabajo de los reducers.
+Las [acciones](./acciones.md) describen que *algo pasó*, pero no especifican cómo cambió el estado de la aplicación en respuesta. Esto es trabajo de los reducers.
 
 ## Diseñando la forma del estado
 
@@ -11,7 +11,7 @@ Para nuestra aplicación de tareas, vamos a querer guardar dos cosas diferentes:
 * El filtro de visibilidad actualmente seleccionado;
 * La lista actual de tareas.
 
-Algunas veces vas a ver que necesitas almacenar algunos datos, así como el estado de la UI, en el árbol de estado. Esto esta bien, pero trata de mantener los datos separado del estado de la UI.
+Algunas veces verás que necesitas almacenar algunos datos, así como el estado de la UI, en el árbol de estado. Esto está bien, pero trata de mantener los datos separados del estado de la UI.
 
 ```js
 {
@@ -31,11 +31,11 @@ Algunas veces vas a ver que necesitas almacenar algunos datos, así como el esta
 
 >##### Nota sobre relaciones
 
->En aplicaciones más complejas, vas a necesitar tener diferentes entidades que se referencien una a otra. Sugerimos mantener el estado tan normalizado como sea posible, sin nada de anidación. Mantener cada entidad en un objeto con el ID como llave, y usa los IDs para referenciar otras entidades, o para listas. Piensa en el estado de la aplicación como una base de datos. Este enfoque es descripto en la documentación de [normalizr's](https://github.com/gaearon/normalizr) más detalladamente. Por ejemplo, manteniendo `todosById: { id ->  todo }` y `todos: array<id>` dentro del estado es mejor para una aplicación real, pero lo vamos a matener simple para el ejemplo.
+>En aplicaciones más complejas, vas a necesitar tener diferentes entidades que se referencien una a otra. Sugerimos mantener el estado tan normalizado como sea posible, sin nada de anidación. Mantener cada entidad en un objeto con el ID como llave, y usa los IDs para referenciar otras entidades, o para listas. Piensa en el estado de la aplicación como una base de datos. Este enfoque se describe en la documentación de [normalizr](https://github.com/gaearon/normalizr) más detalladamente. Por ejemplo, manteniendo `todosById: { id ->  todo }` y `todos: array<id>` dentro del estado es mejor para una aplicación real, pero lo vamos a matener simple para el ejemplo.
 
 ## Manejando Acciones
 
-Ahora que decidimos como se va a ver nuestro objeto de estado, estamos listos para escribir nuestro reducer. El reducer es una función pura que toma el estado anterior y una acción, y devuelve en nuevo estado.
+Ahora que decidimos cómo se verá nuestro objeto de estado, estamos listos para escribir nuestro reducer. El reducer es una función pura que toma el estado anterior y una acción, y devuelve en nuevo estado.
 
 ```js
 (previousState, action) => newState
@@ -158,7 +158,7 @@ case COMPLETE_TODO:
   })
 ```
 
-Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Solo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primeor.
+Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Solo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primero.
 
 ## Separando Reducers
 
@@ -199,7 +199,7 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-¿Hay alguna forma de hacerlo más fácil de entender? Parece que `todos` y `visibilityFilter` se actualizan de forma completamente separadas. Algunas veces campos del estado dependen uno de otro y hay que tener en cuenta más cosas, pero ne nuestro caso podemos facilmente actualizar `todos` en una función separada:
+¿Hay alguna forma de hacerlo más fácil de entender? Parece que `todos` y `visibilityFilter` se actualizan de forma completamente separadas. Algunas veces campos del estado dependen uno de otro y hay que tener en cuenta más cosas, pero en nuestro caso podemos facilmente actualizar `todos` en una función separada:
 
 ```js
 function todos(state = [], action) {
@@ -304,7 +304,7 @@ function todoApp(state = {}, action) {
 
 **Nota que cada uno de estos reducers esta manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
 
-¡Esto ya se esta viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
+¡Esto ya se está viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
 
 Por último, Redux viene con una utilidad llamada [`combineReducers()`](../api/combine-reducers.md) que realiza la misma lógica que usa `todoApp` arriba. Con su ayuda, podemos reescribir `todoApp` de esta forma.
 
@@ -319,7 +319,7 @@ const todoApp = combineReducers({
 export default todoApp
 ```
 
-Fijate que esto es exactamente lo mismo que:
+Fíjate que esto es exactamente lo mismo que:
 
 ```js
 export default function todoApp(state = {}, action) {
