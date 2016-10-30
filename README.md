@@ -21,7 +21,7 @@ Bill Fisher, author of Flux document](https://twitter.com/fisherwebdev/status/61
 > [“It's cool that you are inventing a better Flux by not doing Flux at all.”](https://twitter.com/andrestaltz/status/616271392930201604)
 > André Staltz, creador de Cycle
 
-## Experienia de desarrollo
+## Experiencia de desarrollo
 Escribí Redux mientras trabajaba en mi charla de React Europe llamada ["Hot Reloading with Time Travel"](https://www.youtube.com/watch?v=xsSnOQynTHs). Mi meta era crear una librería de manejo de estado con una API mínima, pero completamente predecible, de forma que fuese posible implementar logging, hot reloading, time travel, aplicaciones universales/isomórficas, grabar y repetir.
 
 ## Influencias
