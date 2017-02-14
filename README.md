@@ -39,7 +39,7 @@ Normalmente también vas a querer usar la [conexión a React](https://github.com
 npm i -S react-redux
 npm i -D redux-devtools
 ```
-Esto asumiendo que estas usando [npm](https://www.npmjs.com/) como administrador de paquetes con un empaquetador de módulos como [Webpack](http://webpack.github.io/) o [Browserify](http://browserify.org/) para usar [módulos de CommonJS](http://webpack.github.io/docs/commonjs.html).
+Esto asumiendo que estás usando [npm](https://www.npmjs.com/) como administrador de paquetes con un empaquetador de módulos como [Webpack](http://webpack.github.io/) o [Browserify](http://browserify.org/) para usar [módulos de CommonJS](http://webpack.github.io/docs/commonjs.html).
 
 Si todavía no usas [npm](https://www.npmjs.com/) o algún empaquetador de módulos moderno, capaz prefiera el paquete en [UMD](https://github.com/umdjs/umd) que define `Redux` como un objeto global, puedes usar una desde [cdnjs](https://cdnjs.com/libraries/redux). *No* recomendamos este enfoque para ninguna aplicación seria, ya que la mayoría de las librerías complementarias a Redux está solo disponibles en [npm](https://www.npmjs.com/).
 
