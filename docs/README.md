@@ -3,7 +3,7 @@
 * [Read Me](README.md)
 * [Introducción](docs/introduccion/README.md)
    * [Motivación](docs/introduccion/motivacion.md)
-   * [Conceptos básicos](docs/introduccion/conceptos-basicos.md)
+   * [Conceptos Básicos](docs/introduccion/conceptos-basicos.md)
    * [Tres Principios](docs/introduccion/tres-principios.md)
    * [Herencia](docs/introduccion/herencia.md)
    * [Ecosistema](docs/introduccion/ecosistema.md)
