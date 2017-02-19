@@ -22,7 +22,7 @@ El ciclo de duración de la data en cualquier aplicación Redux sigue estos 4 pa
 
   Puedes invocar [`store.dispatch(action)`](../api/Store.md#dispatch) desde cualquier lugar en tu aplicación, incluyendo componentes y *XHR callbacks*, o incluso en intervalos programados.
 
-  2. **El *store* en Redux invoca a la función reductor que le indicaste.**
+2. **El *store* en Redux invoca a la función reductor que le indicaste.**
 
   El [*store*](Store.md) pasará dos argumentos al [reductor](Reducers.md): el árbol de estado actual y la acción. Por ejemplo, en el caso de la aplicacion de asuntos pendientes, el reductor  raíz podría recibir algo como esto:
 
