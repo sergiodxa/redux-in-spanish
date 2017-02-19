@@ -91,7 +91,7 @@ El ciclo de duración de la data en cualquier aplicación Redux sigue estos 4 pa
 
   Mientras [`combineReducers()`](../api/combine-Reducers.md) es una utilidad de gran ayuda, no tienes que usarla; ten la liberta de escribir tu propio reductor raíz!
 
-  4. **El *store* en Redux guarda por completo el árbol de estado devuelto por el reductor raíz.**
+4. **El *store* en Redux guarda por completo el árbol de estado devuelto por el reductor raíz.**
   
   ¡Este nuevo árbol es ahora el siguiente estado de tu aplicación! Cada *listener* registrado usando [`store.subscribe(listener)`](../api/Store.md#subscribe) será ahora invocado; los listeners podrán invocar [`store.getState()`](../api/Store.md#getState) para obtener el estado acutal.
 
