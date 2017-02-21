@@ -267,3 +267,167 @@ const mapStateToProps = (state) => {
 }
 ```
 
+Además de leer el estado, los componentes contenedores pueden enviar acciones. De manera similar, puede definir una función llamada `mapDispatchToProps()` que recibe el método [`dispatch()`](../api/Store.md#dispatch) y devuelve los *callback props* que deseas inyectar en el componente de presentación. Por ejemplo, queremos que `VisibleTodoList` inyecte un prop llamado `onTodoClick` en el componente `TodoList`, y queremos que `onTodoClick` envíe una acción `TOGGLE_TODO`:
+
+```js
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+```
+
+Finalmente, creamos `VisibleTodoList` llamando `connect()` y le pasamos estas dos funciones:
+
+```js
+import { connect } from 'react-redux'
+
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+```
+
+Estos son los conceptos básicos de la API de React Redux, pero hay algunos atajos y opciones avanzadas por lo que le animamos a revisar [su documentación](https://github.com/reactjs/react-redux) en detalle. En caso de que que te preocupe el hecho que `mapStateToProps` esté creando objetos nuevos con demasiada frecuencia, quizás desees aprender acerca de [computar datos derivados](../recipes/ComputingDerivedData.md) con [*reselect*](https://github.com/reactjs/Reselect).
+
+El resto de los componentes contenedores están definidos a continuación:
+
+#### `containers/FilterLink.js`
+
+```js
+import { connect } from 'react-redux'
+import { setVisibilityFilter } from '../actions'
+import Link from '../components/Link'
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    active: ownProps.filter === state.visibilityFilter
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch(setVisibilityFilter(ownProps.filter))
+    }
+  }
+}
+
+const FilterLink = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Link)
+
+export default FilterLink
+```
+
+#### `containers/VisibleTodoList.js`
+
+```js
+import { connect } from 'react-redux'
+import { toggleTodo } from '../actions'
+import TodoList from '../components/TodoList'
+
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.completed)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+```
+
+### Implementación de otros componentes
+
+#### `containers/AddTodo.js`
+
+```js
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../actions'
+
+let AddTodo = ({ dispatch }) => {
+  let input
+
+  return (
+    <div>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
+        }
+        dispatch(addTodo(input.value))
+        input.value = ''
+      }}>
+        <input ref={node => {
+          input = node
+        }} />
+        <button type="submit">
+          Añadir tarea
+        </button>
+      </form>
+    </div>
+  )
+}
+AddTodo = connect()(AddTodo)
+
+export default AddTodo
+```
+
+## Transferir al *store*
+
+Todos los componentes contenedores necesitan acceso al *store Redux* para que puedan suscribirse a ella. Una opción sería pasarlo como un *prop* a cada componente contenedor. Sin embargo, se vuelve tedioso, ya que hay que enlzar `store` incluso a través del componentes de presentación ya que puede suceder que tenga que renderizar un contenedor allá en lo profundo del árbol de componentes.
+
+La opción que recomendamos es usar un componente *React Redux* especial llamado [`<Proveedor>`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store) para [mágicamente](https://facebook.github.io/react/docs/context.html) hacer que el *store* esté disponible para todos los componentes del contenedor en la aplicación sin pasarlo explícitamente. Sólo es necesario utilizarlo una vez al renderizar el componente raíz:
+
+#### `index.js`
+
+```js
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
+
+let store = createStore(todoApp)
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
+```
+
+## Siguientes pasos
+
+Lea el [código fuente completo de este tutorial](ExampleTodoList.md) para internalizar mejor el conocimiento que ha adquirido. Luego, dirígete directamente al [tutorial avanzado](../advanced/README.md) para aprender a manejar los *network requests* y el *routing*!
