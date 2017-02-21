@@ -1,24 +1,24 @@
 # Uso con React
 
-Desde el principio, necesitamos enfatizar que Redux no tiene relación con React. Puedes escribir aplicaciones Redux con React, Angular, Ember, jQuery o vanilla JavaScript.
+Comencemos enfatizando que Redux no tiene relación alguna con React. Puedes escribir aplicaciones Redux con React, Angular, Ember, jQuery o vanilla JavaScript.
 
 Dicho esto, Redux funciona especialmente bien con librerías como [React](http://facebook.github.io/react/) y [Deku](https://github.com/dekujs/deku) porque te permiten describir la interfaz de usuario como una función de estado, y Redux emite actualizaciones de estado en respuesta a acciones.
 
-Usaremos React para crear nuestra una aplicación sencilla de asuntos pendites (todo).
+Usaremos React para crear nuestra una aplicación sencilla de asuntos pendites (To-do).
 
 ## Instalando React Redux
 
-[React Redux](https://github.com/reactjs/react-redux) no se incluye en Redux de forma predeterminada. Debe instalarlo explícitamente:
+[React Redux](https://github.com/reactjs/react-redux) no está incluido en Redux de manera predeterminada. Debe instalarlo explícitamente:
 
 ```
 npm install --save react-redux
 ```
 
-Si no usas npm, puedes obtener la distribución UMD (Universal Module Definition) más reciente desde unpkg (ya sea la distribución de [desarrollo](https://unpkg.com/react-redux@latest/dist/react-redux.js) o la de [producción](https://unpkg.com/react-redux@latest/dist/react-redux.min.js)). La distribución UMD exporta una variable global llamada `window.ReactRedux` por si la añades a tu pagina a través de la etiqueta `<script>`.
+Si no usas npm, puedes obtener la distribución UMD (Universal Module Definition) más reciente desde unpkg (ya sea la distribución de [desarrollo](https://unpkg.com/react-redux@latest/dist/react-redux.js) o la de [producción](https://unpkg.com/react-redux@latest/dist/react-redux.min.js)). La distribución UMD exporta una variable global llamada `window.ReactRedux` por si la añades a tu página a través de la etiqueta `<script>`.
 
-## Componentes de Presentación y Contenedor
+## Componentes de Presentación y Contenedores
 
-Para asociar React con Redux se recurre a la idea de **separacion presentational y componentes contenedores**. Si no está familiarizado con estos términos, [lea sobre ellos primero](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), y luego vuelva. ¡Son importantes, así que vamos lo vamos a esperar!
+Para asociar React con Redux se recurre a la idea de **separación de presentación y componentes contenedores**. Si no está familiarizado con estos términos, [lea sobre ellos primero](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0), y luego vuelva. ¡Son importantes, así que vamos le vamos a esperar!
 
 ¿Ha terminado de leer el artículo? Repasemos sus diferencias:
 
@@ -44,13 +44,13 @@ Para asociar React con Redux se recurre a la idea de **separacion presentational
         </tr>
         <tr>
           <th scope="row" style="text-align:right">Para leer datos</th>
-          <td>Leer datos de los <em>props</em></td>
-          <td>Suscribirse al estado en Redux</td>
+          <td>Lee datos de los <em>props</em></td>
+          <td>Se suscribe al estado en Redux</td>
         </tr>
         <tr>
           <th scope="row" style="text-align:right">Para manipular datos</th>
-          <td>Invocar llamadaa de retorno desde los <em>props</em></td>
-          <td>Enviar acciones a Redux</td>
+          <td>Invoca llamada de retorno (callback) desde los <em>props</em></td>
+          <td>Envia acciones a Redux</td>
         </tr>
         <tr>
           <th scope="row" style="text-align:right">Son escritas</th>
@@ -60,9 +60,9 @@ Para asociar React con Redux se recurre a la idea de **separacion presentational
     </tbody>
 </table>
 
-La mayoría de los componentes que escribiremos serán presentacionales, pero necesitaremos generar algunos componentes contenedores para conectarlos al *store* que maneja Redux. Esto y el resumen de diseño que mencionaremos a continuación no implica que los componentes contenedores deban estar cerca o en la parte superior del árbol de componentes. Si un componente contenedor se vuelve demasiado complejo (es decir, tiene componentes presentionales fuertemente anidados con innumerables devoluciones de llamadas que se pasan hacia abajo), introduzca otro contenedor dentro del árbol de componentes como se indica en el [FAQ](../faq/ReactRedux.md#react-multiple-componentes).
+La mayoría de los componentes que escribiremos serán de presentación, pero necesitaremos generar algunos componentes contenedores para conectarlos al *store* que maneja Redux. Con esto y el resumen de diseño que mencionaremos a continuación no implica que los componentes contenedores deban estar cerca o en la parte superior del árbol de componentes. Si un componente contenedor se vuelve demasiado complejo (es decir, tiene componentes de presentación fuertemente anidados con innumerables devoluciones de llamadas que se pasan hacia abajo), introduzca otro contenedor dentro del árbol de componentes como se indica en el [FAQ](../faq/ReactRedux.md#react-multiple-componentes).
 
-Técnicamente usted podría escribir los componentes contenedores manualmente usando [`store.subscribe()`](../api/Store.md#subscribe). No le aconsejamos que haga esto porque React Redux hace muchas optimizaciones de rendimiento que son difíciles de hacer a mano. Por esta razón, en lugar de escribir los componentes contenedores, los generaremos utilizando el comando [`connect()`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-Mapdispatchtoprops-mergeprops-options) función proporcionada por React Redux, como verá a continuación.
+Técnicamente usted podría escribir los componentes contenedores manualmente usando [`store.subscribe()`](../api/Store.md#subscribe). No le aconsejamos que haga esto porque React Redux hace muchas optimizaciones de rendimiento que son difíciles de hacer a mano. Por esta razón, en lugar de escribir los componentes contenedores, los generaremos utilizando el comando [`connect()`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-Mapdispatchtoprops-mergeprops-options), función proporcionada por React Redux, como verá a continuación.
 
 ## Diseño de la jerarquía de componentes
 
@@ -74,7 +74,7 @@ Nuestro breve resumen del diseño es simple. Queremos mostrar una lista de asunt
 
 Podemos ver los siguientes componentes de presentación y sus *props* surgir a través de esta breve descripción:
 
-* **`TodoList`** es una lista que muestras para tareas pendientes.
+* **`TodoList`** es una lista que mostrará las tareas pendientes disponibles.
   - `todos: Array` es un arreglo de tareas pendientes que contiene la siguiente descripción `{ id, text, completed }`.
   - `onTodoClick(id: number)` es un *callback* para invocar cuando un asunto pendientes es presionado.
 * **`Todo`** es un asunto pendiente.
@@ -86,21 +86,21 @@ Podemos ver los siguientes componentes de presentación y sus *props* surgir a t
 * **`Footer`** es donde dejamos que el usuario cambie las tareas pendientes visibles actualmente.
 * **`App`** es el componente raíz que representa todo lo demás.
 
-Cada articulo describe la *apariencia* pero no conoce *de donde* los datos vienen, o *cómo* cambiarlos. Sólo muestran lo que se les da. Si migras de Redux a otra cosa, podrás mantener todos estos componentes exactamente iguales. No dependen de Redux en absoluto.
+Cada artículo describe la *apariencia* pero no conoce *de donde* vienen los datos, o *cómo* cambiarlos. Sólo muestran lo que se les da. Si migras de Redux a otra cosa, podrás mantener todos estos componentes exactamente iguales. No dependen de Redux en absoluto.
 
 ### Diseño de componentes contenedores
 
-También necesitaremos algunos componentes contenedores para conectar los componentes de presentación a Redux. Por ejemplo, el componente presentational `TodoList` necesita un contenedor como` VisibleTodoList` que se suscribe al *store* de Redux y debe saber cómo aplicar el filtro de visibilidad. Para cambiar el filtro de visibilidad, proporcionaremos un componente contenedor `FilterLink` que renderiza un `Link` que distribuye la debida acción al hacer clic:
+También necesitaremos algunos componentes contenedores para conectar los componentes de presentación a Redux. Por ejemplo, el componente de presentación `TodoList` necesita un contenedor como` VisibleTodoList` que se suscribe al *store* de Redux y debe saber cómo aplicar el filtro de visibilidad. Para cambiar el filtro de visibilidad, proporcionaremos un componente contenedor `FilterLink` que renderiza un `Link` que distribuye la debida acción al hacer clic:
 
 * **`VisibleTodoList`** filtra los asuntos de acuerdo a la visibilidad actual y renderiza el `TodoList`.
-* **`FilterLink`** obtiene la el filtro de visibilidad actual y renderiza un `Link`.
-  - `filter: string` es la representacion del filtro de visibilidad.
+* **`FilterLink`** obtiene el filtro de visibilidad actual y renderiza un `Link`.
+  - `filter: string` es el tipo del filtro de visibilidad.
 
-  ### Diseño de otros componentes
+### Diseño de otros componentes
 
-A veces es difícil saber si un componente debe ser componente de presentación o contenedor. Por ejemplo, a veces la forma y la función están realmente juntas, como en el caso de este pequeño componente:
+A veces es difícil saber si un componente debe ser componente de presentación o contenedor. Por ejemplo, a veces la forma y la función están realmente entrelazadas, como en el caso de este pequeño componente:
 
-* **`AddTodo`** es un campo de entrada con un botón "Añadir"
+* **`AddTodo`** es un campo de entrada con un botón "Añadir tarea"
 
 Técnicamente podríamos dividirlo en dos componentes, pero podría ser demasiado pronto en esta etapa. Está bien mezclar presentación y lógica en un componente que sea muy pequeño. A medida que crece, será más obvio cómo dividirlo, así que lo dejaremos en uno solo.  
 
@@ -110,7 +110,7 @@ Vamos a escribir los componentes! Comenzaremos con los componentes de presentaci
 
 ### Implementación de componentes de presentación
 
-Todos estos son componentes normales de React, por lo que no los examinaremos en detalle. Escribiremos componentes funcionales sin-estado a menos que necesitemos usar el estado local o los métodos del ciclo de duración. Esto no significa que los componentes de presentación *tengan que ser* funciones - es solo que es más fácil definirlos de esta manera. Si y cuando necesites agregar un estado local, métodos de ciclo de duración u optimizaciones de rendimiento, puede convertirlos a clases.
+Todos estos son componentes normales de React, por lo que no los examinaremos en detalle. Escribiremos componentes funcionales sin-estado a menos que necesitemos usar el estado local o los métodos del ciclo de duración. Esto no significa que los componentes de presentación *tengan que ser* funciones - es solo que es más fácil definirlos de esta manera. Si, y cuando necesites agregar un estado local, métodos de ciclo de duración u optimizaciones de rendimiento, puede convertirlos a clases.
 
 #### `components/Todo.js`
 
@@ -244,7 +244,7 @@ const App = () => (
 export default App
 ```
 
-Ahora es el momento de conectar los componentes de presentación a Redux mediante la creación de algunos contenedores. Técnicamente, un componente contenedor es sólo un componente de React que utiliza [`store.subscribe ()`](../api/Store.md#subscribe) para leer una parte del árbol de estado en Redux y suministrar los *props* a un componente de presentación que renderiza. Puedes escribir un componente contenedor manualmente, pero sugerimos generar los componentes contenedores con la función [`connect()`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) de la librería React Redux, ya que proporciona muchas optimizaciones útiles para evitar *re-renders* innecesarios. (Un resultado de esta utilización es que usted no tiene que preocuparse por la implementación del método `shouldComponentUpdate` [recomendado por React para mejor rendimiento](https://facebook.github.io/react/docs/advanced-performance.html).)
+Ahora es el momento de conectar los componentes de presentación a Redux mediante la creación de algunos contenedores. Técnicamente, un componente contenedor es sólo un componente de React que utiliza [`store.subscribe ()`](../api/Store.md#subscribe) para leer una parte del árbol de estado en Redux y suministrar los *props* a un componente de presentación que renderiza. Puedes escribir un componente contenedor manualmente, pero sugerimos generar los componentes contenedores con la función [`connect()`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) de la librería React Redux, ya que proporciona muchas optimizaciones útiles para evitar *re-renders* innecesarios. (Un beneficio de utilizar esta librería es que usted no tiene que preocuparse por la implementación del método `shouldComponentUpdate` [recomendado por React para mejor rendimiento](https://facebook.github.io/react/docs/advanced-performance.html).)
 
 Para usar `connect()`, es necesario definir una función especial llamada `mapStateToProps` que indiqua cómo transformar el estado actual del *store* Redux en los *props* que desea pasar a un componente de presentación. Por ejemplo, `VisibleTodoList` necesita calcular `todos` para pasar a `TodoList`, así que definimos una función que filtra el `state.todos` de acuerdo con el `state.visibilityFilter`, y lo usamos en su `mapStateToProps`:
 
@@ -267,7 +267,7 @@ const mapStateToProps = (state) => {
 }
 ```
 
-Además de leer el estado, los componentes contenedores pueden enviar acciones. De manera similar, puede definir una función llamada `mapDispatchToProps()` que recibe el método [`dispatch()`](../api/Store.md#dispatch) y devuelve los *callback props* que deseas inyectar en el componente de presentación. Por ejemplo, queremos que `VisibleTodoList` inyecte un prop llamado `onTodoClick` en el componente `TodoList`, y queremos que `onTodoClick` envíe una acción `TOGGLE_TODO`:
+Además de leer el estado, los componentes contenedores pueden enviar acciones. De manera similar, puede definir una función llamada `mapDispatchToProps()` que recibe el método [`dispatch()`](../api/Store.md#dispatch) y devuelve los *callback props* que deseas inyectar en el componente de presentación. Por ejemplo, queremos que `VisibleTodoList` inyecte un *prop* llamado `onTodoClick` en el componente `TodoList`, y queremos que `onTodoClick` envíe una acción `TOGGLE_TODO`:
 
 ```js
 const mapDispatchToProps = (dispatch) => {
