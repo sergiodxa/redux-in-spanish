@@ -129,7 +129,7 @@ const todoApp = combineReducers({
 export default todoApp
 ```
 
-## Presentational Components
+## Componentes de presentación
 
 #### `components/Todo.js`
 
@@ -262,7 +262,7 @@ const App = () => (
 export default App
 ```
 
-## Container Components
+## Componentes contenedores
 
 #### `containers/VisibleTodoList.js`
 
@@ -333,7 +333,7 @@ const FilterLink = connect(
 export default FilterLink
 ```
 
-### Other Components
+### Otros componentes
 
 #### `containers/AddTodo.js`
 
