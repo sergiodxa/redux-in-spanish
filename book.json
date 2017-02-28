@@ -1,13 +1,7 @@
 {
-  "gitbook": "2.4.3",
-  "structure": {
-    "readme": "README.md",
-    "summary": "./docs/README.md"
-  },
+  "gitbook": "3.2.2",
   "title": "Redux en Español",
-  "description": "Traducción al Español de la documentation de Redux",
-  "language": "es",
-  "plugins": ["edit-link", "prism", "-highlight", "github", "anker-enable"],
+  "plugins": ["edit-link", "prism", "-highlight", "github", "anchorjs"],
   "pluginsConfig": {
     "edit-link": {
       "base": "https://github.com/sergiodxa/redux-in-spanish/tree/master",
@@ -16,8 +10,10 @@
     "github": {
       "url": "https://github.com/sergiodxa/redux-in-spanish/"
     },
-    "ga": {
-      "token": "UA-48432002-3"
+    "theme-default": {
+      "styles": {
+        "website": "build/gitbook.css"
+      }
     }
   }
 }
