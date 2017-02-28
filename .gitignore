@@ -1,5 +1,6 @@
 .DS_Store
 *.log
-node_modules/
-_book/
 npm-debug.log
+node_modules
+tmp
+_book
