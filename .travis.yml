@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  node
+cache: yarn
+script:
+  yarn clean
+  yarn build
+  cp CNAME _book
+  touch _book/.nojekyll
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  name: Publishment Bot
+  on:
+    branch: gh-pages
+  local_dir: _book
