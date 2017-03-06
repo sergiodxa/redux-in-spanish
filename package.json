@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rimraf _book",
     "prepare": "gitbook install",
-    "build": "npm run prepare && gitbook build -g sergiodxa/redux-in-spanish",
     "watch": "gitbook serve",
     "publish": "npm run clean && npm run build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push https://github.com/sergiodxa/redux-in-spanish.git gh-pages --force"
   },
