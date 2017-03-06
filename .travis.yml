@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  node
+  "node"
 cache: yarn
 script:
-  - yarn clean
-  - yarn build
+  - npm run clean
+  - npm run build
   - cp CNAME _book
   - touch _book/.nojekyll
 deploy:
