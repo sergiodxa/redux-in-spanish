@@ -5,9 +5,13 @@
   "main": "README.md",
   "scripts": {
     "clean": "rimraf _book",
+    "preprepare": "npm run clean",
     "prepare": "gitbook install",
+    "prebuild": "npm run prepare",
+    "build": "gitbook build -g sergiodxa/redux-in-spanish",
+    "afterbuild": "cp CNAME _book && touch _book/.nojekyll",
     "watch": "gitbook serve",
-    "publish": "npm run clean && npm run build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update book' && git push https://github.com/sergiodxa/redux-in-spanish.git gh-pages --force"
+    "publish": "npm run build && cd _book && git init && git commit --allow-empty -m 'update book' && git checkout -b gh-pages && git add . && git commit -am 'update book' && git push https://github.com/sergiodxa/redux-in-spanish.git gh-pages --force"
   },
   "repository": {
     "type": "git",
