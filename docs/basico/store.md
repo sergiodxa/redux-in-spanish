@@ -73,4 +73,4 @@ let store = createStore(todoApp)
 
 ## Próximos Pasos
 
-Antes de crear la interfaz de usuario para nuestra aplicación TODO, tomaremos un desvío para ver [cómo fluyen los datos en una aplicación Redux](flujodata.md).
+Antes de crear la interfaz de usuario para nuestra aplicación TODO, tomaremos un desvío para ver [cómo fluyen los datos en una aplicación Redux](flujo-de-datos.md).
