@@ -1,11 +1,11 @@
 {
   "gitbook": "2.4.3",
+  "title": "Redux en Español",
   "structure": {
     "readme": "README.md",
     "summary": "./docs/README.md"
   },
-  "title": "Redux en Español",
-  "description": "Traducción al Español de la documentation de Redux",
+  "description": "Traducción al Español de la documentación de Redux",
   "language": "es",
   "plugins": ["edit-link", "prism", "-highlight", "github", "anker-enable"],
   "pluginsConfig": {
