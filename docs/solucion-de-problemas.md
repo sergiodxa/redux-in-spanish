@@ -3,10 +3,12 @@
 Este un un lugar para compartir soluciones a problemas comunes.
 Los ejemplos usan React, pero deberías encontrarlos útiles incluso si usas otra cosa.
 
-## No ocurre nada el despachar una acción
+### No ocurre nada el despachar una acción
+
 Algunas veces, tratas de despachar una acción, pero la vista no se actualiza. ¿Por qué ocurre esto? Hay varias razons.
 
 ### Nunca modifiques los argumentos del reducer
+
 Si estas tratando de modificar el `state` o `action` que te da Redux. ¡No lo hagas!
 
 Redux asume que nunca modificas el estado que te da en los reducers. **Siempre debes devolver un nuevo objeto con el estado**. Incluso si no usas librerías como [https://facebook.github.io/immutable-js/](Immutable), necesitas evitar completamente las modificaciones.
@@ -14,6 +16,7 @@ Redux asume que nunca modificas el estado que te da en los reducers. **Siempre d
 La inmutabilidad es lo que permite a [react-redux](https://github.com/gaearon/react-redux) suscribirse eficientemente a actualizaciones muy específicas de tu estado. También permite un gran experiencia de desarrollo gracias a características como time travel con [redux-devtools](http://github.com/gaearon/redux-devtools).
 
 Por ejemplo, un reducer como este está mal porque modifica el estado:
+
 ```javascript
 function todos(state = [], action) {
   switch (action.type) {
@@ -33,7 +36,9 @@ function todos(state = [], action) {
   }
 }
 ```
+
 Debe ser re programado de esta forma:
+
 ```javascript
 function todos(state = [], action) {
   switch (action.type) {
@@ -61,7 +66,9 @@ function todos(state = [], action) {
   }
 }
 ```
+
 Es más código, pero es lo que permite a Redux ser predecible y eficiente. si quieres tener menos código puedes usar herramientas como [`React.addons.update`](https://facebook.github.io/react/docs/update.html) para escribir transformaciones inmutables con una sintaxis pequeña:
+
 ```javascript
 // Antes:
 return [
@@ -80,12 +87,14 @@ return update(state, {
     },
   },
 });
+
 ```
 Por último, para actualizar objeto, vas a necesitar algo como `_.extend` de Lodash o mejor, un polyfill de [`Object.assign](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign).
 
 Asegurate de que usas `Object.assign` correctamente. Por ejemplo, en vez de devolver algo como `Object.assign(state, newData)` en tus reducers, devuelve `Object.assign({}, state, newData)`. De estas forma no vas a modificar el `state` anterior.
 
 También puedes habilitar [ES7 object spread proposal](https://github.com/sebmarkbage/ecmascript-rest-spread) con [Babel stage 1](http://babeljs.io/docs/usage/experimental/):
+
 ```javascript
 // Antes:
 return [
@@ -103,19 +112,21 @@ return [
   ...state.slice(action.index + 1),
 ];
 ```
+
 Ten en cuenta que las funciones experimentales estás sujetas a cambios, y no es bueno depender de ellas en grandes cantidades de código.
 
 ### No olvides llamar [`dispatch(action)`](./api/Store.md#dispatch)
 Sí defines un creador de acciones, ejecutándolo *no* va a despachar tus acciones automáticamente. Por ejemplo, este código no hace nada:
 
-#### **`TodoActions.js`**
+#### `TodoActions.js`
+
 ```javascript
 export function addTodo(text) {
   return { type: 'ADD_TODO', text };
 };
 ```
 
-#### **`AddTodo.js`**
+#### `AddTodo.js`
 ```javascript
 import React, { Component } from 'react';
 import { addTodo } from './TodoActions';
