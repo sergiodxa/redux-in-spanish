@@ -41,7 +41,7 @@ npm i -D redux-devtools
 ```
 Esto asumiendo que estás usando [npm](https://www.npmjs.com/) como administrador de paquetes con un empaquetador de módulos como [Webpack](http://webpack.github.io/) o [Browserify](http://browserify.org/) para usar [módulos de CommonJS](http://webpack.github.io/docs/commonjs.html).
 
-Si todavía no usas [npm](https://www.npmjs.com/) o algún empaquetador de módulos moderno, capaz prefiera el paquete en [UMD](https://github.com/umdjs/umd) que define `Redux` como un objeto global, puedes usar una desde [cdnjs](https://cdnjs.com/libraries/redux). *No* recomendamos este enfoque para ninguna aplicación seria, ya que la mayoría de las librerías complementarias a Redux está solo disponibles en [npm](https://www.npmjs.com/).
+Si todavía no usas [npm](https://www.npmjs.com/) o algún empaquetador de módulos moderno, quizás prefieras el paquete en [UMD](https://github.com/umdjs/umd) que define `Redux` como un objeto global, puedes usar una desde [cdnjs](https://cdnjs.com/libraries/redux). *No* recomendamos este enfoque para ninguna aplicación seria, ya que la mayoría de las librerías complementarias a Redux está solo disponibles en [npm](https://www.npmjs.com/).
 
 ## El Gist
 Todo el estado de tu aplicación esta almacenado en un único árbol dentro de un único *store*.
@@ -55,12 +55,17 @@ Para especificar como las acciones transforman el árbol de estado, usas *reduce
 import { createStore } from 'redux';
 
 /**
- * Esto es un reducer, una función pura con el formato (state, action) => newState.
- * Describe como una acción transforma el estado en el nuevo estado.
+ * Esto es un reducer, una función pura con el formato
+ * (state, action) => newState. Describe como una acción transforma el estado
+ * en el nuevo estado.
  *
- * La forma del estado depende de tí: puede ser un primitivo, un array, un objeto, o incluso una estructura de datos de Immutable.js. La única parte importante es que no debes modificar el objeto del estado, en vez de eso devolver una nuevo objeto si el estado cambió.
+ * La forma del estado depende de tí: puede ser un primitivo, un array, un
+ * objeto, o incluso una estructura de datos de Immutable.js. La única parte
+ * importante es que no debes modificar el objeto del estado, en vez de eso
+ * devolver una nuevo objeto si el estado cambió.
  *
- * En este ejemplo, usamos `switch` y strings, pero puedes usar cualquier forma que desees si tiene sentido para tu proyecto.
+ * En este ejemplo, usamos `switch` y strings, pero puedes usar cualquier forma
+ * que desees si tiene sentido para tu proyecto.
  */
 function counter(state = 0, action) {
   switch (action.type) {
@@ -77,13 +82,15 @@ function counter(state = 0, action) {
 // Su API es { subscribe, dispatch, getState }.
 let store = createStore(counter);
 
-// Puedes suscribirte manualmente a los cambios, o conectar tu vista directamente
+// Puedes suscribirte manualmente a los cambios, o conectar tu vista
+// directamente
 store.subscribe(() => {
   console.log(store.getState())
 });
 
 // La única forma de modificar el estado interno es despachando acciones.
-// Las acciones pueden ser serializadas, registradas o almacenadas luego para volver a ejecutarlas.
+// Las acciones pueden ser serializadas, registradas o almacenadas luego para
+// volver a ejecutarlas.
 store.dispatch({ type: 'INCREMENT' });
 // 1
 store.dispatch({ type: 'INCREMENT' });
@@ -92,14 +99,14 @@ store.dispatch({ type: 'DECREMENT' });
 // 1
 ```
 
-En vez de modificar el estado directamente, especificas las modificaciones que quieras que ocurren con objetos planos llamados *acciones*. Entonces escribes una función especial llamada *reducer* que decide como cada acción transforma el estado de la aplicación.
+En vez de modificar el estado directamente, especificas las modificaciones que quieres que ocurran con objetos planos llamados *acciones*. Entonces escribes una función especial llamada *reducer* que decide como cada acción transforma el estado de la aplicación.
 
 Si vienes de Flux, hay una única diferencia importante que necesitas entender. Redux no tiene Dispatcher o soporta múltiples stores. En cambio, hay un único store con una única función reductora. Cuando tu aplicación crezca, en vez de agregar más stores, divides tu reducer principal en varios reducers pequeños que operan de forma independiente en distintas partes del árbol de estado. Esto es exactamente como si solo hubiese un componente principal en una aplicación de React, pero esta compuesta de muchos componentes pequeños.
 
-Esta arquitectura puede parecer una exageración para una aplicación de contador, pero los hermoso de este patrón es los bien que escala en aplicaciones grandes y complejas. También permite herramientas de desarrollo muy poderosas, ya que es posible registrar cada modificación que las acciones causan. Podrías registrar la sesión de un usuario y reproducirlas simplemente ejecutando las mismas acciones.
+Esta arquitectura puede parecer una exageración para una aplicación de contador, pero lo hermoso de este patrón es los bien que escala en aplicaciones grandes y complejas. También permite herramientas de desarrollo muy poderosas, ya que es posible registrar cada modificación que las acciones causan. Podrías registrar la sesión de un usuario y reproducirlas simplemente ejecutando las mismas acciones.
 
 ## Aprende Redux con su Creador (en inglés)
-[Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) es un curso de 30 vídeos explicados por Dan Abramov, autor de Redux. Esta diseñado para complementar las partes "Básicas" de la documentación mientras incluye ideas adicionales sobre inmutabilidad, pruebas, buenas prácticas de Redux, y como usar Redux con React.**Este curso es gratuito y siempre lo va a ser**.
+[Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) es un curso de 30 vídeos explicados por Dan Abramov, autor de Redux. Esta diseñado para complementar las partes "Básicas" de la documentación mientras incluye ideas adicionales sobre inmutabilidad, pruebas, buenas prácticas de Redux, y como usar Redux con React. **Este curso es gratuito y siempre lo va a ser**.
 
 > [“Great course on egghead.io by @dan_abramov - instead of just showing you how to use #redux, it also shows how and why redux was built!”](https://twitter.com/sandrinodm/status/670548531422326785)
 > Sandrino Di Mattia
@@ -120,7 +127,7 @@ Así que ¿Qué estas esperando?
 
 ### **[¡Mira los 30 vídeos gratuitos!](https://egghead.io/series/getting-started-with-redux)**
 
-Sí se gusto el curso, considera soportar a Egghead [comprando una suscripción](https://egghead.io/pricing). Los suscriptos tiene acceso al código fuentes de los ejemplos en cada uno los vídeos, así como un montón de lecciones avanzados en otros temas, incluyendo JavaScript en profundidad, React, Angular, y más. Muchas [profesores de Egghead](https://egghead.io/instructors) son también autores de librerías de código abierto, así que comprando una suscripción es una buena forma de ayudarlos por todo el trabajo que hicieron.
+Sí te gustó el curso, considera apoyar a Egghead [comprando una suscripción](https://egghead.io/pricing). Los suscriptores tienen acceso al código fuente de los ejemplos en cada uno los vídeos, así como un montón de lecciones avanzadas en otros temas, incluyendo JavaScript en profundidad, React, Angular, y más. Muchos [profesores de Egghead](https://egghead.io/instructors) son también autores de librerías de código abierto, así que comprar una suscripción es una buena forma de ayudarlos por todo el trabajo que hicieron.
 
 ## Documentación
 - [Introducción](docs/introduccion/README.md)
@@ -141,7 +148,7 @@ Sí se gusto el curso, considera soportar a Egghead [comprando una suscripción]
 - [Carrito de compra](https://github.com/rackt/redux/tree/master/examples/shopping-cart)
 - [Vista de árbol](https://github.com/rackt/redux/tree/master/examples/tree-view)
 
-Si eres nuevo en el ecosistema de NPM y tiene problemas iniciando un proyecto, o no estas seguro de donde pegar el gist de arriba, revisa [simples-redux-example](https://github.com/jackielii/simplest-redux-example) que usa React junto a React y Browserify.
+Si eres nuevo en el ecosistema de NPM y tienes problemas iniciando un proyecto, o no estas seguro de donde pegar el gist de arriba, revisa [simples-redux-example](https://github.com/jackielii/simplest-redux-example) que usa Redux junto a React y Browserify.
 
 ## Discusiones
 Únete al canal [#redux](https://discord.gg/0ZcbPKXt5bZ6au5t) de la comunidad en Discord [Reactiflux](http://www.reactiflux.com/).
