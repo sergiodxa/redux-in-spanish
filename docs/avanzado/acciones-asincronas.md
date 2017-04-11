@@ -504,7 +504,7 @@ Depende de ti probar las diferentes opciones, elegir una convención que te gust
 
 ## Conexión a la interfaz de usuario
 
-La distribución de acciones asíncronas no es diferente de enviar acciones síncronas, por lo que no discutiremos esto en detalle. Vea [Uso con React](../basico/uso-con-react.md) para una introducción al uso de Redux desde los componentes de React. Consulte [Ejemplo: Reddit API](ejemploRedditAPI.md) para el código fuente completo discutido en este ejemplo.
+La distribución de acciones asíncronas no es diferente de enviar acciones síncronas, por lo que no discutiremos esto en detalle. Vea [Uso con React](../basico/uso-con-react.md) para una introducción al uso de Redux desde los componentes de React. Consulte [Ejemplo: Reddit API](ejemplo-api-reddit.md) para el código fuente completo discutido en este ejemplo.
 
 ## Próximos pasos
 
