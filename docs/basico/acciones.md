@@ -2,7 +2,7 @@
 
 Primero, vamos a definir algunas acciones.
 
-Las **acciones** son un bloque de información que envia datos desde tu aplicación a tu store. Son la *única* fuente de información para el store. Las envias al store usando [`store.dispatch()`](../api/Store.md#dispatch).
+Las **acciones** son un bloque de información que envía datos desde tu aplicación a tu store. Son la *única* fuente de información para el store. Las envías al store usando [`store.dispatch()`](../api/Store.md#dispatch).
 
 Aquí hay unas acciones de ejemplo que representan agergar nuevas tareas pendientes:
 
@@ -17,7 +17,7 @@ const ADD_TODO = 'ADD_TODO'
 }
 ```
 
-Las acciones son objetos planos de JavaScript. Una acción debe tener una propiedad `type` que indica el tipo de acción a realizar. Los tipos normalmente son definidos como strings constantes. Una vez que tu aplicación sea suficientemente grande, quizas quieras moverlos a un módulo separado.
+Las acciones son objetos planos de JavaScript. Una acción debe tener una propiedad `type` que indica el tipo de acción a realizar. Los tipos normalmente son definidos como strings constantes. Una vez que tu aplicación sea suficientemente grande, quizás quieras moverlos a un módulo separado.
 
 ```js
 import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
@@ -25,9 +25,9 @@ import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
 
 >##### Nota
 
->No necesitas definir tus tipos de acciones constantes en un archivo separado, o incluso definirlas. Para proyectos pequeños, probablemente sea más fácil usar strings directamente para los tipos de acciones. De todas formas, hay algunos beneficios explícitos en declarar constantes en grandes bloques de código. Lee [Reduciendo el Boilerplate](../recetas/reduciendo-el-boilerplate.md) para más consejos prácticos sobre como mantener tu código limpio.
+>No necesitas definir tus tipos de acciones constantes en un archivo separado, o incluso definirlas. Para proyectos pequeños, probablemente sea más fácil usar strings directamente para los tipos de acciones. De todas formas, hay algunos beneficios explícitos en declarar constantes en grandes bloques de código. Lee [Reduciendo el Boilerplate](../recetas/reduciendo-el-boilerplate.md) para más consejos prácticos sobre cómo mantener tu código limpio.
 
-Además del `type`, el resto de la estructura de los objetos de acciones depende de tí. Si estas interesado, revisa[Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de como una acción debe armarse.
+Además del `type`, el resto de la estructura de los objetos de acciones depende de tí. Si estaás interesado, revisa[Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de cómo una acción debe armarse.
 
 Vamos a agregar una acción más para describir un usuario marcando una tarea como completa. Nos referimos a una tarea en particular como su `index` ya que vamos a almacenarlos en un array. En una aplicación real, es más inteligente generar un ID único cada vez que creamos una nueva.
 
@@ -97,9 +97,9 @@ boundAddTodo(text)
 boundCompleteTodo(index)
 ```
 
-La función `dispatch()` puede ser accedida directamente desde el store como [`store.dispatch()`](../api/Store.md#dispatch), pero comunmente vas a querer usar utilidades como `connect()` de [react-redux](http://github.com/gaearon/react-redux). Puedes usar [`bindActionCreators()`](../api/bind-action-creators.md) para automaticamente conectar muchos creadores de acciones a `dispatch()`.
+La función `dispatch()` puede ser accedida directamente desde el store como [`store.dispatch()`](../api/Store.md#dispatch), pero comunmente vas a querer usar utilidades como `connect()` de [react-redux](http://github.com/gaearon/react-redux). Puedes usar [`bindActionCreators()`](../api/bind-action-creators.md) para automáticamente conectar muchos creadores de acciones a `dispatch()`.
 
-Los creadores de acciones pueden además ser asíncronos y tener efectos secundarios. Puedes leer más sobre las [acciones asíncronas](../avanzado/acciones-asíncronas.md) en el [tutorial avanzado](../avanzado/README.md) para aprender como manejar respuestas AJAX y combinar creadores de acciones en un flujo de control asíncrono. No salta ahora mismo hasta las acciones asíncronas hasta que completes el tutorial básico, ya que cubre otros conceptos importantes que son prerequisitos para el tutorial avanzado y las acciones asíncronas.
+Los creadores de acciones pueden además ser asíncronos y tener efectos secundarios. Puedes leer más sobre las [acciones asíncronas](../avanzado/acciones-asíncronas.md) en el [tutorial avanzado](../avanzado/README.md) para aprender cómo manejar respuestas AJAX y combinar creadores de acciones en un flujo de control asíncrono. No salta ahora mismo hasta las acciones asíncronas hasta que completes el tutorial básico, ya que cubre otros conceptos importantes que son prerequisitos para el tutorial avanzado y las acciones asíncronas.
 
 ## Código fuente
 
@@ -143,4 +143,4 @@ export function setVisibilityFilter(filter) {
 
 ## Siguientes pasos
 
-¡Ahora vamos a [definir algunos reducers](./reducers.md) para especificar como el estado se actualiza cuando despachas estas acciones!
+¡Ahora vamos a [definir algunos reducers](./reducers.md) para especificar cómo el estado se actualiza cuando despachas estas acciones!
