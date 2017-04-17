@@ -1,0 +1,1157 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Herencia · Redux en Español</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ecosistema.html" />
+    
+    
+    <link rel="prev" href="tres-principios.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="motivacion.html">
+            
+                <a href="motivacion.html">
+            
+                    
+                    Motivación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="conceptos-basicos.html">
+            
+                <a href="conceptos-basicos.html">
+            
+                    
+                    Conceptos Básicos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="tres-principios.html">
+            
+                <a href="tres-principios.html">
+            
+                    
+                    Tres Principios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="herencia.html">
+            
+                <a href="herencia.html">
+            
+                    
+                    Herencia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="ecosistema.html">
+            
+                <a href="ecosistema.html">
+            
+                    
+                    Ecosistema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="ejemplos.html">
+            
+                <a href="ejemplos.html">
+            
+                    
+                    Ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basico/">
+            
+                <a href="../basico/">
+            
+                    
+                    Básico
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basico/acciones.html">
+            
+                <a href="../basico/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basico/reducers.html">
+            
+                <a href="../basico/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basico/store.html">
+            
+                <a href="../basico/store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basico/flujo-de-datos.html">
+            
+                <a href="../basico/flujo-de-datos.html">
+            
+                    
+                    Flujo de datos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basico/uso-con-react.html">
+            
+                <a href="../basico/uso-con-react.html">
+            
+                    
+                    Uso con React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basico/ejemplo-todos.html">
+            
+                <a href="../basico/ejemplo-todos.html">
+            
+                    
+                    Ejemplo: Lista de TODOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../avanzado/">
+            
+                <a href="../avanzado/">
+            
+                    
+                    Avanzado
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../avanzado/acciones-asincronas.html">
+            
+                <a href="../avanzado/acciones-asincronas.html">
+            
+                    
+                    Acciones asíncronas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../avanzado/flujo-asincrono.html">
+            
+                <a href="../avanzado/flujo-asincrono.html">
+            
+                    
+                    Flujo asíncrono
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../avanzado/middleware.html">
+            
+                <a href="../avanzado/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../avanzado/uso-con-react-router.html">
+            
+                <a href="../avanzado/uso-con-react-router.html">
+            
+                    
+                    Uso con React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../avanzado/ejemplo-api-reddit.html">
+            
+                <a href="../avanzado/ejemplo-api-reddit.html">
+            
+                    
+                    Ejemplo: API Reddit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../avanzado/siguientes-pasos.html">
+            
+                <a href="../avanzado/siguientes-pasos.html">
+            
+                    
+                    Siguientes pasos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recetas/">
+            
+                <a href="../recetas/">
+            
+                    
+                    Recetas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../recetas/migrando-a-redux.html">
+            
+                <a href="../recetas/migrando-a-redux.html">
+            
+                    
+                    Migrando a Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../recetas/usando-el-operador-spread-en-objetos.md">
+            
+                <span>
+            
+                    
+                    Usando el operador Spread en objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../recetas/reduciendo-boilerplate.md">
+            
+                <span>
+            
+                    
+                    Reduciendo el Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../recetas/render-en-el-servidor.md">
+            
+                <span>
+            
+                    
+                    Render en el Servidor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../recetas/escribiendo-pruebas.md">
+            
+                <span>
+            
+                    
+                    Escribiendo pruebas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../recetas/calculando-datos-obtenidos.md">
+            
+                <span>
+            
+                    
+                    Calculando Datos Obtenidos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../recetas/implementando-deshacer.md">
+            
+                <span>
+            
+                    
+                    Implementando Deshacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../recetas/aislando-subapps.md">
+            
+                <span>
+            
+                    
+                    Aislando subaplicaciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../recetas/estructurando-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructurando reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../recipes/reducers/conceptos-prerequeridos.md">
+            
+                <span>
+            
+                    
+                    Conceptos prerequeridos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../recetas/reducers/estructura-basica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructuras básica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../recetas/reducers/separando-logica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Separando lógica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../recetas/reducers/ejemplo-refactorizando-reducers.md">
+            
+                <span>
+            
+                    
+                    Ejemplo: Refactorizando reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../recetas/reducers/usando-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Usando combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../recetas/reducers/mas-alla-de-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Más allá de combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../recetas/reducers/normalizando-la-forma-del-estado.md">
+            
+                <span>
+            
+                    
+                    Normalizando la forma del estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../recetas/reducers/actualizando-datos-normalizados.md">
+            
+                <span>
+            
+                    
+                    Actualizando datos normalizados
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../recetas/reducers/reusando-logica-en-reducers.md">
+            
+                <span>
+            
+                    
+                    Reusando lógica en reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../recetas/reducers/patrones-de-eactualizacion-inmutables.md">
+            
+                <span>
+            
+                    
+                    Patrones de actualización inmutables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../recetas/reducers/inicializando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Inicializando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.md">
+            
+                <span>
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/reducers.html">
+            
+                <a href="../faq/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/organizando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Organizando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/configurando-el-store.md">
+            
+                <span>
+            
+                    
+                    Configurando el Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/acciones.html">
+            
+                <a href="../faq/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/estructura-de-codigo.md">
+            
+                <span>
+            
+                    
+                    Estructura de código
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/rendimiento.html">
+            
+                <a href="../faq/rendimiento.html">
+            
+                    
+                    Rendimiento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/react-redux.md">
+            
+                <span>
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/miscelaneo.md">
+            
+                <span>
+            
+                    
+                    Misceláneo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../solucion-de-problemas.html">
+            
+                <a href="../solucion-de-problemas.html">
+            
+                    
+                    Solución de problemas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../glosario.html">
+            
+                <a href="../glosario.html">
+            
+                    
+                    Glosario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    Referencia API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../api/create-store.html">
+            
+                <a href="../api/create-store.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../api/Store.html">
+            
+                <a href="../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../api/combine-reducers.html">
+            
+                <a href="../api/combine-reducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../api/apply-middleware.html">
+            
+                <a href="../api/apply-middleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../api/bind-action-creators.html">
+            
+                <a href="../api/bind-action-creators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../api/compose.html">
+            
+                <a href="../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Registro de cambios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.html">
+            
+                <a href="../PATRONS.html">
+            
+                    
+                    Patrocinadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../feedback.html">
+            
+                <a href="../feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Herencia</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="herencia">Herencia</h1>
+<p>Redux tiene una herencia mixta. Es similar a ciertos patrones y tecnolog&#xED;as, pero tambi&#xE9;n es diferente en varias formas importantes. Vamos a ver las similitudes y diferencias debajo.</p>
+<h3 id="flux">Flux</h3>
+<p>Puede Redux ser considerado una implementaci&#xF3;n de <a href="https://facebook.github.io/flux/" target="_blank">Flux</a>?
+<a href="https://twitter.com/fisherwebdev/status/616278911886884864" target="_blank">S&#xED;</a> y <a href="https://twitter.com/andrestaltz/status/616270755605708800" target="_blank">no</a>.</p>
+<p>(No te preocupes, <a href="https://twitter.com/jingc/status/616608251463909376" target="_blank">los creadores de Flux</a> <a href="https://twitter.com/fisherwebdev/status/616286955693682688" target="_blank">lo aprueba</a>, si es lo que necesitas saber.)</p>
+<p>Redux se inspiro en muchas de las cualidades importantes de Flux. Como Flux, Redux te hacer concentrar la l&#xF3;gica de actualizaci&#xF3;n de modelos en una capa espec&#xED;fica de tu aplicaci&#xF3;n (&quot;stores&quot; en Flux, &quot;reducers&quot; en Redux). En vez de dejar al c&#xF3;digo de la aplicaci&#x1FF;n modificar los datos directamente, ambos te hacen describir cada mutaci&#xF3;n como objetos planos llamados &quot;acciones&quot;.</p>
+<p>A diferencia de Flux, <strong>en Redux no existe el concepto de Dispatcher</strong>. Esto es porque se basa en funciones puras en vez de emisores de ventos, y las funciones puras son f&#xE1;ciles de componer y no necesitan entidades adicionales para controlarlas. Dependiendo de como veas Flux, puedes ver esto tanto como una desviaci&#xF3;n o un detalle de implementaci&#xF3;n. Flux siempre fue <a href="https://speakerdeck.com/jmorrell/jsconf-uy-flux-those-who-forget-the-past-dot-dot-dot-1" target="_blank">descripto como <code>(state, action) =&gt; state</code></a>. En ese sentido, Redux es una verdadera arquitectura Flux, pero m&#xE1;s simple gracias a las funciones puras.</p>
+<p>Otra diferencia importante con Flux es que <strong>Redux asume que nunca modificas los datos</strong>. Puede usar objetos planos o arrays para tu estado y esta perfecto, pero modificarlos dentro de los reducers no es recomendable. Siempre deber&#xED;as devolver un nuevo objeto, lo cual es simple con la <a href="../recetas/usando-el-operador-spread.md">propuesta del operador spread</a>, o con librer&#xED;as como <a href="https://facebook.github.io/immutable-js" target="_blank">Immutable</a>.</p>
+<p>Mientras que es tecnicamente <em>posible</em> escribir <a href="https://github.com/reactjs/redux/issues/328#issuecomment-125035516" target="_blank">reducers impuros</a> que modifican los datos en algunos por razones de rendimiento, desalentamos activamente hacer eso. Caracter&#xED;sticas de desarrollo como time travel, registrar/rehacer, o hot reloading pueden romperse. Adem&#xE1;s caracter&#xED;sticas como inmutabilidad no parecen causar problemas de rendimiento en aplicaciones reales, ya que, como <a href="https://github.com/omcljs/om" target="_blank">Om</a> demostr&#xF3;, incluso si pierdes la posibilidad de usar asignaci&#xF3;n en objetos, todav&#xED;a ganas por evitar re-renders y recalculos caros, debido a que sabes exactamente que cambio gracias a los reducers puros.</p>
+<h3 id="elm">Elm</h3>
+<p><a href="http://elm-lang.org/" target="_blank">Elm</a> es un lenguaje de programaci&#xF3;n funcional inspirado por Haskell y creado por <a href="https://twitter.com/czaplic" target="_blank">Evan Czaplicki</a>. Utiliza <a href="https://github.com/evancz/elm-architecture-tutorial/" target="_blank">una arquitectura &apos;modelo vista actualizador&quot;</a>, donde el actualizador tiene el siguiente formato: <code>(action, state) =&gt; state</code>. Los &quot;actualizadores&quot; de Elm sirven para el mismo prop&#xF3;sito que los reducers en Redux.</p>
+<p>A diferencia de Redux, Elm es un lenguaje, as&#xED; que puede beneficiarse de de muchas cosas como pureza forzada, tipado est&#xE1;tico, inmutabilidad, y coincidencia de patrones (usando la expresi&#xF3;n <code>case</code>). Incluso si no planeas usar Elm, deber&#xED;as leer sobre la arquitectura de Elm, y jugar con eso. Hay un interesante <a href="https://github.com/paldepind/noname-functional-frontend-framework" target="_blank">playground de librer&#xED;as de JavaScript que implementa ideas similares</a>. &#xA1;Debemos mirar ah&#xED; por inspiraci&#xF3;n en Redux! Una forma de acercarnos al tipado est&#xE1;tico de Elm es <a href="https://github.com/reactjs/redux/issues/290" target="_blank">usando una soluci&#xF3;n de tipado gradual como Flow</a>.</p>
+<h3 id="immutable">Immutable</h3>
+<p><a href="https://facebook.github.io/immutable-js" target="_blank">Immutable</a> es una librer&#xED;a de JavaScript que implementa estructuras de datos persistentes. Es una API JavaScript idiom&#xE1;tica y performante.</p>
+<p>Immutable y la mayor&#xED;a de las librer&#xED;as similares son ortogonales a Redux. &#xA1;Sientete libre de usarlos juntos!</p>
+<p><strong>Redux no se preocupa por si guardas el estado en objetos planos, objetos de Immutable o cualquier otra cosa.</strong> Probablemente quieras un mecanismo de (de)serializaci&#xF3;n para crear aplicaciones universales y rehidratar su estado desde el servidor, pero aparte de eso, puedes usar cualquier librer&#xED;a de almacenamiento de datos <em>mientras soporte inmutabilidad</em>. Por ejemplo, no tiene sentido usar Backbone para tu estado de Redux, ya que estos son mutables.</p>
+<p>Ten en cuenta que que incluso si tu librer&#xED;a inmutable soporta punteros, no deber&#xED;as usarlos en una aplicaci&#xF3;n de Redux. Todo el &#xE1;rbol de estado deber&#xED;a ser considerado de solo lectura, y deber&#xED;as usar Redux para actualizar el estado, y suscribirse a los cambios. Por lo tanto, actualizar mediante recuerdos no tiene sentido en Redux. <strong>Si tu &#xFA;nico caso de uso para los punteros es desacoplar el &#xE1;rbol de estado del el &#xE1;rbolde UI y gradualmente refinar tus punteros, deber&#xED;as revisar los selectores mejor.</strong> Los selectores son funciones getter combinables. Mira <a href="http://github.com/faassen/reselect" target="_blank">reselect</a> para una muy buena y concisa implementaci&#xF3;n de selectores combinables.</p>
+<h3 id="baobab">Baobab</h3>
+<p><a href="https://github.com/Yomguithereal/baobab" target="_blank">Baobab</a> es otra popular librer&#xED;a para implementar inmutabilidad para actualizar objetos planos en JavaScript. Aunque puedes usarlo con Redux, hay muy pocos beneficios de usarlos juntos.</p>
+<p>La mayor&#xED;as de las funcionalidades que provee Baobab est&#xE1;n relacionados con actualizar los datos con punteros, pero Redux impone que la &#xFA;nica forma de actualizar los datos es despachando acciones. Por lo tanto, resuelven el mismo problema de forma diferente, y no se complementar uno con otro.</p>
+<p>A diferencia de Immutable, Baobab todav&#xED;a no implemente ninguna estructura de datos especialmente eficiente, as&#xED; que no ganas nada realmente por usarlo junto a Redux. Es m&#xE1;s f&#xE1;cil simplemente usar objetos planos en su lugar.</p>
+<h3 id="rx">Rx</h3>
+<p><a href="https://github.com/Reactive-Extensions/RxJS" target="_blank">Reactive Extensions</a> (y su <a href="https://github.com/ReactiveX/RxJS" target="_blank">reescritura moderna</a> en proceso) es una formas magn&#xED;fica de manejar la complejidad de aplicaciones as&#xED;ncronas. De hecho <a href="http://cycle.js.org" target="_blank">hay un esfuerzo de crear una librer&#xED;a para controlar la interacci&#xF3;n entre humano y computadora como observables independientes</a>.</p>
+<p>&#xBF;Tiene sentido usar Redux junto con Rx? &#xA1;Seguro! Funcionan genial juntos. Por ejemplo, es f&#xE1;cil exponer el store de Redux como un observable:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">function</span> <span class="token function">toObservable</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">{</span> onNext <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> dispose <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">onNext</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">onNext</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span> dispose <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>De forma similar, puedes componer diferentes streams as&#xED;ncronos para convertirlos en acciones antes de enviarlos al <code>store.dispatch()</code>.</p>
+<p>La pregunta es: de verdad necesitas REdux si ya usar Rx? Probablemente no. No es dificil <a href="https://github.com/jas-chen/rx-redux" target="_blank">reimplementar Redux en Rx</a>. Algunos dicen, que son solo 2 l&#xED;neas usando el m&#xE9;todo <code>.scan()</code> de Rx. &#xA1;Y probablemente lo sea!</p>
+<p>Si tienes dudas, revisa el c&#xF3;digo fuente de Redux (no hay mcuho ah&#xED;), as&#xED; como su ecosistema (por ejemplo, <a href="https://github.com/gaearon/redux-devtools" target="_blank">las herramientas de desarrolladores</a>). Si no te interesa tanto eso y quieres que los datos reactivos simplemente fluyan, probablemente quieras usar algo como <a href="http://cycle.js.org" target="_blank">Cycle</a> en su lugar, o incluso combinarlos con Redux. &#xA1;D&#xE9;janos saber como resulta eso!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tres-principios.html" class="navigation navigation-prev " aria-label="Previous page: Tres Principios">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ecosistema.html" class="navigation navigation-next " aria-label="Next page: Ecosistema">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Herencia","level":"1.2.4","depth":2,"next":{"title":"Ecosistema","level":"1.2.5","depth":2,"path":"docs/introduccion/ecosistema.md","ref":"docs/introduccion/ecosistema.md","articles":[]},"previous":{"title":"Tres Principios","level":"1.2.3","depth":2,"path":"docs/introduccion/tres-principios.md","ref":"docs/introduccion/tres-principios.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/sergiodxa/redux-in-spanish/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Contribuye","base":"https://github.com/sergiodxa/redux-in-spanish/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux en Español","gitbook":"3.2.2"},"file":{"path":"docs/introduccion/herencia.md","mtime":"2017-04-11T18:29:06.140Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-17T17:58:30.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

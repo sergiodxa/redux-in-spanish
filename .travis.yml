@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  "node"
+script: npm run build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  name: Publishment Bot
+  on:
+    branch: gh-pages
+  local_dir: _book

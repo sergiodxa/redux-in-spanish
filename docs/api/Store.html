@@ -1,0 +1,1220 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Store · Redux en Español</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="combine-reducers.html" />
+    
+    
+    <link rel="prev" href="create-store.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduccion/">
+            
+                <a href="../introduccion/">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduccion/motivacion.html">
+            
+                <a href="../introduccion/motivacion.html">
+            
+                    
+                    Motivación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduccion/conceptos-basicos.html">
+            
+                <a href="../introduccion/conceptos-basicos.html">
+            
+                    
+                    Conceptos Básicos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduccion/tres-principios.html">
+            
+                <a href="../introduccion/tres-principios.html">
+            
+                    
+                    Tres Principios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduccion/herencia.html">
+            
+                <a href="../introduccion/herencia.html">
+            
+                    
+                    Herencia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduccion/ecosistema.html">
+            
+                <a href="../introduccion/ecosistema.html">
+            
+                    
+                    Ecosistema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduccion/ejemplos.html">
+            
+                <a href="../introduccion/ejemplos.html">
+            
+                    
+                    Ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basico/">
+            
+                <a href="../basico/">
+            
+                    
+                    Básico
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basico/acciones.html">
+            
+                <a href="../basico/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basico/reducers.html">
+            
+                <a href="../basico/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basico/store.html">
+            
+                <a href="../basico/store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basico/flujo-de-datos.html">
+            
+                <a href="../basico/flujo-de-datos.html">
+            
+                    
+                    Flujo de datos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basico/uso-con-react.html">
+            
+                <a href="../basico/uso-con-react.html">
+            
+                    
+                    Uso con React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basico/ejemplo-todos.html">
+            
+                <a href="../basico/ejemplo-todos.html">
+            
+                    
+                    Ejemplo: Lista de TODOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../avanzado/">
+            
+                <a href="../avanzado/">
+            
+                    
+                    Avanzado
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../avanzado/acciones-asincronas.html">
+            
+                <a href="../avanzado/acciones-asincronas.html">
+            
+                    
+                    Acciones asíncronas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../avanzado/flujo-asincrono.html">
+            
+                <a href="../avanzado/flujo-asincrono.html">
+            
+                    
+                    Flujo asíncrono
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../avanzado/middleware.html">
+            
+                <a href="../avanzado/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../avanzado/uso-con-react-router.html">
+            
+                <a href="../avanzado/uso-con-react-router.html">
+            
+                    
+                    Uso con React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../avanzado/ejemplo-api-reddit.html">
+            
+                <a href="../avanzado/ejemplo-api-reddit.html">
+            
+                    
+                    Ejemplo: API Reddit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../avanzado/siguientes-pasos.html">
+            
+                <a href="../avanzado/siguientes-pasos.html">
+            
+                    
+                    Siguientes pasos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recetas/">
+            
+                <a href="../recetas/">
+            
+                    
+                    Recetas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../recetas/migrando-a-redux.html">
+            
+                <a href="../recetas/migrando-a-redux.html">
+            
+                    
+                    Migrando a Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../recetas/usando-el-operador-spread-en-objetos.md">
+            
+                <span>
+            
+                    
+                    Usando el operador Spread en objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../recetas/reduciendo-boilerplate.md">
+            
+                <span>
+            
+                    
+                    Reduciendo el Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../recetas/render-en-el-servidor.md">
+            
+                <span>
+            
+                    
+                    Render en el Servidor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../recetas/escribiendo-pruebas.md">
+            
+                <span>
+            
+                    
+                    Escribiendo pruebas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../recetas/calculando-datos-obtenidos.md">
+            
+                <span>
+            
+                    
+                    Calculando Datos Obtenidos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../recetas/implementando-deshacer.md">
+            
+                <span>
+            
+                    
+                    Implementando Deshacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../recetas/aislando-subapps.md">
+            
+                <span>
+            
+                    
+                    Aislando subaplicaciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../recetas/estructurando-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructurando reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../recipes/reducers/conceptos-prerequeridos.md">
+            
+                <span>
+            
+                    
+                    Conceptos prerequeridos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../recetas/reducers/estructura-basica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructuras básica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../recetas/reducers/separando-logica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Separando lógica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../recetas/reducers/ejemplo-refactorizando-reducers.md">
+            
+                <span>
+            
+                    
+                    Ejemplo: Refactorizando reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../recetas/reducers/usando-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Usando combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../recetas/reducers/mas-alla-de-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Más allá de combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../recetas/reducers/normalizando-la-forma-del-estado.md">
+            
+                <span>
+            
+                    
+                    Normalizando la forma del estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../recetas/reducers/actualizando-datos-normalizados.md">
+            
+                <span>
+            
+                    
+                    Actualizando datos normalizados
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../recetas/reducers/reusando-logica-en-reducers.md">
+            
+                <span>
+            
+                    
+                    Reusando lógica en reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../recetas/reducers/patrones-de-eactualizacion-inmutables.md">
+            
+                <span>
+            
+                    
+                    Patrones de actualización inmutables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../recetas/reducers/inicializando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Inicializando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.md">
+            
+                <span>
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/reducers.html">
+            
+                <a href="../faq/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/organizando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Organizando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/configurando-el-store.md">
+            
+                <span>
+            
+                    
+                    Configurando el Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/acciones.html">
+            
+                <a href="../faq/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/estructura-de-codigo.md">
+            
+                <span>
+            
+                    
+                    Estructura de código
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/rendimiento.html">
+            
+                <a href="../faq/rendimiento.html">
+            
+                    
+                    Rendimiento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/react-redux.md">
+            
+                <span>
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/miscelaneo.md">
+            
+                <span>
+            
+                    
+                    Misceláneo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../solucion-de-problemas.html">
+            
+                <a href="../solucion-de-problemas.html">
+            
+                    
+                    Solución de problemas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../glosario.html">
+            
+                <a href="../glosario.html">
+            
+                    
+                    Glosario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Referencia API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="create-store.html">
+            
+                <a href="create-store.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.2" data-path="Store.html">
+            
+                <a href="Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="combine-reducers.html">
+            
+                <a href="combine-reducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="apply-middleware.html">
+            
+                <a href="apply-middleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="bind-action-creators.html">
+            
+                <a href="bind-action-creators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="compose.html">
+            
+                <a href="compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Registro de cambios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.html">
+            
+                <a href="../PATRONS.html">
+            
+                    
+                    Patrocinadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../feedback.html">
+            
+                <a href="../feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Store</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="store">Store</h1>
+<p>El store contiene todo el <a href="../glosario.html#estado">&#xE1;rbol de estado</a> de tu aplicaci&#xF3;n.
+La &#xFA;nica forma de cambiar el estado que contiene es despachando una <a href="../glosario.html#acci&#xF3;n">acci&#xF3;n</a>.</p>
+<p>El store no es una clase. Es solo un objeto con unos p&#xF3;cos m&#xE9;todos.
+Para crearlo, pasa tu principal <a href="../glosario.html#reducer">funci&#xF3;n reductora</a> a <a href="create-store.html"><code>createStore</code></a>.</p>
+<blockquote>
+<h5 id="una-nota-para-usuarios-de-flux">Una nota para usuarios de Flux</h5>
+<p>Si vienes de Flux, hay una importante diferencias que necesitas entender.
+Redux no tiene un Dispatcher o soporta m&#xFA;ltiples stores. <strong>En cambio, hay un &#xFA;nico store con una &#xFA;nica <a href="../glosario.html#reducer">funci&#xF3;n reductora</a>.</strong> Mientras tu aplicaci&#xF3;n crece, en vez de a&#xF1;adir stores, puedes dividir tu reducer en varios reducer independientes que operan en diferentes partes del &#xE1;rbolde estado. Puedes usar funci&#xF3;n como <a href="combine-reducers.html"><code>combineReducers</code></a> para combinarlo. Esto es similar a como hay un &#xFA;nico componente ra&#xED;z en aplicaciones de React, pero esta compuesto de muchos componentes peque&#xF1;os.</p>
+</blockquote>
+<h3 id="m&#xE9;todos-del-storemetodos-store">M&#xE9;todos del Store(#metodos-store)</h3>
+<ul>
+<li><a href="#getState"><code>getState()</code></a></li>
+<li><a href="#dispatch"><code>dispatch(action)</code></a></li>
+<li><a href="#subscribe"><code>subscribe(listener)</code></a></li>
+<li><a href="#replaceReducer"><code>replaceReducer(nextReducer)</code></a></li>
+</ul>
+<h2 id="m&#xE9;todos-del-store">M&#xE9;todos del Store</h2>
+<h3 id="getstate"><a id="getState"></a><a href="#getState"><code>getState()</code></a></h3>
+<p>Regresa el actual &#xE1;rbol de estado de tu aplicaci&#xF3;n.
+Es igual al &#xFA;ltimo valor regresado por los reducers del store.</p>
+<h4 id="regresa">Regresa</h4>
+<p><em>(any)</em>: El actual &#xE1;rbol de estado de tu aplicaci&#xF3;n.</p>
+<hr>
+<h3 id="dispatchaction"><a id="dispatch"></a><a href="#dispatch"><code>dispatch(action)</code></a></h3>
+<p>Despacha una acci&#xF3;n. Esta es la &#xFA;nica forma de realizar un cambio de estado.</p>
+<p>La funci&#xF3;n funci&#xF3;n reductora es ejecutada por el resultado de <a href="#getState"><code>getState()</code></a> y el <code>action</code> indicado de forma s&#xED;ncrona. El valor devuelto es considerado el siguiente estado. Va a ser devuelto por <a href="#getState"><code>getState()</code></a> desde ahora, y las funciones escuchando los cambios van a ser inmediatamente notificadas.</p>
+<blockquote>
+<h5 id="una-nota-para-usuarios-de-flux">Una nota para usuarios de Flux</h5>
+<p>Si intentas llamar a <code>dispatch</code> desde dentro de un <a href="../glosario.html#reducer">reducer</a>, va a tirar un error diciendo &quot;Los reducers no deben despachar acciones.&quot; Esto es similar al error de Flux de &quot;No se puede despachar en medio de un despacheo&quot;, pero no causa los problemas asociados con este. En Flux, despachar esta prohibido mientras los Store est&#xE1;n manejando las acciones y emitiendo las actualizaciones. Esto es una l&#xE1;stima porque hace imposible despachar acciones desde el ciclo de vida del componente u otras partes benignas.</p>
+<p>En Redux, los suscriptores se ejecutan luego de que el reducer principal devuelve el nuevo estado, as&#xED; <em>quiz&#xE1;s</em> quieras despachar dentro de ellos. Solo no puedes despachar dentro de reducers porque no pueden tener efectos secundarios. Si quieres causar un efecto secundario en respuesta a una acci&#xF3;n, el mejor lugar para hacer eso es <a href="../glosario.html#creador-de-acciones">creadores de acciones</a> as&#xED;ncronas.</p>
+</blockquote>
+<h4 id="argumentos">Argumentos</h4>
+<ol>
+<li><code>action</code> (<em>Objeto</em><sup>&#x2020;</sup>): Un objeto plano describiendo las cambios necesarios para tu aplicaci&#xF3;n. Las acciones son la &#xFA;nica forma de enviar datos al store, as&#xED; que cualquier dato, ya sea de eventos de la UI, callbacks de peticiones, o cualquier otra fuente como WebSocket va a necesitar eventualmente ser despachada como acciones. Las acciones deben tener un campo <code>type</code> que indique el tipo de acci&#xF3;n que se esta realizando. Los tipos pueden ser definidos como constantes e importados desde otros m&#xF3;dulos. Es mejor usar strings para el <code>type</code> en vez de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol" target="_blank">Symbols</a> porque los strings son serializables. Aparte de <code>type</code>, la estructura de los objetos de acciones son controlador por t&#xED;. Si est&#xE1;s interesado, revisa <a href="https://github.com/acdlite/flux-standard-action" target="_blank">Flux Standard Action</a> para recomendaciones de como armas acciones.</li>
+</ol>
+<h4 id="regresa">Regresa</h4>
+<p>(Objeto<sup>&#x2020;</sup>): La acci&#xF3;n despachada (revisa las notas).</p>
+<h4 id="notas">Notas</h4>
+<p><sup>&#x2020;</sup> La implementaci&#xF3;n &quot;vainilla&quot; del store que obtienes al llamar <a href="createStore.md"><code>createStore</code></a> solo soporta objetos planos como acciones y las maneja inmediatamento en los reducers.</p>
+<p>De todas formas, si envuelves <a href="create-store.html"><code>createStore</code></a> con <a href="apply-middleware.html"><code>applyMiddleware</code></a>, el middleware puede interpretar acciones de otra forma, y proveer soporta para despachar <a href="../glosario.html#acci&#xF3;n-as&#xED;ncrona">acciones as&#xED;ncronas</a>. Las acciones as&#xED;ncronas normalmente son Promises, Observables, o thunks.</p>
+<p>Los middlewares son creador por la comunidad y no vienen incluidos en Redux por defecto. Necesitas expl&#xED;citamente instalar paquetes como <a href="https://github.com/gaearon/redux-thunk" target="_blank">redux-thunk</a> o <a href="https://github.com/acdlite/redux-promise" target="_blank">redux-promise</a> para usarlos. Probablemente tambi&#xE9;n crees tus propios middlewares.</p>
+<p>Para aprender como describir llamadas as&#xED;ncronas a un API, leer el estado actual dentro de creadores de acciones o realizar efectos secundarios, mira los ejemplos de <a href="applyMiddleware.md"><code>applyMiddleware</code></a>.</p>
+<h4 id="ejemplo">Ejemplo</h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>todos<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token string">&apos;Use Redux&apos;</span> <span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> <span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">,</span>
+    text
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token string">&apos;Read the docs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token string">&apos;Read about the middleware&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h3 id="subscribelistener"><a id="subscribe"></a><a href="#subscribe"><code>subscribe(listener)</code></a></h3>
+<p>Agregar una funci&#xF3;n que escucha los cambios. Va a ser ejecutada cada vez que una acci&#xF3;n es despachada y algunas partes del &#xE1;rbol de estado puedan potencialmente haber cambiado. Probablemente quieras llamar a <a href="#getState"><code>getState()</code></a> para leer el &#xE1;rbol de estado actual dentro del callback.</p>
+<p>Probablemente quieras llamar a <a href="#dispatch"><code>dispatch()</code></a> desde el callback, siguiendo las siguientes advertencias:</p>
+<ol>
+<li><p>Las suscripciones son ejecutadas justo despu&#xE9;s de cada llamada de <a href="#dispatch"><code>dispatch()</code></a>. Si te suscribes o desuscribes mientras un listener esta siendo invocado, no va a tener ning&#xFA;n efecto en el <a href="#dispatch"><code>dispatch()</code></a> actualmente en progreso. De todas formas, la siguiente llamada a <a href="#dispatch"><code>dispatch()</code></a>, ya sea anidada o no, va a usar la m&#xE1;s reciente versi&#xF3;n de la lista de suscripciones.</p>
+</li>
+<li><p>Los listeners no deben esperar ver todos los cambios de estado, ya que el estado puede haber sido actualizado multiples veces durante los <a href="#dispatch"><code>dispatch()</code></a> anidados antes de que los listeners sean llamados. De todas formas, es seguro que todos los listeners registrados antes de que <a href="#dispatch"><code>dispatch()</code></a> sea ejecutado van a ser llamados con el &#xFA;ltimo estado existente en ese momento.</p>
+</li>
+</ol>
+<p>Es una API de bajo nivel. Comunmente, en vez de usarla directamente, vas a usar conexiones para React (u otros). Si sientes que necesitas que el callback sea invocado con el estado actual, probablemente quieras <a href="https://github.com/reactjs/redux/issues/303#issuecomment-125184409" target="_blank">convertir el store en un Obersavle o escribir un <code>observeStore</code> personalizado</a></p>
+<p>Para desuscribir un listener invoca la funci&#xF3;n devuelta por <code>subscribe</code>.</p>
+<h4 id="arguments">Arguments</h4>
+<ol>
+<li><code>listener</code> (<em>Funci&#xF3;n</em>): El callback que va a ser invocado cada vez que una acci&#xF3;n es despachada y el &#xE1;rbol de estado puede haber cambiado. Probablemente quieras usar <a href="#getState"><code>getState()</code></a> dentro de este callback para obtener el &#xE1;rbol de estado actual. </li>
+</ol>
+<h5 id="regresa">Regresa</h5>
+<p>(<em>Funci&#x1FF;n</em>): Una funci&#xF3;n para desuscribir el listener.</p>
+<h5 id="ejemplo">Ejemplo</h5>
+<pre class="language-"><code class="lang-js"><span class="token keyword">function</span> <span class="token function">select</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">.</span>some<span class="token punctuation">.</span>deep<span class="token punctuation">.</span>property
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> currentValue
+<span class="token keyword">function</span> <span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> previousValue <span class="token operator">=</span> currentValue
+  currentValue <span class="token operator">=</span> <span class="token function">select</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>previousValue <span class="token operator">!==</span> currentValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Some deep nested property changed from&apos;</span><span class="token punctuation">,</span> previousValue<span class="token punctuation">,</span> <span class="token string">&apos;to&apos;</span><span class="token punctuation">,</span> currentValue<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> unsubscribe <span class="token operator">=</span> store<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>handleChange<span class="token punctuation">)</span>
+<span class="token function">handleChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<h3 id="replacereducernextreducer"><a id="replaceReducer"></a><a href="#replaceReducer"><code>replaceReducer(nextReducer)</code></a></h3>
+<p>Reemplaza el reducer actualmente usado en el store para calcular el estado.</p>
+<p>Es una API avanzada. Probablemente lo necesitas si tu aplicaci&#xF3;n implementa separaci&#xF3;n de c&#xF3;digo y quieres cargas algunos reducers dinamicamente. Adem&#xE1;s necesitas esto si implementas mecanismos como hot-reloading en Redux.</p>
+<h4 id="argumentos">Argumentos</h4>
+<ol>
+<li><code>reducer</code> (<em>Funci&#xF3;n</em>) El nuevo reducer a ser usado en el store.</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="create-store.html" class="navigation navigation-prev " aria-label="Previous page: createStore">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="combine-reducers.html" class="navigation navigation-next " aria-label="Next page: combineReducers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Store","level":"1.9.2","depth":2,"next":{"title":"combineReducers","level":"1.9.3","depth":2,"path":"docs/api/combine-reducers.md","ref":"docs/api/combine-reducers.md","articles":[]},"previous":{"title":"createStore","level":"1.9.1","depth":2,"path":"docs/api/create-store.md","ref":"docs/api/create-store.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/sergiodxa/redux-in-spanish/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Contribuye","base":"https://github.com/sergiodxa/redux-in-spanish/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux en Español","gitbook":"3.2.2"},"file":{"path":"docs/api/Store.md","mtime":"2017-04-11T18:29:06.136Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-17T17:58:30.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

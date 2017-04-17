@@ -1,0 +1,1489 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Uso con React · Redux en Español</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ejemplo-todos.html" />
+    
+    
+    <link rel="prev" href="flujo-de-datos.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduccion/">
+            
+                <a href="../introduccion/">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduccion/motivacion.html">
+            
+                <a href="../introduccion/motivacion.html">
+            
+                    
+                    Motivación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduccion/conceptos-basicos.html">
+            
+                <a href="../introduccion/conceptos-basicos.html">
+            
+                    
+                    Conceptos Básicos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduccion/tres-principios.html">
+            
+                <a href="../introduccion/tres-principios.html">
+            
+                    
+                    Tres Principios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduccion/herencia.html">
+            
+                <a href="../introduccion/herencia.html">
+            
+                    
+                    Herencia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduccion/ecosistema.html">
+            
+                <a href="../introduccion/ecosistema.html">
+            
+                    
+                    Ecosistema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduccion/ejemplos.html">
+            
+                <a href="../introduccion/ejemplos.html">
+            
+                    
+                    Ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Básico
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="acciones.html">
+            
+                <a href="acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="reducers.html">
+            
+                <a href="reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="store.html">
+            
+                <a href="store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="flujo-de-datos.html">
+            
+                <a href="flujo-de-datos.html">
+            
+                    
+                    Flujo de datos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="uso-con-react.html">
+            
+                <a href="uso-con-react.html">
+            
+                    
+                    Uso con React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="ejemplo-todos.html">
+            
+                <a href="ejemplo-todos.html">
+            
+                    
+                    Ejemplo: Lista de TODOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../avanzado/">
+            
+                <a href="../avanzado/">
+            
+                    
+                    Avanzado
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../avanzado/acciones-asincronas.html">
+            
+                <a href="../avanzado/acciones-asincronas.html">
+            
+                    
+                    Acciones asíncronas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../avanzado/flujo-asincrono.html">
+            
+                <a href="../avanzado/flujo-asincrono.html">
+            
+                    
+                    Flujo asíncrono
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../avanzado/middleware.html">
+            
+                <a href="../avanzado/middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../avanzado/uso-con-react-router.html">
+            
+                <a href="../avanzado/uso-con-react-router.html">
+            
+                    
+                    Uso con React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../avanzado/ejemplo-api-reddit.html">
+            
+                <a href="../avanzado/ejemplo-api-reddit.html">
+            
+                    
+                    Ejemplo: API Reddit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../avanzado/siguientes-pasos.html">
+            
+                <a href="../avanzado/siguientes-pasos.html">
+            
+                    
+                    Siguientes pasos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recetas/">
+            
+                <a href="../recetas/">
+            
+                    
+                    Recetas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../recetas/migrando-a-redux.html">
+            
+                <a href="../recetas/migrando-a-redux.html">
+            
+                    
+                    Migrando a Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../recetas/usando-el-operador-spread-en-objetos.md">
+            
+                <span>
+            
+                    
+                    Usando el operador Spread en objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../recetas/reduciendo-boilerplate.md">
+            
+                <span>
+            
+                    
+                    Reduciendo el Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../recetas/render-en-el-servidor.md">
+            
+                <span>
+            
+                    
+                    Render en el Servidor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../recetas/escribiendo-pruebas.md">
+            
+                <span>
+            
+                    
+                    Escribiendo pruebas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../recetas/calculando-datos-obtenidos.md">
+            
+                <span>
+            
+                    
+                    Calculando Datos Obtenidos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../recetas/implementando-deshacer.md">
+            
+                <span>
+            
+                    
+                    Implementando Deshacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../recetas/aislando-subapps.md">
+            
+                <span>
+            
+                    
+                    Aislando subaplicaciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../recetas/estructurando-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructurando reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../recipes/reducers/conceptos-prerequeridos.md">
+            
+                <span>
+            
+                    
+                    Conceptos prerequeridos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../recetas/reducers/estructura-basica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructuras básica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../recetas/reducers/separando-logica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Separando lógica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../recetas/reducers/ejemplo-refactorizando-reducers.md">
+            
+                <span>
+            
+                    
+                    Ejemplo: Refactorizando reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../recetas/reducers/usando-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Usando combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../recetas/reducers/mas-alla-de-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Más allá de combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../recetas/reducers/normalizando-la-forma-del-estado.md">
+            
+                <span>
+            
+                    
+                    Normalizando la forma del estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../recetas/reducers/actualizando-datos-normalizados.md">
+            
+                <span>
+            
+                    
+                    Actualizando datos normalizados
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../recetas/reducers/reusando-logica-en-reducers.md">
+            
+                <span>
+            
+                    
+                    Reusando lógica en reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../recetas/reducers/patrones-de-eactualizacion-inmutables.md">
+            
+                <span>
+            
+                    
+                    Patrones de actualización inmutables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../recetas/reducers/inicializando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Inicializando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.md">
+            
+                <span>
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/reducers.html">
+            
+                <a href="../faq/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/organizando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Organizando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/configurando-el-store.md">
+            
+                <span>
+            
+                    
+                    Configurando el Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/acciones.html">
+            
+                <a href="../faq/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/estructura-de-codigo.md">
+            
+                <span>
+            
+                    
+                    Estructura de código
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/rendimiento.html">
+            
+                <a href="../faq/rendimiento.html">
+            
+                    
+                    Rendimiento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/react-redux.md">
+            
+                <span>
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/miscelaneo.md">
+            
+                <span>
+            
+                    
+                    Misceláneo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../solucion-de-problemas.html">
+            
+                <a href="../solucion-de-problemas.html">
+            
+                    
+                    Solución de problemas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../glosario.html">
+            
+                <a href="../glosario.html">
+            
+                    
+                    Glosario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    Referencia API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../api/create-store.html">
+            
+                <a href="../api/create-store.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../api/Store.html">
+            
+                <a href="../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../api/combine-reducers.html">
+            
+                <a href="../api/combine-reducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../api/apply-middleware.html">
+            
+                <a href="../api/apply-middleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../api/bind-action-creators.html">
+            
+                <a href="../api/bind-action-creators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../api/compose.html">
+            
+                <a href="../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Registro de cambios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.html">
+            
+                <a href="../PATRONS.html">
+            
+                    
+                    Patrocinadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../feedback.html">
+            
+                <a href="../feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Uso con React</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="uso-con-react">Uso con React</h1>
+<p>Comencemos enfatizando que Redux no tiene relaci&#xF3;n alguna con React. Puedes escribir aplicaciones Redux con React, Angular, Ember, jQuery o vanilla JavaScript.</p>
+<p>Dicho esto, Redux funciona especialmente bien con librer&#xED;as como <a href="http://facebook.github.io/react/" target="_blank">React</a> y <a href="https://github.com/dekujs/deku" target="_blank">Deku</a> porque te permiten describir la interfaz de usuario como una funci&#xF3;n de estado, y Redux emite actualizaciones de estado en respuesta a acciones.</p>
+<p>Usaremos React para crear nuestra una aplicaci&#xF3;n sencilla de asuntos pendites (To-do).</p>
+<h2 id="instalando-react-redux">Instalando React Redux</h2>
+<p><a href="https://github.com/reactjs/react-redux" target="_blank">React Redux</a> no est&#xE1; incluido en Redux de manera predeterminada. Debe instalarlo expl&#xED;citamente:</p>
+<pre class="language-"><code>npm install --save react-redux
+</code></pre><p>Si no usas npm, puedes obtener la distribuci&#xF3;n UMD (Universal Module Definition) m&#xE1;s reciente desde unpkg (ya sea la distribuci&#xF3;n de <a href="https://unpkg.com/react-redux@latest/dist/react-redux.js" target="_blank">desarrollo</a> o la de <a href="https://unpkg.com/react-redux@latest/dist/react-redux.min.js" target="_blank">producci&#xF3;n</a>). La distribuci&#xF3;n UMD exporta una variable global llamada <code>window.ReactRedux</code> por si la a&#xF1;ades a tu p&#xE1;gina a trav&#xE9;s de la etiqueta <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></code>.</p>
+<h2 id="componentes-de-presentaci&#xF3;n-y-contenedores">Componentes de Presentaci&#xF3;n y Contenedores</h2>
+<p>Para asociar React con Redux se recurre a la idea de <strong>separaci&#xF3;n de presentaci&#xF3;n y componentes contenedores</strong>. Si no est&#xE1; familiarizado con estos t&#xE9;rminos, <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0" target="_blank">lea sobre ellos primero</a>, y luego vuelva. &#xA1;Son importantes, as&#xED; que vamos le vamos a esperar!</p>
+<p>&#xBF;Ha terminado de leer el art&#xED;culo? Repasemos sus diferencias:</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col" style="text-align:left">Componentes de Presentaci&#xF3;n</th>
+            <th scope="col" style="text-align:left">Componentes Contenedores</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th scope="row" style="text-align:right">Prop&#xF3;sito
+</th>
+          <td>Como se ven las cosas (<em>markup</em>, estilos)</td>
+          <td>Como funcionan las cosas (b&#xFA;squeda de datos, actualizaciones de estado)</td>
+        </tr>
+        <tr>
+          <th scope="row" style="text-align:right">Pertinente a Redux</th>
+          <td>No
+          </td><td>Yes
+        </td></tr>
+        <tr>
+          <th scope="row" style="text-align:right">Para leer datos</th>
+          <td>Lee datos de los <em>props</em></td>
+          <td>Se suscribe al estado en Redux</td>
+        </tr>
+        <tr>
+          <th scope="row" style="text-align:right">Para manipular datos</th>
+          <td>Invoca llamada de retorno (callback) desde los <em>props</em></td>
+          <td>Envia acciones a Redux</td>
+        </tr>
+        <tr>
+          <th scope="row" style="text-align:right">Son escritas</th>
+          <td>Manualmente</td>
+          <td>Usualmente generados por React Redux</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>La mayor&#xED;a de los componentes que escribiremos ser&#xE1;n de presentaci&#xF3;n, pero necesitaremos generar algunos componentes contenedores para conectarlos al <em>store</em> que maneja Redux. Con esto y el resumen de dise&#xF1;o que mencionaremos a continuaci&#xF3;n no implica que los componentes contenedores deban estar cerca o en la parte superior del &#xE1;rbol de componentes. Si un componente contenedor se vuelve demasiado complejo (es decir, tiene componentes de presentaci&#xF3;n fuertemente anidados con innumerables devoluciones de llamadas que se pasan hacia abajo), introduzca otro contenedor dentro del &#xE1;rbol de componentes como se indica en el <a href="../faq/ReactRedux.md#react-multiple-componentes">FAQ</a>.</p>
+<p>T&#xE9;cnicamente usted podr&#xED;a escribir los componentes contenedores manualmente usando <a href="../api/Store.html#subscribe"><code>store.subscribe()</code></a>. No le aconsejamos que haga esto porque React Redux hace muchas optimizaciones de rendimiento que son dif&#xED;ciles de hacer a mano. Por esta raz&#xF3;n, en lugar de escribir los componentes contenedores, los generaremos utilizando el comando <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-Mapdispatchtoprops-mergeprops-options" target="_blank"><code>connect()</code></a>, funci&#xF3;n proporcionada por React Redux, como ver&#xE1; a continuaci&#xF3;n.</p>
+<h2 id="dise&#xF1;o-de-la-jerarqu&#xED;a-de-componentes">Dise&#xF1;o de la jerarqu&#xED;a de componentes</h2>
+<p>Recuerda c&#xF3;mo <a href="Reducers.md">dise&#xF1;amos y dimos forma al objecto del estado ra&#xED;z</a>? Es hora de dise&#xF1;ar la jerarqu&#xED;a de la interfaz de usuario para que coincida con este objeto del estado. Esto no es una tarea espec&#xED;fica de Redux. <a href="https://facebook.github.io/react/docs/thinking-in-react.html" target="_blank"><em>Thinking in React</em></a> es un excelente tutorial que explica el proceso.</p>
+<p>Nuestro breve resumen del dise&#xF1;o es simple. Queremos mostrar una lista de asuntos pendientes. Al hacer clic, un elemento de la lista se tachar&#xE1; como completado. Queremos mostrar un campo en el que el usuario puede agregar una tarea nueva. En el pie de p&#xE1;gina, queremos mostrar un <em>toggle</em> para mostrar todas las taras, s&#xF3;lo las completadas, o s&#xF3;lo las activas.</p>
+<h3 id="dise&#xF1;o-de-componentes-de-presentaci&#xF3;n">Dise&#xF1;o de componentes de presentaci&#xF3;n</h3>
+<p>Podemos ver los siguientes componentes de presentaci&#xF3;n y sus <em>props</em> surgir a trav&#xE9;s de esta breve descripci&#xF3;n:</p>
+<ul>
+<li><strong><code>TodoList</code></strong> es una lista que mostrar&#xE1; las tareas pendientes disponibles.<ul>
+<li><code>todos: Array</code> es un arreglo de tareas pendientes que contiene la siguiente descripci&#xF3;n <code>{ id, text, completed }</code>.</li>
+<li><code>onTodoClick(id: number)</code> es un <em>callback</em> para invocar cuando un asunto pendientes es presionado.</li>
+</ul>
+</li>
+<li><strong><code>Todo</code></strong> es un asunto pendiente.<ul>
+<li><code>text: string</code> es el texto a mostrar.</li>
+<li><code>completed: boolean</code> indica si la tarea debe aparecer tachada.</li>
+<li><code>onClick()</code> es un <em>callback</em> para invocar cuando la tarea es presionada.</li>
+</ul>
+</li>
+<li><strong><code>Link</code></strong> es el enlace con su <em>callback</em>.<ul>
+<li><code>onClick()</code> es un <em>callback</em> para invocar cuando el enlace es presionado.</li>
+</ul>
+</li>
+<li><strong><code>Footer</code></strong> es donde dejamos que el usuario cambie las tareas pendientes visibles actualmente.</li>
+<li><strong><code>App</code></strong> es el componente ra&#xED;z que representa todo lo dem&#xE1;s.</li>
+</ul>
+<p>Cada art&#xED;culo describe la <em>apariencia</em> pero no conoce <em>de donde</em> vienen los datos, o <em>c&#xF3;mo</em> cambiarlos. S&#xF3;lo muestran lo que se les da. Si migras de Redux a otra cosa, podr&#xE1;s mantener todos estos componentes exactamente iguales. No dependen de Redux en absoluto.</p>
+<h3 id="dise&#xF1;o-de-componentes-contenedores">Dise&#xF1;o de componentes contenedores</h3>
+<p>Tambi&#xE9;n necesitaremos algunos componentes contenedores para conectar los componentes de presentaci&#xF3;n a Redux. Por ejemplo, el componente de presentaci&#xF3;n <code>TodoList</code> necesita un contenedor como<code>VisibleTodoList</code> que se suscribe al <em>store</em> de Redux y debe saber c&#xF3;mo aplicar el filtro de visibilidad. Para cambiar el filtro de visibilidad, proporcionaremos un componente contenedor <code>FilterLink</code> que renderiza un <code>Link</code> que distribuye la debida acci&#xF3;n al hacer clic:</p>
+<ul>
+<li><strong><code>VisibleTodoList</code></strong> filtra los asuntos de acuerdo a la visibilidad actual y renderiza el <code>TodoList</code>.</li>
+<li><strong><code>FilterLink</code></strong> obtiene el filtro de visibilidad actual y renderiza un <code>Link</code>.<ul>
+<li><code>filter: string</code> es el tipo del filtro de visibilidad.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dise&#xF1;o-de-otros-componentes">Dise&#xF1;o de otros componentes</h3>
+<p>A veces es dif&#xED;cil saber si un componente debe ser componente de presentaci&#xF3;n o contenedor. Por ejemplo, a veces la forma y la funci&#xF3;n est&#xE1;n realmente entrelazadas, como en el caso de este peque&#xF1;o componente:</p>
+<ul>
+<li><strong><code>AddTodo</code></strong> es un campo de entrada con un bot&#xF3;n &quot;A&#xF1;adir tarea&quot;</li>
+</ul>
+<p>T&#xE9;cnicamente podr&#xED;amos dividirlo en dos componentes, pero podr&#xED;a ser demasiado pronto en esta etapa. Est&#xE1; bien mezclar presentaci&#xF3;n y l&#xF3;gica en un componente que sea muy peque&#xF1;o. A medida que crece, ser&#xE1; m&#xE1;s obvio c&#xF3;mo dividirlo, as&#xED; que lo dejaremos en uno solo.  </p>
+<h2 id="implementaci&#xF3;n-de-componentes">Implementaci&#xF3;n de componentes</h2>
+<p>Vamos a escribir los componentes! Comenzaremos con los componentes de presentaci&#xF3;n por lo que no es necesario pensar en la relaci&#xF3;n con Redux todav&#xED;a.</p>
+<h3 id="implementaci&#xF3;n-de-componentes-de-presentaci&#xF3;n">Implementaci&#xF3;n de componentes de presentaci&#xF3;n</h3>
+<p>Todos estos son componentes normales de React, por lo que no los examinaremos en detalle. Escribiremos componentes funcionales sin-estado a menos que necesitemos usar el estado local o los m&#xE9;todos del ciclo de duraci&#xF3;n. Esto no significa que los componentes de presentaci&#xF3;n <em>tengan que ser</em> funciones - es solo que es m&#xE1;s f&#xE1;cil definirlos de esta manera. Si, y cuando necesites agregar un estado local, m&#xE9;todos de ciclo de duraci&#xF3;n u optimizaciones de rendimiento, puede convertirlos a clases.</p>
+<h4 id="componentstodojs"><code>components/Todo.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> PropTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+
+<span class="token keyword">const</span> Todo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> onClick<span class="token punctuation">,</span> completed<span class="token punctuation">,</span> text <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>li
+    onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span>
+    style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+      textDecoration<span class="token punctuation">:</span> completed <span class="token operator">?</span> <span class="token string">&apos;line-through&apos;</span> <span class="token punctuation">:</span> <span class="token string">&apos;none&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span>text<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+
+Todo<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  onClick<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  completed<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>bool<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  text<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Todo
+</code></pre>
+<h4 id="componentstodolistjs"><code>components/TodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> PropTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;./Todo&apos;</span>
+
+<span class="token keyword">const</span> TodoList <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> todos<span class="token punctuation">,</span> onTodoClick <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Todo
+        key<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span>
+        <span class="token punctuation">{</span><span class="token operator">...</span>todo<span class="token punctuation">}</span>
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">onTodoClick</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+
+TodoList<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  todos<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">arrayOf</span><span class="token punctuation">(</span>PropTypes<span class="token punctuation">.</span><span class="token function">shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>number<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>bool<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+    text<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isRequired<span class="token punctuation">)</span><span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  onTodoClick<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> TodoList
+</code></pre>
+<h4 id="componentslinkjs"><code>components/Link.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> PropTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+
+<span class="token keyword">const</span> Link <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> active<span class="token punctuation">,</span> children<span class="token punctuation">,</span> onClick <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>active<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">&quot;#&quot;</span>
+       onClick<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+         e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+         <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+       <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+Link<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  active<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>bool<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  children<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>node<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+  onClick<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Link
+</code></pre>
+<h4 id="componentsfooterjs"><code>components/Footer.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> FilterLink <span class="token keyword">from</span> <span class="token string">&apos;../containers/FilterLink&apos;</span>
+
+<span class="token keyword">const</span> Footer <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+    Show<span class="token punctuation">:</span>
+    <span class="token punctuation">{</span><span class="token string">&quot; &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_ALL&quot;</span><span class="token operator">&gt;</span>
+      Todos
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_ACTIVE&quot;</span><span class="token operator">&gt;</span>
+      Activo
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_COMPLETED&quot;</span><span class="token operator">&gt;</span>
+      Completado
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Footer
+</code></pre>
+<h4 id="componentsappjs"><code>components/App.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> Footer <span class="token keyword">from</span> <span class="token string">&apos;./Footer&apos;</span>
+<span class="token keyword">import</span> AddTodo <span class="token keyword">from</span> <span class="token string">&apos;../containers/AddTodo&apos;</span>
+<span class="token keyword">import</span> VisibleTodoList <span class="token keyword">from</span> <span class="token string">&apos;../containers/VisibleTodoList&apos;</span>
+
+<span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>AddTodo <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>VisibleTodoList <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Footer <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App
+</code></pre>
+<p>Ahora es el momento de conectar los componentes de presentaci&#xF3;n a Redux mediante la creaci&#xF3;n de algunos contenedores. T&#xE9;cnicamente, un componente contenedor es s&#xF3;lo un componente de React que utiliza <a href="../api/Store.html#subscribe"><code>store.subscribe ()</code></a> para leer una parte del &#xE1;rbol de estado en Redux y suministrar los <em>props</em> a un componente de presentaci&#xF3;n que renderiza. Puedes escribir un componente contenedor manualmente, pero sugerimos generar los componentes contenedores con la funci&#xF3;n <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank"><code>connect()</code></a> de la librer&#xED;a React Redux, ya que proporciona muchas optimizaciones &#xFA;tiles para evitar <em>re-renders</em> innecesarios. (Un beneficio de utilizar esta librer&#xED;a es que usted no tiene que preocuparse por la implementaci&#xF3;n del m&#xE9;todo <code>shouldComponentUpdate</code> <a href="https://facebook.github.io/react/docs/advanced-performance.html" target="_blank">recomendado por React para mejor rendimiento</a>.)</p>
+<p>Para usar <code>connect()</code>, es necesario definir una funci&#xF3;n especial llamada <code>mapStateToProps</code> que indiqua c&#xF3;mo transformar el estado actual del <em>store</em> Redux en los <em>props</em> que desea pasar a un componente de presentaci&#xF3;n. Por ejemplo, <code>VisibleTodoList</code> necesita calcular <code>todos</code> para pasar a <code>TodoList</code>, as&#xED; que definimos una funci&#xF3;n que filtra el <code>state.todos</code> de acuerdo con el <code>state.visibilityFilter</code>, y lo usamos en su <code>mapStateToProps</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token punctuation">(</span>todos<span class="token punctuation">,</span> filter<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>filter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> state<span class="token punctuation">.</span>visibilityFilter<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Adem&#xE1;s de leer el estado, los componentes contenedores pueden enviar acciones. De manera similar, puede definir una funci&#xF3;n llamada <code>mapDispatchToProps()</code> que recibe el m&#xE9;todo <a href="../api/Store.html#dispatch"><code>dispatch()</code></a> y devuelve los <em>callback props</em> que deseas inyectar en el componente de presentaci&#xF3;n. Por ejemplo, queremos que <code>VisibleTodoList</code> inyecte un <em>prop</em> llamado <code>onTodoClick</code> en el componente <code>TodoList</code>, y queremos que <code>onTodoClick</code> env&#xED;e una acci&#xF3;n <code>TOGGLE_TODO</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Finalmente, creamos <code>VisibleTodoList</code> llamando <code>connect()</code> y le pasamos estas dos funciones:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<p>Estos son los conceptos b&#xE1;sicos de la API de React Redux, pero hay algunos atajos y opciones avanzadas por lo que le animamos a revisar <a href="https://github.com/reactjs/react-redux" target="_blank">su documentaci&#xF3;n</a> en detalle. En caso de que que te preocupe el hecho que <code>mapStateToProps</code> est&#xE9; creando objetos nuevos con demasiada frecuencia, quiz&#xE1;s desees aprender acerca de <a href="../recipes/ComputingDerivedData.md">computar datos derivados</a> con <a href="https://github.com/reactjs/Reselect" target="_blank"><em>reselect</em></a>.</p>
+<p>El resto de los componentes contenedores est&#xE1;n definidos a continuaci&#xF3;n:</p>
+<h4 id="containersfilterlinkjs"><code>containers/FilterLink.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setVisibilityFilter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> Link <span class="token keyword">from</span> <span class="token string">&apos;../components/Link&apos;</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> ownProps<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    active<span class="token punctuation">:</span> ownProps<span class="token punctuation">.</span>filter <span class="token operator">===</span> state<span class="token punctuation">.</span>visibilityFilter
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">,</span> ownProps<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onClick<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span>ownProps<span class="token punctuation">.</span>filter<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> FilterLink <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>Link<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> FilterLink
+</code></pre>
+<h4 id="containersvisibletodolistjs"><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> toggleTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+<span class="token keyword">import</span> TodoList <span class="token keyword">from</span> <span class="token string">&apos;../components/TodoList&apos;</span>
+
+<span class="token keyword">const</span> getVisibleTodos <span class="token operator">=</span> <span class="token punctuation">(</span>todos<span class="token punctuation">,</span> filter<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>filter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_COMPLETED&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;SHOW_ACTIVE&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>t<span class="token punctuation">.</span>completed<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> state<span class="token punctuation">.</span>visibilityFilter<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mapDispatchToProps <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    onTodoClick<span class="token punctuation">:</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">toggleTodo</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> VisibleTodoList <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span>
+  mapStateToProps<span class="token punctuation">,</span>
+  mapDispatchToProps
+<span class="token punctuation">)</span><span class="token punctuation">(</span>TodoList<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> VisibleTodoList
+</code></pre>
+<h3 id="implementaci&#xF3;n-de-otros-componentes">Implementaci&#xF3;n de otros componentes</h3>
+<h4 id="containersaddtodojs"><code>containers/AddTodo.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> addTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+
+<span class="token keyword">let</span> AddTodo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> dispatch <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> input
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>input<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">addTodo</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        input<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">&apos;&apos;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>input ref<span class="token operator">=</span><span class="token punctuation">{</span>node <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+          input <span class="token operator">=</span> node
+        <span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span><span class="token operator">&gt;</span>
+          A&#xF1;adir tarea
+        <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+AddTodo <span class="token operator">=</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>AddTodo<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AddTodo
+</code></pre>
+<h2 id="transferir-al-store">Transferir al <em>store</em></h2>
+<p>Todos los componentes contenedores necesitan acceso al <em>store Redux</em> para que puedan suscribirse a ella. Una opci&#xF3;n ser&#xED;a pasarlo como un <em>prop</em> a cada componente contenedor. Sin embargo, se vuelve tedioso, ya que hay que enlzar <code>store</code> incluso a trav&#xE9;s del componentes de presentaci&#xF3;n ya que puede suceder que tenga que renderizar un contenedor all&#xE1; en lo profundo del &#xE1;rbol de componentes.</p>
+<p>La opci&#xF3;n que recomendamos es usar un componente <em>React Redux</em> especial llamado <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store" target="_blank"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Proveedor</span><span class="token punctuation">&gt;</span></span></code></a> para <a href="https://facebook.github.io/react/docs/context.html" target="_blank">m&#xE1;gicamente</a> hacer que el <em>store</em> est&#xE9; disponible para todos los componentes del contenedor en la aplicaci&#xF3;n sin pasarlo expl&#xED;citamente. S&#xF3;lo es necesario utilizarlo una vez al renderizar el componente ra&#xED;z:</p>
+<h4 id="indexjs"><code>index.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> todoApp <span class="token keyword">from</span> <span class="token string">&apos;./reducers&apos;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">&apos;./components/App&apos;</span>
+
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>todoApp<span class="token punctuation">)</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;root&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="siguientes-pasos">Siguientes pasos</h2>
+<p>Lea el <a href="ExampleTodoList.md">c&#xF3;digo fuente completo de este tutorial</a> para internalizar mejor el conocimiento que ha adquirido. Luego, dir&#xED;gete directamente al <a href="../advanced/README.md">tutorial avanzado</a> para aprender a manejar los <em>network requests</em> y el <em>routing</em>!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="flujo-de-datos.html" class="navigation navigation-prev " aria-label="Previous page: Flujo de datos">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ejemplo-todos.html" class="navigation navigation-next " aria-label="Next page: Ejemplo: Lista de TODOs">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Uso con React","level":"1.3.5","depth":2,"next":{"title":"Ejemplo: Lista de TODOs","level":"1.3.6","depth":2,"path":"docs/basico/ejemplo-todos.md","ref":"docs/basico/ejemplo-todos.md","articles":[]},"previous":{"title":"Flujo de datos","level":"1.3.4","depth":2,"path":"docs/basico/flujo-de-datos.md","ref":"docs/basico/flujo-de-datos.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/sergiodxa/redux-in-spanish/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Contribuye","base":"https://github.com/sergiodxa/redux-in-spanish/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux en Español","gitbook":"3.2.2"},"file":{"path":"docs/basico/uso-con-react.md","mtime":"2017-04-11T18:29:06.140Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-17T17:58:30.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

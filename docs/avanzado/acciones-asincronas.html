@@ -1,0 +1,1550 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Acciones asíncronas · Redux en Español</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flujo-asincrono.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduccion/">
+            
+                <a href="../introduccion/">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduccion/motivacion.html">
+            
+                <a href="../introduccion/motivacion.html">
+            
+                    
+                    Motivación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduccion/conceptos-basicos.html">
+            
+                <a href="../introduccion/conceptos-basicos.html">
+            
+                    
+                    Conceptos Básicos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduccion/tres-principios.html">
+            
+                <a href="../introduccion/tres-principios.html">
+            
+                    
+                    Tres Principios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduccion/herencia.html">
+            
+                <a href="../introduccion/herencia.html">
+            
+                    
+                    Herencia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduccion/ecosistema.html">
+            
+                <a href="../introduccion/ecosistema.html">
+            
+                    
+                    Ecosistema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduccion/ejemplos.html">
+            
+                <a href="../introduccion/ejemplos.html">
+            
+                    
+                    Ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basico/">
+            
+                <a href="../basico/">
+            
+                    
+                    Básico
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basico/acciones.html">
+            
+                <a href="../basico/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basico/reducers.html">
+            
+                <a href="../basico/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basico/store.html">
+            
+                <a href="../basico/store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basico/flujo-de-datos.html">
+            
+                <a href="../basico/flujo-de-datos.html">
+            
+                    
+                    Flujo de datos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basico/uso-con-react.html">
+            
+                <a href="../basico/uso-con-react.html">
+            
+                    
+                    Uso con React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basico/ejemplo-todos.html">
+            
+                <a href="../basico/ejemplo-todos.html">
+            
+                    
+                    Ejemplo: Lista de TODOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Avanzado
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="acciones-asincronas.html">
+            
+                <a href="acciones-asincronas.html">
+            
+                    
+                    Acciones asíncronas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="flujo-asincrono.html">
+            
+                <a href="flujo-asincrono.html">
+            
+                    
+                    Flujo asíncrono
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="uso-con-react-router.html">
+            
+                <a href="uso-con-react-router.html">
+            
+                    
+                    Uso con React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="ejemplo-api-reddit.html">
+            
+                <a href="ejemplo-api-reddit.html">
+            
+                    
+                    Ejemplo: API Reddit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="siguientes-pasos.html">
+            
+                <a href="siguientes-pasos.html">
+            
+                    
+                    Siguientes pasos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recetas/">
+            
+                <a href="../recetas/">
+            
+                    
+                    Recetas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../recetas/migrando-a-redux.html">
+            
+                <a href="../recetas/migrando-a-redux.html">
+            
+                    
+                    Migrando a Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../recetas/usando-el-operador-spread-en-objetos.md">
+            
+                <span>
+            
+                    
+                    Usando el operador Spread en objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../recetas/reduciendo-boilerplate.md">
+            
+                <span>
+            
+                    
+                    Reduciendo el Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../recetas/render-en-el-servidor.md">
+            
+                <span>
+            
+                    
+                    Render en el Servidor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../recetas/escribiendo-pruebas.md">
+            
+                <span>
+            
+                    
+                    Escribiendo pruebas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../recetas/calculando-datos-obtenidos.md">
+            
+                <span>
+            
+                    
+                    Calculando Datos Obtenidos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../recetas/implementando-deshacer.md">
+            
+                <span>
+            
+                    
+                    Implementando Deshacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../recetas/aislando-subapps.md">
+            
+                <span>
+            
+                    
+                    Aislando subaplicaciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../recetas/estructurando-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructurando reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../recipes/reducers/conceptos-prerequeridos.md">
+            
+                <span>
+            
+                    
+                    Conceptos prerequeridos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../recetas/reducers/estructura-basica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructuras básica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../recetas/reducers/separando-logica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Separando lógica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../recetas/reducers/ejemplo-refactorizando-reducers.md">
+            
+                <span>
+            
+                    
+                    Ejemplo: Refactorizando reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../recetas/reducers/usando-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Usando combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../recetas/reducers/mas-alla-de-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Más allá de combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../recetas/reducers/normalizando-la-forma-del-estado.md">
+            
+                <span>
+            
+                    
+                    Normalizando la forma del estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../recetas/reducers/actualizando-datos-normalizados.md">
+            
+                <span>
+            
+                    
+                    Actualizando datos normalizados
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../recetas/reducers/reusando-logica-en-reducers.md">
+            
+                <span>
+            
+                    
+                    Reusando lógica en reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../recetas/reducers/patrones-de-eactualizacion-inmutables.md">
+            
+                <span>
+            
+                    
+                    Patrones de actualización inmutables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../recetas/reducers/inicializando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Inicializando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.md">
+            
+                <span>
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/reducers.html">
+            
+                <a href="../faq/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/organizando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Organizando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/configurando-el-store.md">
+            
+                <span>
+            
+                    
+                    Configurando el Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/acciones.html">
+            
+                <a href="../faq/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/estructura-de-codigo.md">
+            
+                <span>
+            
+                    
+                    Estructura de código
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/rendimiento.html">
+            
+                <a href="../faq/rendimiento.html">
+            
+                    
+                    Rendimiento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/react-redux.md">
+            
+                <span>
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/miscelaneo.md">
+            
+                <span>
+            
+                    
+                    Misceláneo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../solucion-de-problemas.html">
+            
+                <a href="../solucion-de-problemas.html">
+            
+                    
+                    Solución de problemas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../glosario.html">
+            
+                <a href="../glosario.html">
+            
+                    
+                    Glosario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    Referencia API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../api/create-store.html">
+            
+                <a href="../api/create-store.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../api/Store.html">
+            
+                <a href="../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../api/combine-reducers.html">
+            
+                <a href="../api/combine-reducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../api/apply-middleware.html">
+            
+                <a href="../api/apply-middleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../api/bind-action-creators.html">
+            
+                <a href="../api/bind-action-creators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../api/compose.html">
+            
+                <a href="../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Registro de cambios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.html">
+            
+                <a href="../PATRONS.html">
+            
+                    
+                    Patrocinadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../feedback.html">
+            
+                <a href="../feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Acciones asíncronas</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="acciones-as&#xED;ncronas">Acciones as&#xED;ncronas</h1>
+<p>En la <a href="../basico/">gu&#xED;a b&#xE1;sica</a>, hemos creado una simple aplicaci&#xF3;n de tareas pendientes (To-do). Dicho ejemplo era totalmente sincr&#xF3;nico. Cada vez que se env&#xED;a una acci&#xF3;n, el estado se actualiza inmediatamente.</p>
+<p>En esta gu&#xED;a, crearemos una aplicaci&#xF3;n as&#xED;ncrona diferente. Utilizaremos la API de Reddit para mostrar los titulares actuales de un subreddit seleccionado. &#xBF;C&#xF3;mo encaja la asincronicidad en el flujo de Redux?</p>
+<h2 id="acciones">Acciones</h2>
+<p>Cuando se hace una llama as&#xED;ncrona a una API, hay dos momentos cruciales en la ejecuci&#xF3;n: el momento en el que inicias la llamada y el momento en que recibes una respuesta (o un tiempo de espera).</p>
+<p>Cada uno de estos dos momentos suele requerir un cambio en el estado de la aplicaci&#xF3;n; Para ello, es necesario enviar acciones normales que ser&#xE1;n procesadas de forma s&#xED;ncrona por los reductores. Por lo general, para cualquier solicitud de un API, desear&#xE1;s enviar (<em>dispatch</em>) al menos tres tipos diferentes de acciones:</p>
+<ul>
+<li><p><strong>Una acci&#xF3;n informando a los reductores que la solicitud comenz&#xF3;.</strong></p>
+<p>Los reductores pueden manejar esta acci&#xF3;n alternando un indicador <code>isFetching</code> en el estado. De esta manera la interfaz de usuario sabe que es el momento de mostrar un indicador de cargando (<em>spinner</em>).</p>
+</li>
+<li><p><strong>Una acci&#xF3;n que informa a los reductores de que la solicitud finaliz&#xF3; correctamente.</strong></p>
+<p>Los reductores pueden manejar esta acci&#xF3;n fusionando los nuevos datos en el estado que administran y restableciendo <code>isFetching</code>. La interfaz de usuario ocultar&#xED;a el indicador de cargando y mostrar&#xED;a los datos obtenidos.</p>
+</li>
+<li><p><strong>Una acci&#xF3;n que informa a los reductores que la solicitud fall&#xF3;.</strong></p>
+<p>Los reductores pueden manejar esta acci&#xF3;n restableciendo <code>isFetching</code>. Adem&#xE1;s, algunos reductores pueden querer almacenar el mensaje de error para que la interfaz de usuario pueda mostrarlo.</p>
+</li>
+</ul>
+<p>Puedes utilizar un campo dedicado de tipo <code>status</code> en tus acciones:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS&apos;</span><span class="token punctuation">,</span> status<span class="token punctuation">:</span> <span class="token string">&apos;error&apos;</span><span class="token punctuation">,</span> error<span class="token punctuation">:</span> <span class="token string">&apos;Oops&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS&apos;</span><span class="token punctuation">,</span> status<span class="token punctuation">:</span> <span class="token string">&apos;success&apos;</span><span class="token punctuation">,</span> response<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+</code></pre>
+<p>O puedes definir diference tipos para cada uno:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS_REQUEST&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS_FAILURE&apos;</span><span class="token punctuation">,</span> error<span class="token punctuation">:</span> <span class="token string">&apos;Oops&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;FETCH_POSTS_SUCCESS&apos;</span><span class="token punctuation">,</span> response<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span> <span class="token punctuation">}</span>
+</code></pre>
+<p>Elegir si deseas utilizar un solo tipo de acci&#xF3;n o varios tipos de acciones, est&#xE1; a tu discreci&#xF3;n. Es una convenci&#xF3;n que usted necesita discutir con su equipo de trabajo. M&#xFA;ltiples tipos dejan menos espacio para un error, pero esto no es un problema si se generan creadores de acciones y reductores con una librer&#xED;a auxiliar como <a href="https://github.com/acdlite/redux-actions" target="_blank">redux-actions</a>.</p>
+<p>Cualquiera que sea la convenci&#xF3;n que elijas, mantente con ella durante toda la aplicaci&#xF3;n.</p>
+<p>Utilizaremos tipos separados en este tutorial.</p>
+<h2 id="creadores-de-acciones-s&#xED;ncronas">Creadores de acciones s&#xED;ncronas</h2>
+<p>Comencemos por definir los varios tipos de acci&#xF3;n s&#xED;ncrona y los creadores de acci&#xF3;n que necesitamos en nuestra aplicaci&#xF3;n de ejemplo. Aqu&#xED;, el usuario puede seleccionar un subreddit para ser mostrado:</p>
+<h4 id="actionsjs"><code>actions.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> SELECT_SUBREDDIT <span class="token operator">=</span> <span class="token string">&apos;SELECT_SUBREDDIT&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">selectSubreddit</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> SELECT_SUBREDDIT<span class="token punctuation">,</span>
+    subreddit
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Tambi&#xE9;n pueden presionar un bot&#xF3;n de &quot;actualizar&quot; para actualizarlo:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> INVALIDATE_SUBREDDIT <span class="token operator">=</span> <span class="token string">&apos;INVALIDATE_SUBREDDIT&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">invalidateSubreddit</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> INVALIDATE_SUBREDDIT<span class="token punctuation">,</span>
+    subreddit
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Estas son las acciones gobernadas por la interacci&#xF3;n del usuario. Tambi&#xE9;n tendremos otro tipo de acci&#xF3;n, regida por las solicitudes de red. Eventualmente veremos c&#xF3;mo enviarlas, pero por ahora, solo queremos definirlas.</p>
+<p>Cuando llegue el momento de buscar las publicaciones de alg&#xFA;n subreddit, enviaremos una acci&#xF3;n <code>REQUEST_POSTS</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> REQUEST_POSTS <span class="token operator">=</span> <span class="token string">&apos;REQUEST_POSTS&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">requestPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> REQUEST_POSTS<span class="token punctuation">,</span>
+    subreddit
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Es importante que est&#xE9; separado de <code>SELECT_SUBREDDIT</code> o <code>INVALIDATE_SUBREDDIT</code>. Aunque pueden ocurrir una tras otra, a medida que la aplicaci&#xF3;n se vuelve m&#xE1;s compleja, es posible que desees obtener algunos datos independientemente de la acci&#xF3;n del usuario (por ejemplo, para buscar de forma m&#xE1;s r&#xE1;pida los subreddits m&#xE1;s populares o actualizar los datos antiguos de vez en cuando). Tambi&#xE9;n es posible que desees buscar en respuesta a un cambio de ruta, por lo que no es aconsejable acoplar la busqueda a alg&#xFA;n evento de interfaz de usuario desde el principio.</p>
+<p>Finalmente, cuando llegue la solicitud de red, enviaremos <code>RECEIVE_POSTS</code>:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> RECEIVE_POSTS <span class="token operator">=</span> <span class="token string">&apos;RECEIVE_POSTS&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">receivePosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">,</span> json<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> RECEIVE_POSTS<span class="token punctuation">,</span>
+    subreddit<span class="token punctuation">,</span>
+    posts<span class="token punctuation">:</span> json<span class="token punctuation">.</span>data<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>child <span class="token operator">=</span><span class="token operator">&gt;</span> child<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    receivedAt<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Esto es todo lo que necesitamos saber por ahora. El mecanismo particular para enviar estas acciones junto con las solicitudes de red se discutir&#xE1; m&#xE1;s adelante.</p>
+<blockquote>
+<h5 id="nota-sobre-el-manejo-de-errores">Nota sobre el manejo de errores</h5>
+<p>En una aplicaci&#xF3;n real, tambi&#xE9;n se desea enviar una acci&#xF3;n que responda a una petici&#xF3;n de error. No implementaremos el manejo de errores en este tutorial, pero en la secci&#xF3;n <a href="../introduccion/ejemplos.html#real-world">de ejemplo en el mundo real</a> se muestra uno de los posibles enfoques.</p>
+</blockquote>
+<h2 id="dise&#xF1;ando-la-apariencia-del-estado-state-shape">Dise&#xF1;ando la apariencia del estado (<em>State Shape</em>)</h2>
+<p>Al igual que en el tutorial b&#xE1;sico, necesitar&#xE1;s <a href="../basico/reducers.html#designing-the-state-shape">dise&#xF1;ar la forma del estado de tu aplicaci&#xF3;n</a> antes de entrar en la implementaci&#xF3;n. Con el c&#xF3;digo as&#xED;ncrono, hay m&#xE1;s estados para velar, por lo que tenemos que pensarlo detalladamente.</p>
+<p>Esta parte suele ser confusa para los principiantes, ya que no se tiene claro inmediatamente qu&#xE9; informaci&#xF3;n describe el estado de una aplicaci&#xF3;n as&#xED;ncrona y c&#xF3;mo organizarla en un solo &#xE1;rbol.</p>
+<p>Comenzaremos con el caso de uso m&#xE1;s com&#xFA;n: listas. Las aplicaciones Web suelen mostrar listas de cosas. Por ejemplo, una lista de publicaciones o una lista de amigos. Tendr&#xE1;s que averiguar qu&#xE9; tipo de listas puede mostrar tu aplicaci&#xF3;n. Se desea almacenarlos por separado en el estado, porque de esta manera se pueden almacenar en cach&#xE9; y s&#xF3;lo se puede recuperar si es necesario.</p>
+<p>La apariencia de estado para nuestra aplicaci&#xF3;n &quot;Titulares de Reddit&quot; podr&#xED;a verse as&#xED;:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  selectedSubreddit<span class="token punctuation">:</span> <span class="token string">&apos;frontend&apos;</span><span class="token punctuation">,</span>
+  postsBySubreddit<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    frontend<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      isFetching<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    reactjs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      isFetching<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      lastUpdated<span class="token punctuation">:</span> <span class="token number">1439478405547</span><span class="token punctuation">,</span>
+      items<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+          title<span class="token punctuation">:</span> <span class="token string">&apos;Confusion about Flux and Relay&apos;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+          title<span class="token punctuation">:</span> <span class="token string">&apos;Creating a Simple Application Using React JS and Flux Architecture&apos;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Algunos detalles importantes aqu&#xED;:</p>
+<ul>
+<li><p>Almacenamos la informaci&#xF3;n de cada subreddit por separado para poder almacenar en cach&#xE9; cada subreddit. Cuando el usuario cambie entre ellos la segunda vez, la actualizaci&#xF3;n ser&#xE1; instant&#xE1;nea, y no necesitaremos refetch a menos que lo deseemos. No te preocupes por el hecho de que todos estos elementos residan en la memoria: a menos que est&#xE9;s tratando con decenas de miles de elementos, y su usuario rara vez cierre la pesta&#xF1;a, no necesitar&#xE1;s ning&#xFA;n tipo de limpieza.</p>
+</li>
+<li><p>Para cada lista de elementos, debes almacenar <code>isFetching</code> para mostrar un spinner,<code>didInvalidate</code> para que puedas cambiarlo m&#xE1;s tarde cuando los datos est&#xE9;n expirados, <code>lastUpdated</code> para que sepas cu&#xE1;ndo fue buscado la &#xFA;ltima vez, y los <code>items</code> como tal. En una aplicaci&#xF3;n real, tambi&#xE9;n desear&#xE1;s almacenar el estado de paginaci&#xF3;n como <code>fetchedPageCount</code> y <code>nextPageUrl</code>.</p>
+</li>
+</ul>
+<blockquote>
+<h5 id="nota-sobre-entidades-anidadas">Nota sobre entidades anidadas</h5>
+<p>En este ejemplo, almacenamos los elementos recibidos junto con la informaci&#xF3;n de paginaci&#xF3;n. Sin embargo, este enfoque no funcionar&#xE1; bien si tienes entidades anidadas que se hacen referenica entre s&#xED; o si deja que el usuario edite elementos. Imagine que el usuario desea editar una publicaci&#xF3;n recuperada, pero esta publicaci&#xF3;n se duplica en varios lugares del &#xE1;rbol de estado. Esto ser&#xED;a muy dif&#xED;cil de implementar.</p>
+<p>Si tiene entidades anidadas o si deja que los usuarios editen entidades recibidas, debe mantenerlas separadas en el estado como si se tratara de una base de datos. En la informaci&#xF3;n de paginaci&#xF3;n, s&#xF3;lo se har&#xE1; referencia a ellos por sus ID. Esto le permite mantenerlos siempre actualizados. El <a href="../introduccion/ejemplos.html#real-world">ejemplo del mundo real</a> muestra este enfoque, junto con <a href="https://github.com/paularmstrong/normalizr" target="_blank">normalizr</a> para normalizar las respuestas anidadas de la API. Con este enfoque, su estado podr&#xED;a verse as&#xED;:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  selectedSubreddit<span class="token punctuation">:</span> <span class="token string">&apos;frontend&apos;</span><span class="token punctuation">,</span>
+  entities<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    users<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token number">2</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">&apos;Andrew&apos;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    posts<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token number">42</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+        title<span class="token punctuation">:</span> <span class="token string">&apos;Confusion about Flux and Relay&apos;</span><span class="token punctuation">,</span>
+        author<span class="token punctuation">:</span> <span class="token number">2</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token number">100</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        title<span class="token punctuation">:</span> <span class="token string">&apos;Creating a Simple Application Using React JS and Flux Architecture&apos;</span><span class="token punctuation">,</span>
+        author<span class="token punctuation">:</span> <span class="token number">2</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  postsBySubreddit<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    frontend<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      isFetching<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    reactjs<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      isFetching<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      lastUpdated<span class="token punctuation">:</span> <span class="token number">1439478405547</span><span class="token punctuation">,</span>
+      items<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token number">100</span> <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>En esta gu&#xED;a, no normalizaremos las entidades, pero es algo que usted debe considerar para una aplicaci&#xF3;n m&#xE1;s din&#xE1;mica.</p>
+</blockquote>
+<h2 id="manejando-acciones">Manejando acciones</h2>
+<p>Antes de entrar en los detalles de las acciones de despacho junto con las solicitudes de red, escribiremos los reductores para las acciones que definimos anteriormente.</p>
+<blockquote>
+<h5 id="nota-sobre-la-composici&#xF3;n-del-reductor">Nota sobre la composici&#xF3;n del reductor</h5>
+<p>Aqu&#xED;, vamos a suponer que usted entiende la composici&#xF3;n del reductor usando <a href="../api/combine-reducers.html"><code>combineReducers ()</code></a>, tal como se describe en la secci&#xF3;n <a href="../basico/reducers.html#separando-reducers">Separando Reductores</a> de la <a href="../basico/">gu&#xED;a b&#xE1;sica</a>. Si no lo conoce, por favor <a href="../basico/Reducers.md#separando-reducers">l&#xE9;alo primero</a>.</p>
+</blockquote>
+<h4 id="reducersjs"><code>reducers.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  SELECT_SUBREDDIT<span class="token punctuation">,</span> INVALIDATE_SUBREDDIT<span class="token punctuation">,</span>
+  REQUEST_POSTS<span class="token punctuation">,</span> RECEIVE_POSTS
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../actions&apos;</span>
+
+<span class="token keyword">function</span> <span class="token function">selectedSubreddit</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token string">&apos;reactjs&apos;</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> SELECT_SUBREDDIT<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> action<span class="token punctuation">.</span>subreddit
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">posts</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+  isFetching<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> INVALIDATE_SUBREDDIT<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        didInvalidate<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> REQUEST_POSTS<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        isFetching<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> RECEIVE_POSTS<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        isFetching<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        didInvalidate<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        items<span class="token punctuation">:</span> action<span class="token punctuation">.</span>posts<span class="token punctuation">,</span>
+        lastUpdated<span class="token punctuation">:</span> action<span class="token punctuation">.</span>receivedAt
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">postsBySubreddit</span><span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> INVALIDATE_SUBREDDIT<span class="token punctuation">:</span>
+    <span class="token keyword">case</span> RECEIVE_POSTS<span class="token punctuation">:</span>
+    <span class="token keyword">case</span> REQUEST_POSTS<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token function">posts</span><span class="token punctuation">(</span>state<span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> rootReducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  postsBySubreddit<span class="token punctuation">,</span>
+  selectedSubreddit
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> rootReducer
+</code></pre>
+<p>En este c&#xF3;digo, hay dos partes interesantes:</p>
+<ul>
+<li><p>Utilizamos la sintaxis de la propiedad computada ES6 para poder actualizar <code>state [action.subreddit]</code> con <code>Object.assign()</code> de una forma concisa de la siguiente manera:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token function">posts</span><span class="token punctuation">(</span>state<span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>lo cual es equivalente a:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> nextState <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+nextState<span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">posts</span><span class="token punctuation">(</span>state<span class="token punctuation">[</span>action<span class="token punctuation">.</span>subreddit<span class="token punctuation">]</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+<span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> nextState<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><p>Extra&#xED;mos <code>posts(state, action)</code> que gestiona el estado de una lista de artic&#xED;ulos espec&#xED;ficos. Esto es s&#xF3;lo <a href="../basico/reducers.html#separando-reducers">composici&#xF3;n del reductor</a>! Es nuestra elecci&#xF3;n c&#xF3;mo dividir el reductor en reductores m&#xE1;s peque&#xF1;os, y en este caso, estamos delegando elementos de actualizaci&#xF3;n dentro de un objeto a un reductor <code>posts</code>. El <a href="../introduccion/ejemplos.html#real-world">ejemplo del mundo real</a> va a&#xFA;n m&#xE1;s all&#xE1;, mostrando c&#xF3;mo crear una factor&#xED;a de reductores para reductores de paginaci&#xF3;n parametrizados.</p>
+</li>
+</ul>
+<p>Recuerde que los reductores son s&#xF3;lo funciones, por lo que puede utilizar la composici&#xF3;n funcional y funciones de orden superior de acuerdo a su conveniencia.</p>
+<h2 id="creadores-de-acciones-as&#xED;ncronas">Creadores de acciones as&#xED;ncronas</h2>
+<p>Finalmente, &#xBF;c&#xF3;mo usamos los creadores de acciones s&#xED;ncronas que <a href="#-Creadores-de-acciones-s&#xED;ncronas">definimos anteriormente</a> junto con las solicitudes de red? La forma est&#xE1;ndar de hacerlo con Redux es usando el <a href="https://github.com/gaearon/redux-thunk" target="_blank">middleware Redux Thunk</a>. Viene en un paquete separado llamado <code>redux-thunk</code>. Explicaremos c&#xF3;mo funcionan los middlewares en general <a href="middleware.html">m&#xE1;s adelante</a>; Por ahora, s&#xF3;lo hay una cosa importante que debes saber: al usar este middleware, un creador de acciones puede devolver una funci&#xF3;n en lugar de un objeto de acci&#xF3;n. De esta manera, el creador de acci&#xF3;n se convierte en un <a href="https://en.wikipedia.org/wiki/Thunk" target="_blank">thunk</a>.</p>
+<p>Cuando un creador de acciones devuelve una funci&#xF3;n, esa funci&#xF3;n ser&#xE1; ejecutada por el middleware Redux Thunk. Esta funci&#xF3;n no necesita ser pura; Por lo tanto se permite tener efectos secundarios, incluyendo la ejecuci&#xF3;n de llamadas API as&#xED;ncronas. La funci&#xF3;n tambi&#xE9;n puede enviar acciones, como las acciones s&#xED;ncronas que definimos anteriormente.</p>
+<p>Todav&#xED;a podemos que definir estos creadores de acci&#xF3;n de <em>thunk</em> especiales dentro de nuestro archivo <code>actions.js</code>:</p>
+<h4 id="actionsjs"><code>actions.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> fetch <span class="token keyword">from</span> <span class="token string">&apos;isomorphic-fetch&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> REQUEST_POSTS <span class="token operator">=</span> <span class="token string">&apos;REQUEST_POSTS&apos;</span>
+<span class="token keyword">function</span> <span class="token function">requestPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> REQUEST_POSTS<span class="token punctuation">,</span>
+    subreddit
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> RECEIVE_POSTS <span class="token operator">=</span> <span class="token string">&apos;RECEIVE_POSTS&apos;</span>
+<span class="token keyword">function</span> <span class="token function">receivePosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">,</span> json<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> RECEIVE_POSTS<span class="token punctuation">,</span>
+    subreddit<span class="token punctuation">,</span>
+    posts<span class="token punctuation">:</span> json<span class="token punctuation">.</span>data<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>child <span class="token operator">=</span><span class="token operator">&gt;</span> child<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    receivedAt<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// He aqui nuestro primer creador thunk action!</span>
+<span class="token comment" spellcheck="true">// Aunque internamente son diferentes, lo usar&#xE1;s como cualquier otro creador de acci&#xF3;n:</span>
+<span class="token comment" spellcheck="true">// store.dispatch(fetchPosts(&apos;reactjs&apos;))</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">fetchPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment" spellcheck="true">// Thunk middleware sabe como manejar funciones.</span>
+  <span class="token comment" spellcheck="true">// Pasa el m&#xE9;todo de despacho como un argumento a la funci&#xF3;n,</span>
+  <span class="token comment" spellcheck="true">// haci&#xE9;ndolo as&#xED; capaz de despachar las acciones por s&#xED; mismo.</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">// Primer env&#xED;o: se actualiza el estado de la aplicaci&#xF3;n para informar</span>
+    <span class="token comment" spellcheck="true">// que la llamada al API est&#xE1; iniciando.</span>
+
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">requestPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// La funci&#xF3;n llamada por el middleware thunk puede devolver un valor,</span>
+    <span class="token comment" spellcheck="true">// que se transmite como el valor de retorno del m&#xE9;todo de env&#xED;o.</span>
+
+    <span class="token comment" spellcheck="true">// En este caso, devolvemos una promesa para esperar por la respuesta.</span>
+    <span class="token comment" spellcheck="true">// Esto no es requerido por middleware thunk, pero es conveniente para nosotros.</span>
+
+    <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://www.reddit.com/r/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>subreddit<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.json`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>json <span class="token operator">=</span><span class="token operator">&gt;</span>
+
+        <span class="token comment" spellcheck="true">// &#xA1;Podemos despachas muchas veces!</span>
+        <span class="token comment" spellcheck="true">// Aqu&#xED;, actualizamos el estado de la aplicaci&#xF3;n con los resultados de la llamada a la API.</span>
+
+        <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">receivePosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true">// En una aplicaci&#xF3;n del mundo real, tambi&#xE9;n</span>
+        <span class="token comment" spellcheck="true">// capturamos cualquier error en la llamada de red.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<h5 id="nota-sobre-fetch">Nota sobre <code>fetch</code></h5>
+<p>Utilizamos la API de <code>fetch</code>(<a href="https://developer.mozilla.org/en/docs/Web/API/Fetch_API" target="_blank">https://developer.mozilla.org/en/docs/Web/API/Fetch_API</a>) en los ejemplos. Es una nueva API para realizar peticiones de red que reemplaza a <code>XMLHttpRequest</code> para las necesidades m&#xE1;s comunes. Debido a que la mayor&#xED;a de los navegadores a&#xFA;n no lo admiten de forma nativa, le sugerimos que utilice la librear&#xED;a <a href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank"><code>isomorphic-fetch</code></a>:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// Hacer esto en todos los archivos en los que utilice `fetch`</span>
+<span class="token keyword">import</span> fetch <span class="token keyword">from</span> <span class="token string">&apos;isomorphic-fetch&apos;</span>
+</code></pre>
+<p>Internamente, se utiliza <a href="https://github.com/github/fetch" target="_blank"><code>whatwg-fetch</code> polyfill</a> en el cliente y <a href="https://github.com/bitinn/node-fetch" target="_blank"><code>node-fetch</code></a> en el servidor, por lo que no necesitar&#xE1; cambiar las llamadas de la API si cambia su aplicaci&#xF3;n a tipo <a href="https://medium.com/@mjackson/universal-javascript-4761051b7ae9" target="_blank">universal</a>.</p>
+<p>Tenga en cuenta que cualquier polyfill <code>fetch</code> asume que un polyfill <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a> ya est&#xE1; presente. La forma m&#xE1;s sencilla de asegurarse de que tiene un <em>polyfill Promise</em> es habilitar el polyfill ES6 de Babel en su punto de entrada antes de que se ejecute cualquier otro c&#xF3;digo:</p>
+<pre class="language-"><code class="lang-js"><span class="token comment" spellcheck="true">// Haga esto una vez antes de cualquier otro c&#xF3;digo en su aplicaci&#xF3;n</span>
+<span class="token keyword">import</span> <span class="token string">&apos;babel-polyfill&apos;</span>
+</code></pre>
+</blockquote>
+<p>&#xBF;C&#xF3;mo incluimos el middleware Redux Thunk en el mecanismo de env&#xED;o? Utilizamos el <em>store enhancer</em> <a href="../api/applyMiddleware.md"><code>applyMiddleware()</code></a> de Redux, como se muestra a continuaci&#xF3;n:</p>
+<h4 id="indexjs"><code>index.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> thunkMiddleware <span class="token keyword">from</span> <span class="token string">&apos;redux-thunk&apos;</span>
+<span class="token keyword">import</span> createLogger <span class="token keyword">from</span> <span class="token string">&apos;redux-logger&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> selectSubreddit<span class="token punctuation">,</span> fetchPosts <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./actions&apos;</span>
+<span class="token keyword">import</span> rootReducer <span class="token keyword">from</span> <span class="token string">&apos;./reducers&apos;</span>
+
+<span class="token keyword">const</span> loggerMiddleware <span class="token operator">=</span> <span class="token function">createLogger</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>
+  rootReducer<span class="token punctuation">,</span>
+  <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>
+    thunkMiddleware<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// nos permite despachar funciones</span>
+    loggerMiddleware <span class="token comment" spellcheck="true">// buen middleware que registra las acciones</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">selectSubreddit</span><span class="token punctuation">(</span><span class="token string">&apos;reactjs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">fetchPosts</span><span class="token punctuation">(</span><span class="token string">&apos;reactjs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Lo bueno de los thunks es que pueden enviar resultados uno del otro:</p>
+<h4 id="actionsjs"><code>actions.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> fetch <span class="token keyword">from</span> <span class="token string">&apos;isomorphic-fetch&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> REQUEST_POSTS <span class="token operator">=</span> <span class="token string">&apos;REQUEST_POSTS&apos;</span>
+<span class="token keyword">function</span> <span class="token function">requestPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> REQUEST_POSTS<span class="token punctuation">,</span>
+    subreddit
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> RECEIVE_POSTS <span class="token operator">=</span> <span class="token string">&apos;RECEIVE_POSTS&apos;</span>
+<span class="token keyword">function</span> <span class="token function">receivePosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">,</span> json<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    type<span class="token punctuation">:</span> RECEIVE_POSTS<span class="token punctuation">,</span>
+    subreddit<span class="token punctuation">,</span>
+    posts<span class="token punctuation">:</span> json<span class="token punctuation">.</span>data<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>child <span class="token operator">=</span><span class="token operator">&gt;</span> child<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    receivedAt<span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">fetchPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> dispatch <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">requestPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://www.reddit.com/r/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>subreddit<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.json`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>json <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">receivePosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">,</span> json<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">shouldFetchPosts</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> posts <span class="token operator">=</span> state<span class="token punctuation">.</span>postsBySubreddit<span class="token punctuation">[</span>subreddit<span class="token punctuation">]</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>posts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>posts<span class="token punctuation">.</span>isFetching<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> posts<span class="token punctuation">.</span>didInvalidate
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">fetchPostsIfNeeded</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment" spellcheck="true">// Observe que la funci&#xF3;n tambi&#xE9;n recibe getState()</span>
+  <span class="token comment" spellcheck="true">// que le permite elegir qu&#xE9; enviar luego.</span>
+
+  <span class="token comment" spellcheck="true">// Esto es &#xFA;til para evitar una solicitud de red si</span>
+  <span class="token comment" spellcheck="true">// un valor en cach&#xE9; ya est&#xE1; disponible.</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">,</span> getState<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">shouldFetchPosts</span><span class="token punctuation">(</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> subreddit<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// Dispatch a thunk from thunk!</span>
+      <span class="token keyword">return</span> <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">fetchPosts</span><span class="token punctuation">(</span>subreddit<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// Deje que el c&#xF3;digo que invoca la llamada</span>
+      <span class="token comment" spellcheck="true">// sepa que no hay nada que esperar.</span>
+      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Esto nos permite escribir un flujo de control as&#xED;ncrono m&#xE1;s sofisticado, mientras que el c&#xF3;digo de consumo puede permanecer pr&#xE1;cticamente igual:</p>
+<h4 id="indexjs"><code>index.js</code></h4>
+<pre class="language-"><code class="lang-js">store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">fetchPostsIfNeeded</span><span class="token punctuation">(</span><span class="token string">&apos;reactjs&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<h5 id="nota-sobre-la-renderizaci&#xF3;n-en-el-servidor-ssr">Nota sobre la renderizaci&#xF3;n en el servidor (<em>SSR</em>)</h5>
+<p>Los creadores de acci&#xF3;n as&#xED;ncrona son especialmente convenientes para la renderizaci&#xF3;n en el servidor. Puede crear un <em>store</em>, enviar un creador de acci&#xF3;n as&#xED;ncrona &#xFA;nico que distribuya a otros creadores de acci&#xF3;n as&#xED;ncrona para obtener datos de toda una secci&#xF3;n de su aplicaci&#xF3;n y que s&#xF3;lo se procesen una vez que se haya completado la Promesa que devuelve. Entonces su <em>store</em> ya estar&#xE1; hidratado con el estado que necesita antes del rendering.</p>
+</blockquote>
+<p><a href="https://github.com/gaearon/redux-thunk" target="_blank">Thunk middleware</a> no es la &#xFA;nica manera de orquestar acciones as&#xED;ncronas en Redux:</p>
+<ul>
+<li>Puedes utilizar <a href="https://github.com/acdlite/redux-promise" target="_blank">redux-promise</a> o <a href="https://github.com/pburtchaell/redux-promise-middleware" target="_blank">redux-promise-middleware</a> para enviar Promesas en lugar de funciones.</li>
+<li>Puedes utilizar <a href="https://github.com/redux-observable/redux-observable" target="_blank">redux-observable</a> para enviar <em>Observables</em>.</li>
+<li>Puedes utilizar el middleware <a href="https://github.com/yelouafi/redux-saga/" target="_blank">redux-saga</a> para construir acciones as&#xED;ncronas m&#xE1;s complejas.</li>
+<li>Puedes utilizar el middleware <a href="https://github.com/lelandrichardson/redux-pack" target="_blank">redux-pack</a> para enviar acciones as&#xED;ncronas basadas en Promesas.</li>
+<li>Incluso puede escribir un middleware personalizado para describir las llamadas a su API, como se hace en el <a href="../introduccion/ejemplos.html#real-world">ejemplo del mundo real</a>.</li>
+</ul>
+<p>Depende de ti probar las diferentes opciones, elegir una convenci&#xF3;n que te guste y seguirla, con o sin el middleware.</p>
+<h2 id="conexi&#xF3;n-a-la-interfaz-de-usuario">Conexi&#xF3;n a la interfaz de usuario</h2>
+<p>La distribuci&#xF3;n de acciones as&#xED;ncronas no es diferente de enviar acciones s&#xED;ncronas, por lo que no discutiremos esto en detalle. Vea <a href="../basico/uso-con-react.html">Uso con React</a> para una introducci&#xF3;n al uso de Redux desde los componentes de React. Consulte <a href="ejemplo-api-reddit.html">Ejemplo: Reddit API</a> para el c&#xF3;digo fuente completo discutido en este ejemplo.</p>
+<h2 id="pr&#xF3;ximos-pasos">Pr&#xF3;ximos pasos</h2>
+<p>Lea <a href="flujo-asincrono.html">Flujo As&#xED;ncrono</a> para recapitular c&#xF3;mo las acciones as&#xED;ncronas encajan en el flujo Redux.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Avanzado">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flujo-asincrono.html" class="navigation navigation-next " aria-label="Next page: Flujo asíncrono">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Acciones asíncronas","level":"1.4.1","depth":2,"next":{"title":"Flujo asíncrono","level":"1.4.2","depth":2,"path":"docs/avanzado/flujo-asincrono.md","ref":"docs/avanzado/flujo-asincrono.md","articles":[]},"previous":{"title":"Avanzado","level":"1.4","depth":1,"path":"docs/avanzado/README.md","ref":"docs/avanzado/README.md","articles":[{"title":"Acciones asíncronas","level":"1.4.1","depth":2,"path":"docs/avanzado/acciones-asincronas.md","ref":"docs/avanzado/acciones-asincronas.md","articles":[]},{"title":"Flujo asíncrono","level":"1.4.2","depth":2,"path":"docs/avanzado/flujo-asincrono.md","ref":"docs/avanzado/flujo-asincrono.md","articles":[]},{"title":"Middleware","level":"1.4.3","depth":2,"path":"docs/avanzado/middleware.md","ref":"docs/avanzado/middleware.md","articles":[]},{"title":"Uso con React Router","level":"1.4.4","depth":2,"path":"docs/avanzado/uso-con-react-router.md","ref":"docs/avanzado/uso-con-react-router.md","articles":[]},{"title":"Ejemplo: API Reddit","level":"1.4.5","depth":2,"path":"docs/avanzado/ejemplo-api-reddit.md","ref":"docs/avanzado/ejemplo-api-reddit.md","articles":[]},{"title":"Siguientes pasos","level":"1.4.6","depth":2,"path":"docs/avanzado/siguientes-pasos.md","ref":"docs/avanzado/siguientes-pasos.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/sergiodxa/redux-in-spanish/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Contribuye","base":"https://github.com/sergiodxa/redux-in-spanish/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux en Español","gitbook":"3.2.2"},"file":{"path":"docs/avanzado/acciones-asincronas.md","mtime":"2017-04-11T18:47:51.672Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-17T17:58:30.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1294 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Uso con React Router · Redux en Español</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ejemplo-api-reddit.html" />
+    
+    
+    <link rel="prev" href="middleware.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduccion/">
+            
+                <a href="../introduccion/">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduccion/motivacion.html">
+            
+                <a href="../introduccion/motivacion.html">
+            
+                    
+                    Motivación
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduccion/conceptos-basicos.html">
+            
+                <a href="../introduccion/conceptos-basicos.html">
+            
+                    
+                    Conceptos Básicos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduccion/tres-principios.html">
+            
+                <a href="../introduccion/tres-principios.html">
+            
+                    
+                    Tres Principios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduccion/herencia.html">
+            
+                <a href="../introduccion/herencia.html">
+            
+                    
+                    Herencia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduccion/ecosistema.html">
+            
+                <a href="../introduccion/ecosistema.html">
+            
+                    
+                    Ecosistema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduccion/ejemplos.html">
+            
+                <a href="../introduccion/ejemplos.html">
+            
+                    
+                    Ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basico/">
+            
+                <a href="../basico/">
+            
+                    
+                    Básico
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basico/acciones.html">
+            
+                <a href="../basico/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basico/reducers.html">
+            
+                <a href="../basico/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basico/store.html">
+            
+                <a href="../basico/store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basico/flujo-de-datos.html">
+            
+                <a href="../basico/flujo-de-datos.html">
+            
+                    
+                    Flujo de datos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basico/uso-con-react.html">
+            
+                <a href="../basico/uso-con-react.html">
+            
+                    
+                    Uso con React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basico/ejemplo-todos.html">
+            
+                <a href="../basico/ejemplo-todos.html">
+            
+                    
+                    Ejemplo: Lista de TODOs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Avanzado
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="acciones-asincronas.html">
+            
+                <a href="acciones-asincronas.html">
+            
+                    
+                    Acciones asíncronas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="flujo-asincrono.html">
+            
+                <a href="flujo-asincrono.html">
+            
+                    
+                    Flujo asíncrono
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="middleware.html">
+            
+                <a href="middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="uso-con-react-router.html">
+            
+                <a href="uso-con-react-router.html">
+            
+                    
+                    Uso con React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="ejemplo-api-reddit.html">
+            
+                <a href="ejemplo-api-reddit.html">
+            
+                    
+                    Ejemplo: API Reddit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="siguientes-pasos.html">
+            
+                <a href="siguientes-pasos.html">
+            
+                    
+                    Siguientes pasos
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../recetas/">
+            
+                <a href="../recetas/">
+            
+                    
+                    Recetas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../recetas/migrando-a-redux.html">
+            
+                <a href="../recetas/migrando-a-redux.html">
+            
+                    
+                    Migrando a Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../recetas/usando-el-operador-spread-en-objetos.md">
+            
+                <span>
+            
+                    
+                    Usando el operador Spread en objetos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../recetas/reduciendo-boilerplate.md">
+            
+                <span>
+            
+                    
+                    Reduciendo el Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../recetas/render-en-el-servidor.md">
+            
+                <span>
+            
+                    
+                    Render en el Servidor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../recetas/escribiendo-pruebas.md">
+            
+                <span>
+            
+                    
+                    Escribiendo pruebas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../recetas/calculando-datos-obtenidos.md">
+            
+                <span>
+            
+                    
+                    Calculando Datos Obtenidos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../recetas/implementando-deshacer.md">
+            
+                <span>
+            
+                    
+                    Implementando Deshacer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../recetas/aislando-subapps.md">
+            
+                <span>
+            
+                    
+                    Aislando subaplicaciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../recetas/estructurando-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructurando reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../recipes/reducers/conceptos-prerequeridos.md">
+            
+                <span>
+            
+                    
+                    Conceptos prerequeridos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../recetas/reducers/estructura-basica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Estructuras básica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../recetas/reducers/separando-logica-de-reducers.md">
+            
+                <span>
+            
+                    
+                    Separando lógica de reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../recetas/reducers/ejemplo-refactorizando-reducers.md">
+            
+                <span>
+            
+                    
+                    Ejemplo: Refactorizando reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../recetas/reducers/usando-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Usando combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../recetas/reducers/mas-alla-de-combineReducers.md">
+            
+                <span>
+            
+                    
+                    Más allá de combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../recetas/reducers/normalizando-la-forma-del-estado.md">
+            
+                <span>
+            
+                    
+                    Normalizando la forma del estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../recetas/reducers/actualizando-datos-normalizados.md">
+            
+                <span>
+            
+                    
+                    Actualizando datos normalizados
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../recetas/reducers/reusando-logica-en-reducers.md">
+            
+                <span>
+            
+                    
+                    Reusando lógica en reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../recetas/reducers/patrones-de-eactualizacion-inmutables.md">
+            
+                <span>
+            
+                    
+                    Patrones de actualización inmutables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../recetas/reducers/inicializando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Inicializando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.md">
+            
+                <span>
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/general.html">
+            
+                <a href="../faq/general.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/reducers.html">
+            
+                <a href="../faq/reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/organizando-el-estado.md">
+            
+                <span>
+            
+                    
+                    Organizando el estado
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/configurando-el-store.md">
+            
+                <span>
+            
+                    
+                    Configurando el Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/acciones.html">
+            
+                <a href="../faq/acciones.html">
+            
+                    
+                    Acciones
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/estructura-de-codigo.md">
+            
+                <span>
+            
+                    
+                    Estructura de código
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/rendimiento.html">
+            
+                <a href="../faq/rendimiento.html">
+            
+                    
+                    Rendimiento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/react-redux.md">
+            
+                <span>
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/miscelaneo.md">
+            
+                <span>
+            
+                    
+                    Misceláneo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../solucion-de-problemas.html">
+            
+                <a href="../solucion-de-problemas.html">
+            
+                    
+                    Solución de problemas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../glosario.html">
+            
+                <a href="../glosario.html">
+            
+                    
+                    Glosario
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    Referencia API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../api/create-store.html">
+            
+                <a href="../api/create-store.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../api/Store.html">
+            
+                <a href="../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../api/combine-reducers.html">
+            
+                <a href="../api/combine-reducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../api/apply-middleware.html">
+            
+                <a href="../api/apply-middleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../api/bind-action-creators.html">
+            
+                <a href="../api/bind-action-creators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../api/compose.html">
+            
+                <a href="../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Registro de cambios
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.html">
+            
+                <a href="../PATRONS.html">
+            
+                    
+                    Patrocinadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../feedback.html">
+            
+                <a href="../feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Uso con React Router</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="uso-con-react-router">Uso con React Router</h1>
+<p>As&#xED; que deseas hacer enrutamiento en tu aplicaci&#xF3;n Redux. Puedes usar <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a>. Redux ser&#xE1; la fuente de verdad para tus datos y React Router ser&#xE1; la fuente de verdad para tu URL. En la mayor&#xED;a de los casos, <strong>est&#xE1; bien</strong> tenerlos separados a menos que necesites <em>viajar en el tiempo</em> y dar marcha atr&#xE1;s a acciones que causen cambios en la URL.</p>
+<h2 id="instalaci&#xF3;n-de-react-router">Instalaci&#xF3;n de React Router</h2>
+<p><code>React-router</code> est&#xE1; disponible en npm. Esta gu&#xED;a asume que se est&#xE1; utilizando <code>react-router@^2.7.0</code>.</p>
+<p><code>npm install --save react-router</code></p>
+<h2 id="configuraci&#xF3;n-de-la-url-de-recuperaci&#xF3;n-fallback">Configuraci&#xF3;n de la URL de recuperaci&#xF3;n (<em>fallback</em>)</h2>
+<p>Antes de integrar React Router, necesitamos configurar nuestro servidor de desarrollo. De hecho, nuestro servidor de desarrollo puede no ser consciente de las rutas declaradas en la configuraci&#xF3;n de React Router. Por ejemplo, si accede <code>/todos</code> y se refresca el navegador, su servidor de desarrollo debe ser configurado para servir <code>index.html</code> porque es una aplicaci&#xF3;n de una sola p&#xE1;gina (SPA). A continuaci&#xF3;n, le indicamos c&#xF3;mo habilitarlo con los servidores de desarrollo m&#xE1;s populares.</p>
+<blockquote>
+<h3 id="nota-sobre-create-react-app">Nota sobre <em>Create React App</em></h3>
+<p>Si est&#xE1;s utilizando <em>Create React App</em>, no necesitar&#xE1;s configurar una URL de recuperaci&#xF3;n ya que se realizar&#xE1; autom&#xE1;ticamente.</p>
+</blockquote>
+<h3 id="configurando-express">Configurando Express</h3>
+<p>Si est&#xE1;s sirviendo el archivo <code>index.html</code> desde Express:</p>
+<pre class="language-"><code class="lang-js">  app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;/*&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;index.html&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="configurando-webpackdevserver">Configurando WebpackDevServer</h3>
+<p>Si est&#xE1;s sirviendo el archivo <code>index.html</code> desde WebpackDevServer:
+A&#xF1;ade a tu archivo de configuraci&#xF3;n <code>webpack.config.dev.js</code> lo siguiente:</p>
+<pre class="language-"><code class="lang-js">  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    historyApiFallback<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="conectar-react-router-con-redux">Conectar React Router con Redux</h2>
+<p>A lo largo de este cap&#xED;tulo, utilizaremos el ejemplo de listas <a href="https://github.com/reactjs/redux/tree/master/examples/todos" target="_blank"><em>To-dos</em></a>. Le recomendamos que lo clone mientras lee este cap&#xED;tulo.</p>
+<p>Primero tendremos que importar <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span> <span class="token punctuation">/&gt;</span></span></code> y <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token punctuation">/&gt;</span></span></code> de React Router. A continuaci&#xF3;n, le indicamos c&#xF3;mo hacerlo:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> browserHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>En una aplicaci&#xF3;n React, usualmente agrupar&#xE1;s <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token punctuation">/&gt;</span></span></code> en <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span> <span class="token punctuation">/&gt;</span></span></code> para que cuando cambie la URL, <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span> <span class="token punctuation">/&gt;</span></span></code> coincida con recurso de sus rutas y procese los componentes configurados. <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token punctuation">/&gt;</span></span></code> se utiliza para asignar mapas de manera declarativa a la jerarqu&#xED;a de componentes de tu aplicaci&#xF3;n. Usted declarar&#xE1; en <code>path</code> la ruta utilizada en la URL y en <code>component</code> el &#xFA;nico componente que se renderizar&#xE1; cuando la ruta coincida con la URL.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> Root <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Router<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>  
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Sin embargo, en nuestra aplicaci&#xF3;n Redux todav&#xED;a necesitaremos <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span> <span class="token punctuation">/&gt;</span></span></code>. <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span> <span class="token punctuation">/&gt;</span></span></code> es el componente de orden superior proporcionado por React Redux que le permite asociar Redux a React (ver <a href="../basico/uso-con-react.html">Uso con React</a>).</p>
+<p>Importaremos el componente <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span> <span class="token punctuation">/&gt;</span></span></code> de React Redux.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Agruparemos <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span> <span class="token punctuation">/&gt;</span></span></code> en <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Provider</span> <span class="token punctuation">/&gt;</span></span></code> para que los manejadores de rutas puedan <a href="../basico/uso-con-react.html#transferir-al-store">accesar el <code>store</code></a>.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> Root <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> store <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Router<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Ahora el componente <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span> <span class="token punctuation">/&gt;</span></span></code> se renderizar&#xE1; si la URL coincide con &apos;/&apos;. Adem&#xE1;s, agregaremos el par&#xE1;metro opcional <code>(: filter)</code> a <code>/</code>, porque lo vamos a necesitar m&#xE1;s adelante cuando tratemos de leer el par&#xE1;metro <code>(: filter)</code> de la URL.</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/(:filter)&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>Probablemente desees eliminar el hash (#) de la URL (por ejemplo: <code>http://localhost:3000/#/?_k=4sbb0i</code>). Para hacer esto, necesitar&#xE1;s tambi&#xE9;n importar <code>browserHistory</code> de React Router:</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> browserHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Y pasarlo al <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Router</span> <span class="token punctuation">/&gt;</span></span></code> para eliminar el hash de la URL:</p>
+<pre class="language-"><code class="lang-js"><span class="token operator">&lt;</span>Router history<span class="token operator">=</span><span class="token punctuation">{</span>browserHistory<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/(:filter)&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+</code></pre>
+<p>A menos que sea requisito apoyar navegadores antiguos como IE9, siempre puedes usar <code>browserHistory</code>.</p>
+<h4 id="componentsrootjs"><code>components/Root.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> PropTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> browserHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">&apos;./App&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Root <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> store <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Router history<span class="token operator">=</span><span class="token punctuation">{</span>browserHistory<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/(:filter)&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Root<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+  store<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>object<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Root<span class="token punctuation">;</span>
+</code></pre>
+<p>Tambi&#xE9;n necesitaremos refactorizar <code>index.js</code> para renderizar el componente <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Root</span> <span class="token punctuation">/&gt;</span></span></code> al DOM.</p>
+<h4 id="indexjs"><code>index.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> render <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span>
+<span class="token keyword">import</span> todoApp <span class="token keyword">from</span> <span class="token string">&apos;./reducers&apos;</span>
+<span class="token keyword">import</span> Root <span class="token keyword">from</span> <span class="token string">&apos;./components/Root&apos;</span>
+
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>todoApp<span class="token punctuation">)</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Root store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;root&apos;</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="navegaci&#xF3;n-con-react-router">Navegaci&#xF3;n con React Router</h2>
+<p>React Router viene con un componente <a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#link" target="_blank"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token punctuation">/&gt;</span></span></code></a> que te permite navegar entre tu aplicaci&#xF3;n. En nuestro ejemplo, podemos agrupar <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Link</span> <span class="token punctuation">/&gt;</span></span></code> con un nuevo componente contenedor <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FilterLink</span> <span class="token punctuation">/&gt;</span></span></code> para cambiar din&#xE1;micamente la URL. La propiedad <code>activeStyle = {}</code> nos permite aplicar un estilo al estado activo.</p>
+<h4 id="containersfilterlinkjs"><code>containers/FilterLink.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Link <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> FilterLink <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> filter<span class="token punctuation">,</span> children <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Link
+    to<span class="token operator">=</span><span class="token punctuation">{</span>filter <span class="token operator">===</span> <span class="token string">&apos;SHOW_ALL&apos;</span> <span class="token operator">?</span> <span class="token string">&apos;/&apos;</span> <span class="token punctuation">:</span> filter<span class="token punctuation">}</span>
+    activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+      textDecoration<span class="token punctuation">:</span> <span class="token string">&apos;none&apos;</span><span class="token punctuation">,</span>
+      color<span class="token punctuation">:</span> <span class="token string">&apos;black&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> FilterLink<span class="token punctuation">;</span>
+</code></pre>
+<h4 id="componentsfooterjs"><code>components/Footer.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
+<span class="token keyword">import</span> FilterLink <span class="token keyword">from</span> <span class="token string">&apos;../containers/FilterLink&apos;</span>
+
+<span class="token keyword">const</span> Footer <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+    Show<span class="token punctuation">:</span>
+    <span class="token punctuation">{</span><span class="token string">&quot; &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_ALL&quot;</span><span class="token operator">&gt;</span>
+      All
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_ACTIVE&quot;</span><span class="token operator">&gt;</span>
+      Active
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>FilterLink filter<span class="token operator">=</span><span class="token string">&quot;SHOW_COMPLETED&quot;</span><span class="token operator">&gt;</span>
+      Completed
+    <span class="token operator">&lt;</span><span class="token operator">/</span>FilterLink<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Footer
+</code></pre>
+<p>Ahora, si hace clic en <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FilterLink</span> <span class="token punctuation">/&gt;</span></span></code> ver&#xE1; que su URL cambiar&#xE1; entre <code>&apos;/SHOW_COMPLETED&apos;</code>, <code>&apos;/ SHOW_ACTIVE&apos;</code> y <code>&apos;/&apos;</code>. Incluso si retrocedes usando el navegador, se utilizar&#xE1; el historial de su navegador y efectivamente ira al URL anterior.</p>
+<h2 id="leyendo-desde-la-url">Leyendo desde la URL</h2>
+<p>Actualmente, la lista de tareas no filtra incluso despu&#xE9;s de que se haya cambiado la URL. Esto se debe a que estamos filtrando desde <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token punctuation">/&gt;</span></span></code>, <code>mapStateToProps()</code> sigue vinculado al <code>state</code> y no a la URL. <code>MapStateToProps</code> tiene un segundo argumento opcional, <code>ownProps</code>, que es un objeto con todos los <em>props</em> pasados a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token punctuation">/&gt;</span></span></code></p>
+<h4 id="containersvisibletodolistjs"><code>containers/VisibleTodoList.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> mapStateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> ownProps<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">getVisibleTodos</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> ownProps<span class="token punctuation">.</span>filter<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// anteriormente era </span>
+    <span class="token comment" spellcheck="true">//getVisibleTodos(state.todos, state.visibilityFilter)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>En este momento no estamos pasando nada a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span> <span class="token punctuation">/&gt;</span></span></code> as&#xED; que <code>ownProps</code> es un objeto vac&#xED;o. Para filtrar nuestros To-dos seg&#xFA;n la URL, queremos pasar los par&#xE1;metros de URL a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token punctuation">/&gt;</span></span></code>.</p>
+<p>Cuando previamente escribimos: <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Route</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/(:filter)<span class="token punctuation">&quot;</span></span> <span class="token attr-name">component</span><span class="token attr-value"><span class="token punctuation">=</span>{App}</span> <span class="token punctuation">/&gt;</span></span></code>, esto puso a nuestra disposici&#xF3;n dentro de <code>App</code> una propiedad, <code>params</code>.</p>
+<p>La propiedad <code>params</code> es un objeto con cada par&#xE1;metro especificado en la url. <em>Por ejemplo: <code>params</code> ser&#xE1; igual a <code>{filter: &apos;SHOW_COMPLETED&apos;}</code> si estamos navegando a <code>localhost:3000/SHOW_COMPLETED</code>. Ahora podemos leer la URL desde <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>App</span><span class="token punctuation">&gt;</span></span></code>.</em></p>
+<p>Note que estamos usando <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank"><em>ES6 destructuring</em></a> en las propiedades para mover <code>params</code> a <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>VisibleTodoList</span> <span class="token punctuation">/&gt;</span></span></code>.</p>
+<h4 id="componentsappjs"><code>components/App.js</code></h4>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>AddTodo <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>VisibleTodoList
+        filter<span class="token operator">=</span><span class="token punctuation">{</span>params<span class="token punctuation">.</span>filter <span class="token operator">||</span> <span class="token string">&apos;SHOW_ALL&apos;</span><span class="token punctuation">}</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Footer <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="pr&#xF3;ximos-pasos">Pr&#xF3;ximos pasos</h2>
+<p>Ahora que sabe c&#xF3;mo hacer el enrutamiento b&#xE1;sico, puedes obtener m&#xE1;s informaci&#xF3;n sobre el <a href="https://github.com/reactjs/react-router/tree/v3/docs/" target="_blank">API React Router</a></p>
+<blockquote>
+<h5 id="nota-sobre-otras-bibliotecas-de-enrutamiento">Nota sobre otras bibliotecas de enrutamiento</h5>
+<p><em>Redux Router</em> es una biblioteca experimental, que le permite mantener completamente el estado de su URL dentro de su store Redux. Tiene la misma API del API React Router pero tiene un apoyo de la comunidad m&#xE1;s reducido que react-router.</p>
+<p><em>React Router Redux</em> crea un v&#xED;nculo entre su aplicaci&#xF3;n redux y react-router y los mantiene sincronizados. Sin este v&#xED;nculo, no podr&#xE1; retroceder las acciones con usando <em>Time Travel</em>. A menos que lo necesite, React Router y Redux pueden funcionar completamente por separados.</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="middleware.html" class="navigation navigation-prev " aria-label="Previous page: Middleware">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ejemplo-api-reddit.html" class="navigation navigation-next " aria-label="Next page: Ejemplo: API Reddit">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Uso con React Router","level":"1.4.4","depth":2,"next":{"title":"Ejemplo: API Reddit","level":"1.4.5","depth":2,"path":"docs/avanzado/ejemplo-api-reddit.md","ref":"docs/avanzado/ejemplo-api-reddit.md","articles":[]},"previous":{"title":"Middleware","level":"1.4.3","depth":2,"path":"docs/avanzado/middleware.md","ref":"docs/avanzado/middleware.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/sergiodxa/redux-in-spanish/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Contribuye","base":"https://github.com/sergiodxa/redux-in-spanish/tree/master"},"theme-default":{"styles":{"website":"build/gitbook.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux en Español","gitbook":"3.2.2"},"file":{"path":"docs/avanzado/uso-con-react-router.md","mtime":"2017-04-17T17:58:16.178Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-17T17:58:30.566Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
