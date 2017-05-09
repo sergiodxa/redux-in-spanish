@@ -8,7 +8,7 @@ El ***Store*** es el objeto que los reúne. El *store* tiene las siguientes resp
 * Permite el acceso al estado via [`getState()`](../api/Store.md#getState);
 * Permite que el estado sea actualizado via [`dispatch(action)`](../api/Store.md#dispatch);
 * Registra los *listeners* via [`subscribe(listener)`](../api/Store.md#subscribe);
-* Maneja la anuliación del registro de los *listeners* via el retorno de la función de [`subscribe(listener)`](../api/Store.md#subscribe).
+* Maneja la anulación del registro de los *listeners* via el retorno de la función de [`subscribe(listener)`](../api/Store.md#subscribe).
 
 Es importante destacar que sólo tendrás un *store* en una aplicación Redux. Cuando desees dividir la lógica para el manejo de datos, usarás [composición de reductores](Reducers.md#splitting-reducers) en lugar de muchos *stores*.
 
@@ -31,7 +31,7 @@ let store = createStore(todoApp, window.STATE_FROM_SERVER)
 Ahora que hemos creado un *store*, vamos a verificar que nuestro programa funciona! Incluso sin ninguna interfaz de usuario, ya podemos verificar la lógica de actualización.
 
 ```js
-import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions'
+import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from './actions'
 
 // Mostramos el estado inicial
 console.log(store.getState())
@@ -46,8 +46,8 @@ let unsubscribe = store.subscribe(() =>
 store.dispatch(addTodo('Aprender sobre acciones'))
 store.dispatch(addTodo('Aprender sobre reductores'))
 store.dispatch(addTodo('Aprender sobre stores'))
-store.dispatch(toggleTodo(0))
-store.dispatch(toggleTodo(1))
+store.dispatch(completeTodo(0))
+store.dispatch(completeTodo(1))
 store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
 
 // Anulamos el monitoreo de las actualizaciones al estado
