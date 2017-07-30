@@ -62,7 +62,7 @@ import { createStore } from 'redux';
  * La forma del estado depende de tí: puede ser un primitivo, un array, un
  * objeto, o incluso una estructura de datos de Immutable.js. La única parte
  * importante es que no debes modificar el objeto del estado, en vez de eso
- * devolver una nuevo objeto si el estado cambió.
+ * devolver un nuevo objeto si el estado cambió.
  *
  * En este ejemplo, usamos `switch` y strings, pero puedes usar cualquier forma
  * que desees si tiene sentido para tu proyecto.
