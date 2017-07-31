@@ -62,7 +62,7 @@ import { createStore } from 'redux';
  * La forma del estado depende de tí: puede ser un primitivo, un array, un
  * objeto, o incluso una estructura de datos de Immutable.js. La única parte
  * importante es que no debes modificar el objeto del estado, en vez de eso
- * devolver una nuevo objeto si el estado cambió.
+ * devolver un nuevo objeto si el estado cambió.
  *
  * En este ejemplo, usamos `switch` y strings, pero puedes usar cualquier forma
  * que desees si tiene sentido para tu proyecto.
@@ -101,7 +101,7 @@ store.dispatch({ type: 'DECREMENT' });
 
 En vez de modificar el estado directamente, especificas las modificaciones que quieres que ocurran con objetos planos llamados *acciones*. Entonces escribes una función especial llamada *reducer* que decide como cada acción transforma el estado de la aplicación.
 
-Si vienes de Flux, hay una única diferencia importante que necesitas entender. Redux no tiene Dispatcher o soporta múltiples stores. En cambio, hay un único store con una única función reductora. Cuando tu aplicación crezca, en vez de agregar más stores, divides tu reducer principal en varios reducers pequeños que operan de forma independiente en distintas partes del árbol de estado. Esto es exactamente como si solo hubiese un componente principal en una aplicación de React, pero esta compuesta de muchos componentes pequeños.
+Si vienes de Flux, hay una única diferencia importante que necesitas entender. Redux no tiene Dispatcher o soporta múltiples stores. En cambio, hay un único store con una única función reductora. Cuando tu aplicación crezca, en vez de agregar más stores, divides tu reducer principal en varios reducers pequeños que operan de forma independiente en distintas partes del árbol de estado. Esto es exactamente como si solo hubiese un componente principal en una aplicación de React, pero está compuesta de muchos componentes pequeños.
 
 Esta arquitectura puede parecer una exageración para una aplicación de contador, pero lo hermoso de este patrón es los bien que escala en aplicaciones grandes y complejas. También permite herramientas de desarrollo muy poderosas, ya que es posible registrar cada modificación que las acciones causan. Podrías registrar la sesión de un usuario y reproducirlas simplemente ejecutando las mismas acciones.
 
