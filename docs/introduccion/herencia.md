@@ -9,7 +9,7 @@ Puede Redux ser considerado una implementación de [Flux](https://facebook.githu
 
 (No te preocupes, [los creadores de Flux](https://twitter.com/jingc/status/616608251463909376) [lo aprueba](https://twitter.com/fisherwebdev/status/616286955693682688), si es lo que necesitas saber.)
 
-Redux se inspiro en muchas de las cualidades importantes de Flux. Como Flux, Redux te hacer concentrar la lógica de actualización de modelos en una capa específica de tu aplicación ("stores" en Flux, "reducers" en Redux). En vez de dejar al código de la aplicaciǿn modificar los datos directamente, ambos te hacen describir cada mutación como objetos planos llamados "acciones".
+Redux se inspiro en muchas de las cualidades importantes de Flux. Como Flux, Redux te hace concentrar la lógica de actualización de modelos en una capa específica de tu aplicación ("stores" en Flux, "reducers" en Redux). En vez de dejar al código de la aplicación modificar los datos directamente, ambos te hacen describir cada mutación como objetos planos llamados "acciones".
 
 A diferencia de Flux, **en Redux no existe el concepto de Dispatcher**. Esto es porque se basa en funciones puras en vez de emisores de ventos, y las funciones puras son fáciles de componer y no necesitan entidades adicionales para controlarlas. Dependiendo de como veas Flux, puedes ver esto tanto como una desviación o un detalle de implementación. Flux siempre fue [descripto como `(state, action) => state`](https://speakerdeck.com/jmorrell/jsconf-uy-flux-those-who-forget-the-past-dot-dot-dot-1). En ese sentido, Redux es una verdadera arquitectura Flux, pero más simple gracias a las funciones puras.
 
@@ -63,4 +63,4 @@ De forma similar, puedes componer diferentes streams asíncronos para convertirl
 
 La pregunta es: de verdad necesitas REdux si ya usar Rx? Probablemente no. No es dificil [reimplementar Redux en Rx](https://github.com/jas-chen/rx-redux). Algunos dicen, que son solo 2 líneas usando el método `.scan()` de Rx. ¡Y probablemente lo sea!
 
-Si tienes dudas, revisa el código fuente de Redux (no hay mcuho ahí), así como su ecosistema (por ejemplo, [las herramientas de desarrolladores](https://github.com/gaearon/redux-devtools)). Si no te interesa tanto eso y quieres que los datos reactivos simplemente fluyan, probablemente quieras usar algo como [Cycle](http://cycle.js.org) en su lugar, o incluso combinarlos con Redux. ¡Déjanos saber como resulta eso!
+Si tienes dudas, revisa el código fuente de Redux (no hay mucho ahí), así como su ecosistema (por ejemplo, [las herramientas de desarrolladores](https://github.com/gaearon/redux-devtools)). Si no te interesa tanto eso y quieres que los datos reactivos simplemente fluyan, probablemente quieras usar algo como [Cycle](http://cycle.js.org) en su lugar, o incluso combinarlos con Redux. ¡Déjanos saber como resulta eso!
