@@ -2,7 +2,7 @@
 
 Redux de por si es muy simple.
 
-Imagine que el estado de su aplicación se describe como un simble objeto. Por ejemplo, el estado de una aplicación de tareas (TODO List) puede tener el siguiente aspecto:
+Imagine que el estado de su aplicación se describe como un simple objeto. Por ejemplo, el estado de una aplicación de tareas (TODO List) puede tener el siguiente aspecto:
 
 ```js
 {
