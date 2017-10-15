@@ -99,7 +99,7 @@ El ciclo de duración de la data en cualquier aplicación Redux sigue estos 4 pa
 
 ## Próximos Pasos
 
-Ahora que sabes cómo funciona Redux, vamos a [conectarlo a una aplicación React](uso-con-React.md)
+Ahora que sabes cómo funciona Redux, vamos a [conectarlo a una aplicación React](uso-con-react.md)
 
 > ##### Nota para usuarios avanzados
 > Si ya estás familiarizado con los conceptos básicos y has completado previamente este tutorial, no olvides consultar [flujo asíncrono](../avanzado/flujo-asincrono.md) en el [tutorial avanzado](../avanzado/README.md) para aprender cómo los *middlewares* transforman [acciones asíncronas](../avanzado/acciones-asincronas.md) antes de que lleguen al reductor.
