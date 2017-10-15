@@ -54,8 +54,7 @@ El ciclo de duración de la data en cualquier aplicación Redux sigue estos 4 pa
 
   Como se estructura el reductor raíz queda completamente a tu discreción. Redux provee una función [`combineReducers()`](../api/combine-Reducers.md) que ayuda, a "dividir" el reductor raíz en funciones separadas donde cada una maneja una porción del árbol de estado.
 
-  Así es como funciona [`combineReducers()`](../api/combineReducers.md). Digamos que usted tiene dos reductores, uno para una lista de asuntos y otro para la configuración del filtro asunto actualmente seleccionado:
-
+  Así es como funciona [`combineReducers()`](../api/combineReducers.md). Digamos que usted tiene dos reductores, uno para una lista de asuntos y otro para la configuración del filtro asunto actualmente seleccionado:r
     ```js
     function todos(state = [], action) {
       // Calcularlo de alguna manera...
@@ -99,7 +98,7 @@ El ciclo de duración de la data en cualquier aplicación Redux sigue estos 4 pa
 
 ## Próximos Pasos
 
-Ahora que sabes cómo funciona Redux, vamos a [conectarlo a una aplicación React](uso-con-React.md)
+Ahora que sabes cómo funciona Redux, vamos a [conectarlo a una aplicación React](uso-con-react.md)
 
 > ##### Nota para usuarios avanzados
 > Si ya estás familiarizado con los conceptos básicos y has completado previamente este tutorial, no olvides consultar [flujo asíncrono](../avanzado/flujo-asincrono.md) en el [tutorial avanzado](../avanzado/README.md) para aprender cómo los *middlewares* transforman [acciones asíncronas](../avanzado/acciones-asincronas.md) antes de que lleguen al reductor.
