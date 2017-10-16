@@ -245,15 +245,22 @@ function todoApp(state = initialState, action) {
 
 Fijate que `todos` acepta `state`—¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
 
-Vamos a explorar la composición de reducers un poco más. ¿Podemos extraer a otro reducer el control de `visibilityFilter`? Podemos:
+Vamos a explorar la composición de reducers un poco más. ¿Podemos extraer a otro reducer el control de `visibilityFilter`? Podemos.
 
+Debajo de todas nuestras importaciones, usemos [ES6 Object Destructuring](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment) para declarar `SHOW_ALL`:
+
+```js
+const { SHOW_ALL } = VisibilityFilters
+```
+
+Luego:
 ```js
 function visibilityFilter(state = SHOW_ALL, action) {
   switch (action.type) {
-  case SET_VISIBILITY_FILTER:
-    return action.filter
-  default:
-    return state
+    case SET_VISIBILITY_FILTER:
+      return action.filter
+    default:
+      return state
   }
 }
 ```
