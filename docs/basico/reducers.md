@@ -162,8 +162,7 @@ Debido a que queremos actualizar un objeto específico del array sin recurrir a 
 
 ## Separando Reducers
 
-Este es nuestro código hasta ahora. Es algo 
-Here is our code so far. It is rather verboso:
+Este es nuestro código hasta ahora. Es algo verboso:
 
 ```js
 function todoApp(state = initialState, action) {
