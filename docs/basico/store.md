@@ -8,7 +8,7 @@ El ***Store*** es el objeto que los reúne. El *store* tiene las siguientes resp
 * Permite el acceso al estado via [`getState()`](../api/Store.md#getState);
 * Permite que el estado sea actualizado via [`dispatch(action)`](../api/Store.md#dispatch);
 * Registra los *listeners* via [`subscribe(listener)`](../api/Store.md#subscribe);
-* Maneja la anuliación del registro de los *listeners* via el retorno de la función de [`subscribe(listener)`](../api/Store.md#subscribe).
+* Maneja la anulación del registro de los *listeners* vía el retorno de la función de [`subscribe(listener)`](../api/Store.md#subscribe).
 
 Es importante destacar que sólo tendrás un *store* en una aplicación Redux. Cuando desees dividir la lógica para el manejo de datos, usarás [composición de reductores](Reducers.md#splitting-reducers) en lugar de muchos *stores*.
 
