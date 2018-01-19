@@ -4,7 +4,7 @@ Primero, vamos a definir algunas acciones.
 
 Las **acciones** son un bloque de información que envia datos desde tu aplicación a tu store. Son la *única* fuente de información para el store. Las envias al store usando [`store.dispatch()`](../api/Store.md#dispatch).
 
-Aquí hay unas acciones de ejemplo que representan agergar nuevas tareas pendientes:
+Aquí hay unas acciones de ejemplo que representan agregar nuevas tareas pendientes:
 
 ```js
 const ADD_TODO = 'ADD_TODO'
@@ -27,7 +27,7 @@ import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
 
 >No necesitas definir tus tipos de acciones constantes en un archivo separado, o incluso definirlas. Para proyectos pequeños, probablemente sea más fácil usar strings directamente para los tipos de acciones. De todas formas, hay algunos beneficios explícitos en declarar constantes en grandes bloques de código. Lee [Reduciendo el Boilerplate](../recetas/reduciendo-el-boilerplate.md) para más consejos prácticos sobre como mantener tu código limpio.
 
-Además del `type`, el resto de la estructura de los objetos de acciones depende de tí. Si estas interesado, revisa[Flux Standard Action](https://github.com/acdlite/flux-standard-action) para recomendaciones de como una acción debe armarse.
+Además del `type`, el resto de la estructura de los objetos de acciones depende de tí. Si estas interesado, revisa [Flux Standard Action](https://github.com/acdlite/flux-standard-action) para ver recomendaciones de como una acción debe armarse.
 
 Vamos a agregar una acción más para describir un usuario marcando una tarea como completa. Nos referimos a una tarea en particular como su `index` ya que vamos a almacenarlos en un array. En una aplicación real, es más inteligente generar un ID único cada vez que creamos una nueva.
 
@@ -38,9 +38,9 @@ Vamos a agregar una acción más para describir un usuario marcando una tarea co
 }
 ```
 
-Es una buena idea pasar la menor cantidad de información posible. Por ejemplo, es mejor pasar el `index` que todo el objeto de tarea.
+Es una buena idea pasar la menor cantidad de información posible. Por ejemplo, es mejor pasar el `index` que todo el objeto de la tarea.
 
-Por último, vamos a agregar una acción más para cambiar las tareas actualmente visibles.
+Por último, vamos a agregar una acción más para cambiar las tareas visibles actualmente.
 
 ```js
 {
@@ -51,7 +51,7 @@ Por último, vamos a agregar una acción más para cambiar las tareas actualment
 
 ## Creadores de acciones
 
-Los **creadores de acciones** son exactamente eso—funciones que crean acciones. Es fácil combinar los términos "acción" con "creador de acción", así que haz lo mejor por usar los términos correctos.
+Los **creadores de acciones** son exactamente eso, funciones que crean acciones. Es fácil combinar los términos "acción" con "creador de acción", así que haz lo mejor por usar los términos correctos.
 
 En implementaciones de [Flux tradicional](http://facebook.github.io/flux), los creadores de acciones ejecutan el despacho cuando son invocadas, algo así:
 
@@ -76,7 +76,7 @@ function addTodo(text) {
 }
 ```
 
-Esto las hace más portables y fáciles de probar. Para efectivamente inicial un despacho, pasa el resultado a la función `dispatch()`:
+Esto las hace más portables y fáciles de probar. Para efectivamente iniciar un despacho se debe pasar el resultado a la función `dispatch()`:
 
 ```js
 dispatch(addTodo(text))
@@ -99,7 +99,7 @@ boundCompleteTodo(index)
 
 La función `dispatch()` puede ser accedida directamente desde el store como [`store.dispatch()`](../api/Store.md#dispatch), pero comunmente vas a querer usar utilidades como `connect()` de [react-redux](http://github.com/gaearon/react-redux). Puedes usar [`bindActionCreators()`](../api/bind-action-creators.md) para automaticamente conectar muchos creadores de acciones a `dispatch()`.
 
-Los creadores de acciones pueden además ser asíncronos y tener efectos secundarios. Puedes leer más sobre las [acciones asíncronas](../avanzado/acciones-asíncronas.md) en el [tutorial avanzado](../avanzado/README.md) para aprender como manejar respuestas AJAX y combinar creadores de acciones en un flujo de control asíncrono. No salta ahora mismo hasta las acciones asíncronas hasta que completes el tutorial básico, ya que cubre otros conceptos importantes que son prerequisitos para el tutorial avanzado y las acciones asíncronas.
+Los creadores de acciones pueden además ser asíncronos y tener efectos secundarios. Puedes leer más sobre las [acciones asíncronas](../avanzado/acciones-asíncronas.md) en el [tutorial avanzado](../avanzado/README.md) para aprender como manejar respuestas AJAX y combinar creadores de acciones en un flujo de control asíncrono. No saltes ahora mismo a las acciones asíncronas hasta que completes el tutorial básico, ya que deben adquirir otros conceptos importantes que son prerequisitos para el tutorial avanzado y las acciones asíncronas.
 
 ## Código fuente
 
