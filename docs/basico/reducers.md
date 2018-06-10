@@ -99,7 +99,7 @@ function todoApp(state = initialState, action) {
 
 Nota que:
 
-1. **No modificamos el `state`.** Creamos una copia con [`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign). `Object.assign(state, { visibilityFilter: action.filter })` también estaría mal: esto modificaría el primero argumento. **Debes** mandar un objeto vacío como primer parámetro. También puedes activar la [propuesta del operador spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator) para escribir `{ ...state, ...newState }`.
+1. **No modificamos el `state`.** Creamos una copia con [`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign). `Object.assign(state, { visibilityFilter: action.filter })` también estaría mal: esto modificaría el primer argumento. **Debes** mandar un objeto vacío como primer parámetro. También puedes activar la [propuesta del operador spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator) para escribir `{ ...state, ...newState }`.
 
 2. **Devolvemos el anterior `state` en el caso `default`**. Es importarte devolver el anterior `state` por cualquier acción desconocida.
 
