@@ -143,4 +143,4 @@ export function setVisibilityFilter(filter) {
 
 ## Siguientes pasos
 
-¡Ahora vamos a [definir algunos reducers](./reducers.md) para especificar como el estado se actualiza cuando despachas estas acciones!
+¡Ahora vamos a [definir algunos reducers](./reducers.md) para especificar cómo el estado se actualiza cuando despachas estas acciones!
