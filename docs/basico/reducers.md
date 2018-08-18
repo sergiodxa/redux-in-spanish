@@ -41,7 +41,7 @@ Ahora que decidimos cómo se verá nuestro objeto de estado, estamos listos para
 (previousState, action) => newState
 ```
 
-Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype.reduce(reducer, ?initialValue)`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce). Es muy importante que los reducer se mantengan puros. Cosas que **nunca** deberías hacer dentron de un reducer:
+Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype.reduce(reducer, ?initialValue)`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce). Es muy importante que los reducer se mantengan puros. Cosas que **nunca** deberías hacer dentro de un reducer:
 
 * Modificar sus argumentos;
 * Realizar tareas con efectos secundarios como llamas a un API o transiciones de rutas.
@@ -49,9 +49,9 @@ Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype
 
 En la [guía avanzada](../avanzado/README.md) vamos a ver como realizar efectos secundarios. Por ahora, solo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
 
-Con esto dicho, vamos a empezar a escribir nuestro reducer gradualmente enseñandole como entender las [acciones](../acciones.md) que definimos antes.
+Con esto dicho, vamos a empezar a escribir nuestro reducer gradualmente enseñándole como entender las [acciones](../acciones.md) que definimos antes.
 
-Vamos a empezar por especificar el estado inicial. Redux va a llamar a nuestros reducers con `undefined` como valor del estado la primera vez. Esta es nuestra oportunidad de devolver el estado inicial de nuestra applicación.
+Vamos a empezar por especificar el estado inicial. Redux va a llamar a nuestros reducers con `undefined` como valor del estado la primera vez. Esta es nuestra oportunidad de devolver el estado inicial de nuestra aplicación.
 
 ```js
 import { VisibilityFilters } from './actions'
@@ -72,7 +72,7 @@ function todoApp(state, action) {
 }
 ```
 
-Un estupendo truco es usar la [sintáxis de parámetros por defecto de ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Parametros_por_defecto) para hacer lo anterior de forma más compacta:
+Un estupendo truco es usar la [sintaxis de parámetros por defecto de ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Parametros_por_defecto) para hacer lo anterior de forma más compacta:
 
 ```js
 function todoApp(state = initialState, action) {
@@ -158,7 +158,7 @@ case COMPLETE_TODO:
   })
 ```
 
-Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Solo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primero.
+Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Sólo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primero.
 
 ## Separando Reducers
 
@@ -362,7 +362,7 @@ Todo lo que [`combineReducers()`](../api/combine-reducers.md) hace es generar un
 >const todoApp = combineReducers(reducers)
 ```
 
->Ya que `import *` es todavía una sintaxis nueva, no la usamos más en la documentación para evitar [confusiones](https://github.com/reactjs/redux/issues/428#issuecomment-129223274), pero probalemente te encuentro con algunos ejemplos en la comunidad.
+>Ya que `import *` es todavía una sintaxis nueva, no la usamos más que en la documentación, para evitar [confusiones](https://github.com/reactjs/redux/issues/428#issuecomment-129223274), pero probablemente te encuentres con algunos ejemplos en la comunidad.
 
 ## Código fuente
 
