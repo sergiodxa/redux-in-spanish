@@ -1,21 +1,21 @@
 # Solución de problemas
 
-Este un un lugar para compartir soluciones a problemas comunes.
+Este es un lugar para compartir soluciones a problemas comunes.
 Los ejemplos usan React, pero deberías encontrarlos útiles incluso si usas otra cosa.
 
 ### No ocurre nada el despachar una acción
 
-Algunas veces, tratas de despachar una acción, pero la vista no se actualiza. ¿Por qué ocurre esto? Hay varias razons.
+Algunas veces, tratas de despachar una acción, pero la vista no se actualiza. ¿Por qué ocurre esto? Hay varias razones.
 
 ### Nunca modifiques los argumentos del reducer
 
-Si estas tratando de modificar el `state` o `action` que te da Redux. ¡No lo hagas!
+Si estás tratando de modificar el `state` o `action` que te da Redux. ¡No lo hagas!
 
 Redux asume que nunca modificas el estado que te da en los reducers. **Siempre debes devolver un nuevo objeto con el estado**. Incluso si no usas librerías como [https://facebook.github.io/immutable-js/](Immutable), necesitas evitar completamente las modificaciones.
 
-La inmutabilidad es lo que permite a [react-redux](https://github.com/gaearon/react-redux) suscribirse eficientemente a actualizaciones muy específicas de tu estado. También permite un gran experiencia de desarrollo gracias a características como time travel con [redux-devtools](http://github.com/gaearon/redux-devtools).
+La inmutabilidad es lo que permite a [react-redux](https://github.com/gaearon/react-redux) suscribirse eficientemente a actualizaciones muy específicas de tu estado. También permite una gran experiencia de desarrollo gracias a características como time travel con [redux-devtools](http://github.com/gaearon/redux-devtools).
 
-Por ejemplo, un reducer como este está mal porque modifica el estado:
+Por ejemplo, un reducer como éste está mal porque modifica el estado:
 
 ```javascript
 function todos(state = [], action) {
@@ -37,7 +37,7 @@ function todos(state = [], action) {
 }
 ```
 
-Debe ser re programado de esta forma:
+Debe ser re-programado de esta forma:
 
 ```javascript
 function todos(state = [], action) {
@@ -67,7 +67,7 @@ function todos(state = [], action) {
 }
 ```
 
-Es más código, pero es lo que permite a Redux ser predecible y eficiente. si quieres tener menos código puedes usar herramientas como [`React.addons.update`](https://facebook.github.io/react/docs/update.html) para escribir transformaciones inmutables con una sintaxis pequeña:
+Es más código, pero es lo que permite a Redux ser predecible y eficiente. Si quieres tener menos código puedes usar herramientas como [`React.addons.update`](https://facebook.github.io/react/docs/update.html) para escribir transformaciones inmutables con una sintaxis pequeña:
 
 ```javascript
 // Antes:
@@ -91,7 +91,7 @@ return update(state, {
 ```
 Por último, para actualizar objeto, vas a necesitar algo como `_.extend` de Lodash o mejor, un polyfill de [`Object.assign](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign).
 
-Asegurate de que usas `Object.assign` correctamente. Por ejemplo, en vez de devolver algo como `Object.assign(state, newData)` en tus reducers, devuelve `Object.assign({}, state, newData)`. De estas forma no vas a modificar el `state` anterior.
+Asegúrate de que usas `Object.assign` correctamente. Por ejemplo, en vez de devolver algo como `Object.assign(state, newData)` en tus reducers, devuelve `Object.assign({}, state, newData)`. De esta forma no vas a modificar el `state` anterior.
 
 También puedes habilitar [ES7 object spread proposal](https://github.com/sebmarkbage/ecmascript-rest-spread) con [Babel stage 1](http://babeljs.io/docs/usage/experimental/):
 
@@ -113,7 +113,7 @@ return [
 ];
 ```
 
-Ten en cuenta que las funciones experimentales estás sujetas a cambios, y no es bueno depender de ellas en grandes cantidades de código.
+Ten en cuenta que las funciones experimentales están sujetas a cambios, y no es bueno depender de ellas en grandes cantidades de código.
 
 ### No olvides llamar [`dispatch(action)`](./api/Store.md#dispatch)
 Sí defines un creador de acciones, ejecutándolo *no* va a despachar tus acciones automáticamente. Por ejemplo, este código no hace nada:
@@ -146,16 +146,16 @@ class AddTodo extends Component {
   }
 }
 ```
-No funciona ya que el creador de acciones es solo una función que *devuelve* una acción. Pero depende de vos despacharla.No podemos conectar tu creador de acciones a una instancia específica del Store durante su definición ya que las aplicaciones que renderizas en el servidor necesitas un store de Redux para cada petición.
+No funciona ya que el creador de acciones es solo una función que *devuelve* una acción. Pero depende de vos despacharla. No podemos conectar tu creador de acciones a una instancia específica del Store durante su definición ya que las aplicaciones que renderizas en el servidor necesitas un store de Redux para cada petición.
 
-Esto se arreglar ejecutando el método [`dispatch()`](./api/Store.md#dispatch) de la instancia del [store](./api/Store.md):
+Esto se arregla ejecutando el método [`dispatch()`](./api/Store.md#dispatch) de la instancia del [store](./api/Store.md):
 ```javascript
 handleClick() {
   // ¡Funciona! (pero debes obtener el store de alguna forma)
   store.dispatch(addTodo('Fix the issue'));
 }
 ```
-Si estas en algún punto profundo en la jerarquía de componentes, es incómodo pasar el store manualmente. Es por eso que [react-redux](https://github.com/gaearon/react-redux) te permite usar el [componente de nivel superior](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750) `connect` que va a además de suscribirse al store de Redux, inyectar `dispatch` en los props de tus componentes.
+Si estás en algún punto profundo en la jerarquía de componentes, es incómodo pasar el store manualmente. Es por eso que [react-redux](https://github.com/gaearon/react-redux) te permite usar el [componente de nivel superior](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750) `connect` que va además de suscribirse al store de Redux, inyectar `dispatch` en los props de tus componentes.
 
 El código arreglado quedaría así:
 
@@ -187,4 +187,4 @@ Puedes pasar `dispatch` a otros componentes manualmente, si quieres.
 
 ## Algo más no funciona
 Pregunta en el canal #redux con [Reactiflux](http://reactiflux.com/), o [crea un issue](https://github.com/rackt/redux/issues).
-Si lo descubre, [modifica este documento](https://github.com/rackt/redux/edit/master/docs/Troubleshooting.md) como cortesía a la siguiente persona con el mismo problema.
+Si lo descubres, [modifica este documento](https://github.com/rackt/redux/edit/master/docs/Troubleshooting.md) como cortesía a la siguiente persona con el mismo problema.
