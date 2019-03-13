@@ -31,7 +31,7 @@ Algunas veces verás que necesitas almacenar algunos datos, así como el estado 
 
 >##### Nota sobre relaciones
 
->En aplicaciones más complejas, vas a necesitar tener diferentes entidades que se referencien una a otra. Sugerimos mantener el estado tan normalizado como sea posible, sin nada de anidación. Mantener cada entidad en un objeto con el ID como llave, y usa los IDs para referenciar otras entidades, o para listas. Piensa en el estado de la aplicación como una base de datos. Este enfoque se describe en la documentación de [normalizr](https://github.com/gaearon/normalizr) más detalladamente. Por ejemplo, manteniendo `todosById: { id ->  todo }` y `todos: array<id>` dentro del estado es mejor para una aplicación real, pero lo vamos a matener simple para el ejemplo.
+>En aplicaciones más complejas, vas a necesitar tener diferentes entidades que se referencien una a otra. Sugerimos mantener el estado tan normalizado como sea posible, sin nada de anidación. Mantener cada entidad en un objeto con el ID como llave, y usa los IDs para referenciar otras entidades, o para listas. Piensa en el estado de la aplicación como una base de datos. Este enfoque se describe en la documentación de [normalizr](https://github.com/gaearon/normalizr) más detalladamente. Por ejemplo, manteniendo `todosById: { id ->  todo }` y `todos: array<id>` dentro del estado es mejor para una aplicación real, pero lo vamos a mantener simple para el ejemplo.
 
 ## Manejando Acciones
 
@@ -44,10 +44,10 @@ Ahora que decidimos cómo se verá nuestro objeto de estado, estamos listos para
 Se llama reducer porque es el tipo de función que pasarías a [`Array.prototype.reduce(reducer, ?initialValue)`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce). Es muy importante que los reducer se mantengan puros. Cosas que **nunca** deberías hacer dentro de un reducer:
 
 * Modificar sus argumentos;
-* Realizar tareas con efectos secundarios como llamas a un API o transiciones de rutas.
+* Realizar tareas con efectos secundarios como llamadas a un API o transiciones de rutas.
 * Llamar una función no pura, por ejemplo `Date.now()` o `Math.random()`.
 
-En la [guía avanzada](../avanzado/README.md) vamos a ver como realizar efectos secundarios. Por ahora, solo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
+En la [guía avanzada](../avanzado/README.md) vamos a ver cómo realizar efectos secundarios. Por ahora, sólo recuerda que los reducers deben ser puros. **Dados los mismos argumentos, debería calcular y devolver el siguiente estado. Sin sorpresas. Sin efectos secundarios. Sin llamadas a APIs. Sin mutaciones. Solo cálculos.**
 
 Con esto dicho, vamos a empezar a escribir nuestro reducer gradualmente enseñándole como entender las [acciones](../acciones.md) que definimos antes.
 
@@ -101,15 +101,15 @@ Nota que:
 
 1. **No modificamos el `state`.** Creamos una copia con [`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign). `Object.assign(state, { visibilityFilter: action.filter })` también estaría mal: esto modificaría el primer argumento. **Debes** mandar un objeto vacío como primer parámetro. También puedes activar la [propuesta del operador spread](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator) para escribir `{ ...state, ...newState }`.
 
-2. **Devolvemos el anterior `state` en el caso `default`**. Es importarte devolver el anterior `state` por cualquier acción desconocida.
+2. **Devolvemos el anterior `state` en el caso `default`**. Es importante devolver el anterior `state` por cualquier acción desconocida.
 
 >##### Nota sobre `Object.assign`
 
->[`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign) es parte de ES6, pero no esta implementado en la mayoría de los navegadores todavía. Vas a necesitar usar ya sea un polyfill,  el [plugin de Babel](https://www.npmjs.com/package/babel-plugin-object-assign), o alguna otra función como [`_.assign()`](https://lodash.com/docs#assign).
+>[`Object.assign()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign) es parte de ES6, pero no está implementado en la mayoría de los navegadores todavía. Vas a necesitar usar ya sea un polyfill, el [plugin de Babel](https://www.npmjs.com/package/babel-plugin-object-assign), o alguna otra función como [`_.assign()`](https://lodash.com/docs#assign).
 
 >##### Nota sobre `switch` y Boilerplate
 
->La sentencia `switch` no es verdadero boilerplate. El verdadero boilerplate de Flux es conceptual: la necesidad de emitir una actualización, la necesidad de registrar el Store con el Dispatcher, la necesidad de que el Store sea un objeto (y las complicaciones que existen para hacer aplicaciones universales). Redux resuelve estos problemas usando reducers puros en vez de emisores de eventos.
+>La sentencia `switch` no es un verdadero boilerplate. El verdadero boilerplate de Flux es conceptual: la necesidad de emitir una actualización, la necesidad de registrar el Store con el Dispatcher, la necesidad de que el Store sea un objeto (y las complicaciones que existen para hacer aplicaciones universales). Redux resuelve estos problemas usando reducers puros en vez de emisores de eventos.
 
 >Desafortunadamente muchos todavía eligen un framework basados en si usan `switch` en su documentación. Si no te gusta `switch`, puedes usar alguna función `createReducer` personalizada que acepte un mapa, como se ve en ["Reduciendo el Boilerplate"](../recetas/reduciendo-el-boilerplate.md#reducers).
 
@@ -158,7 +158,7 @@ case COMPLETE_TODO:
   })
 ```
 
-Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismo objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Sólo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primero.
+Debido a que queremos actualizar un objeto específico del array sin recurrir a modificaciones, necesitamos crear un nuevo array con los mismos objetos menos el objeto en la posición. Si te encuentras realizando mucho estas operaciones, es una buena idea usar utilidades como [react-addons-update](https://facebook.github.io/react/docs/update.html), [updeep](https://github.com/substantial/updeep), o incluso una librería como [Immutable](http://facebook.github.io/immutable-js/) que tienen soporte nativo a actualizaciones profundas. Sólo recuerda nunca asignar nada a algo dentro de `state` antes de clonarlo primero.
 
 ## Separando Reducers
 
@@ -242,7 +242,7 @@ function todoApp(state = initialState, action) {
 }
 ```
 
-Fijate que `todos` acepta `state`—¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
+Fijate que `todos` acepta `state` — ¡Pero es un array! Ahora `todoApp` solo le manda una parte del estado para que la maneje, y `todos` sabe como actualizar esa parte. **Esto es llamado *composición de reducers*, y es un patrón fundamental al construir aplicaciones de Redux.**
 
 Vamos a explorar la composición de reducers un poco más. ¿Podemos extraer a otro reducer el control de `visibilityFilter`? Podemos:
 
@@ -301,7 +301,7 @@ function todoApp(state = {}, action) {
 }
 ```
 
-**Nota que cada uno de estos reducers esta manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
+**Nota que cada uno de estos reducers está manejando su propia parte del estado global. El parámetro `state` es diferente por cada reducer, y corresponde con la parte del estado que controla.**
 
 ¡Esto ya se está viendo mejor! Cuando una aplicación es muy grande, podemos dividir nuestros reducers en archivos separados y mantenerlos completamente independientes y controlando datos específicos.
 
