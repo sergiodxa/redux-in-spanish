@@ -1,7 +1,7 @@
 # Referencia API
-La API de Redux es diminuta. Redux define una serie de contratos que debes implementar (como los [reducers](../glosario.md#reducer) y provee una pocas funciones de ayuda para unir todo.
+La API de Redux es diminuta. Redux define una serie de contratos que debes implementar (como los [reducers](../glosario.md#reducer) y provee unas pocas funciones de ayuda para unir todo.
 
-Esta sección documenta completamente la API de Redux. Recuerda que Redux solo se preocupa con mantener el estado de tu aplicación. En una aplicación de verdad, seguramente quieras usar conexiones como [react-redux](https://github.com/gaearon/react-redux).
+Esta sección documenta completamente la API de Redux. Recuerda que Redux solo se preocupa por mantener el estado de tu aplicación. En una aplicación de verdad, seguramente querrás usar conexiones como [react-redux](https://github.com/gaearon/react-redux).
 
 ### Exportaciones de nivel superior
 - [createStore(reducer, [initialState])](create-store.md)
@@ -18,7 +18,7 @@ Esta sección documenta completamente la API de Redux. Recuerda que Redux solo s
     - [replaceReducer(nextReducer)](store.md#replaceReducer)
 
 ### Importando
-Cada función descrita arriba ex una exportación de nivel superior. Puedes importar cualquiera de estas de esta forma:
+Cada función descrita arriba es una exportación de nivel superior. Puedes importar cualquiera de éstas de esta manera:
 
 #### **ES6**
 ```javascript
