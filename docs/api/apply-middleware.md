@@ -1,20 +1,20 @@
 # `applyMiddleware(...middlewares)`
 
-Los middleware son la forma sugerida de extender Redux con funcionalidades personalizadas. Los middlewares te dajan envolver el método [`dispatch`](./Store.md#dispatch) del Store. La característica principal de los middlewares es que son combinables. Multiples middlewares se pueden combinarjunto, donde ninguno necesita saber cual vino antes o viene después.
+Los middleware son la forma sugerida de extender Redux con funcionalidades personalizadas. Los middlewares te dejan envolver el método [`dispatch`](./Store.md#dispatch) del Store. La característica principal de los middlewares es que son combinables. Múltiples middlewares se pueden combinar juntos, donde ninguno necesita saber cual vino antes o viene después.
 
-El uso más común de los middlewares es soportar acciones asíncronas sin demasiado código o dependiendo de librerías como [Rx](https://github.com/Reactive-Extensions/RxJS). Logre eso gracias a que te permite despachar [acciones asíncronas](../glosario.md#acción-asíncrona) además de las normales.
+El uso más común de los middlewares es soportar acciones asíncronas sin demasiado código o dependiendo de librerías como [Rx](https://github.com/Reactive-Extensions/RxJS). Logra eso gracias a que te permite despachar [acciones asíncronas](../glosario.md#acción-asíncrona) además de las normales.
 
 Por ejemplo, [redux-thunk](https://github.com/gaearon/redux-thunk) permite a los creadores de acciones invertír el control despachando funciones. Van a recibir [`dispatch`](./Store.md#dispatch) como argumento y capaz llamarlo asíncronamente. Estas funciones son llamadas *thunks*. Otro ejemplo de middleware es [redux-promise](https://github.com/acdlite/redux-promise). Este te deja despachar una [Promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa) como una acción asíncrona, y despachar una acción normal cuando la Promesa se resuelve.
 
-Los middlewares no vienen incluidos en [`createStore`](./create-store.md) y no son una parte fundamental de la arquitectua de Redux, pero los consideramos suficientemente útiles para soportarlos directamente. De esta forma, hay una única forma estandarizada de extender [`dispatch`](./Store.md#dispatch) y diferentes middlewares probablemente compitan en expresividad y utilidad.
+Los middlewares no vienen incluidos en [`createStore`](./create-store.md) y no son una parte fundamental de la arquitectura de Redux, pero los consideramos suficientemente útiles para soportarlos directamente. De esta forma, hay una única forma estandarizada de extender [`dispatch`](./Store.md#dispatch) y diferentes middlewares probablemente compitan en expresividad y utilidad.
 
 #### Argumentos
 
-* `...middlewares` (*argumentos*): Funciones que se ajustan la *API de middlewares* de Redux. Cada middleware recibe [`dispatch`](./Store.md#dispatch) y el [`getState`](./Store.md#getState) del [`Store`](./Store.md) como argumentos, y regresa una función. Esa función va a recibir el método para despachar el siguiente middleware, y se espera que devuelva una función que recibe `action` y llame `next(action)`. El último middleware de la cadena va a recibir el verdadero método [`dispatch`](./Store.md#dispatch) del store como parámetro `next`, terminando la cadena. Así, la forma de un middleware sería `({ getState, dispatch }) => next => action`.
+* `...middlewares` (*argumentos*): Funciones que se ajustan a la *API de middlewares* de Redux. Cada middleware recibe [`dispatch`](./Store.md#dispatch) y el [`getState`](./Store.md#getState) del [`Store`](./Store.md) como argumentos, y regresa una función. Esa función va a recibir el método para despachar el siguiente middleware, y se espera que devuelva una función que recibe `action` y llame `next(action)`. El último middleware de la cadena va a recibir el verdadero método [`dispatch`](./Store.md#dispatch) del store como parámetro `next`, terminando la cadena. Así, la forma de un middleware sería `({ getState, dispatch }) => next => action`.
 
 #### Regresa
 
-(*Función*) Un potenciador de store que aplican los middlewares. El potenciador de store tiene el siguiente formato `createStore => createStore`, pero es más fácil de aplicar si lo envias a [`createStore()`](./create-store.md) como el último argumento `enhancer`.
+(*Función*) Un potenciador de store que aplican los middlewares. El potenciador de store tiene el siguiente formato `createStore => createStore`, pero es más fácil de aplicar si lo envías a [`createStore()`](./create-store.md) como el último argumento `enhancer`.
 
 #### Ejemplo: Middleware de Logging Personalizado
 
@@ -31,7 +31,7 @@ function logger({ getState }) {
 
     console.log('state after dispatch', getState())
 
-    // Este seguramente sera la acción, excepto
+    // Este seguramente será la acción, excepto
     // que un middleware anterior la haya modificado.
     return returnValue
   }
@@ -47,7 +47,7 @@ store.dispatch({
   type: 'ADD_TODO',
   text: 'Understand the middleware'
 })
-// (Esta lineas son registradas por el middleware:)
+// (Estas líneas son registradas por el middleware:)
 // will dispatch: { type: 'ADD_TODO', text: 'Understand the middleware' }
 // state after dispatch: [ 'Use Redux', 'Understand the middleware' ]
 ```
@@ -98,8 +98,8 @@ function withdrawMoney(amount) {
 // Incluso sin middlewares, puedes despachar una acción:
 store.dispatch(withdrawMoney(100))
 
-// ¿Pero que haces cuando quieres iniciar una acción asíncrona,
-// como un llamado a un API, o una transición de rutas?
+// ¿Pero qué haces cuando quieres iniciar una acción asíncrona,
+// como un llamado a una API, o una transición de rutas?
 
 // Conoce a thunks.
 // Un thunk es una función que devuelve una función.
@@ -126,7 +126,7 @@ store.dispatch(
   makeASandwichWithSecretSauce('Me')
 )
 
-// Incluso se asegura de regresas el valor de devuelve el thunk
+// Incluso se asegura de regresar el valor que devuelve el thunk
 // en el despacho, así puedo anidar promesas.
 
 store.dispatch(
@@ -181,7 +181,7 @@ store.dispatch(
   response.send(renderToString(<MyApp store={store} />))
 )
 
-// También puedes despachar una acción asínrona desde un componente
+// También puedes despachar una acción asíncrona desde un componente
 // cada vez que los props cambian para cargar los datos faltantes.
 
 import { connect } from 'react-redux'
@@ -216,9 +216,9 @@ export default connect(
 
 #### Consejos
 
-* Los middlewares solo envuelvan la función [`dispatch`](./Store.md#dispatch). Técnicamente, cualquier cosa que podrías hacer un middleware, puede hacerse envolviendo manualmente la llamada a `dispatch`, pero es más fácil manejar esto en un solo lugar y definir las transformaciones de acciones a una escala de todo el proyecto.
+* Los middlewares solo envuelven la función [`dispatch`](./Store.md#dispatch). Técnicamente, cualquier cosa que podrías hacer un middleware, puede hacerse envolviendo manualmente la llamada a `dispatch`, pero es más fácil manejar esto en un solo lugar y definir las transformaciones de acciones a una escala de todo el proyecto.
 
-* Si usas otros potenciadores de store además de `applyMiddleware`, asegurate de poner `applyMiddleware` antes de ellos, porque los middlewares son potenciamente asíncronos. Por ejemplo, si debería ir antes de [redux-devtools](https://github.com/gaearon/redux-devtools) porque de otra forma las DevTools no van a ver las acciones puras emitidas por un middleware de promesas.
+* Si usas otros potenciadores de store además de `applyMiddleware`, asegúrate de poner `applyMiddleware` antes de ellos, porque los middlewares son potencialmente asíncronos. Por ejemplo, si debería ir antes de [redux-devtools](https://github.com/gaearon/redux-devtools) porque de otra forma las DevTools no van a ver las acciones puras emitidas por un middleware de promesas.
 
 * Si necesitas aplicar un middleware condicionalmente, asegurate de solo importarlo cuando sea necesario:
 
@@ -239,8 +239,8 @@ export default connect(
 
   Esto hace más fácil para herramientas de empaquetado cortar los módulos no necesarios y reducir el tamaño de los paquetes.
 
-* ¿Algunas vez te preguntantes que es `applyMiddleware`? Debería ser un mecanismo de extensión más poderoso que los mismos middleware. En efecto, `applyMiddleware` es un ejemplo de el mecanismo más poderoso para extender Redux llamado [potenciadores de store](../glosario.md#potenciador-de-store). Es muy poco probable que alguna vez quieras escribir tu propio potenciador de store. Otro ejemplo de un potenciador de store son las [redux-devtools](https://github.com/gaearon/redux-devtools). Los middlewares son menos poderosos que un potenciador de store, pero son más fáciles de escribir.
+* ¿Algunas vez te preguntantes qué es `applyMiddleware`? Debería ser un mecanismo de extensión más poderoso que los mismos middleware. En efecto, `applyMiddleware` es un ejemplo de el mecanismo más poderoso para extender Redux llamado [potenciadores de store](../glosario.md#potenciador-de-store). Es muy poco probable que alguna vez quieras escribir tu propio potenciador de store. Otro ejemplo de un potenciador de store son las [redux-devtools](https://github.com/gaearon/redux-devtools). Los middlewares son menos poderosos que un potenciador de store, pero son más fáciles de escribir.
 
-* Los middlewares suenan mucho más complicados de lo que en realidad son. La única forma de entenderlos de verdad es ver como un middleware existente funciona, y tratar de escribir uno propio. La anidación de funciones parece intimidante, pero la mayoría de los middlewares que puedas encontrar son, de hecho, menos de 10 líneas y la anidación y combinanción es lo que hace al sistema de middlewares poderosos.
+* Los middlewares suenan mucho más complicados de lo que en realidad son. La única forma de entenderlos de verdad es ver como un middleware existente funciona, y tratar de escribir uno propio. La anidación de funciones parece intimidante, pero la mayoría de los middlewares que puedas encontrar son, de hecho, menos de 10 líneas y la anidación y combinación es lo que hace al sistema de middlewares poderosos.
 
 * Para aplicar múltiples potenciadores de store, probablemente quieras usar [`compose()`](./compose.md).
