@@ -2,11 +2,11 @@
 
 Convierte un objeto cuyos valores son [creadores de acciones](../glosario.md#creador-de-acciones), en un objeto, con las mismas claves, pero donde cada creador de acciones está envuelto en una llamada a [`dispatch`](./Store.md#dispatch) para ser invocada inmediatamente.
 
-Normalmente solo deberías llamar a [`dispatch`](./Store.md#dispatch) directamente desde tu instancia del [`Store`](./Store.md). Si usas Redux con React, [react-redux](https://github.com/gaearon/react-redux) te provee de la función [`dispatch`](Store.md#dispatch) para que las llames directamente.
+Normalmente solo deberías llamar a [`dispatch`](./Store.md#dispatch) directamente desde tu instancia del [`Store`](./Store.md). Si usas Redux con React, [react-redux](https://github.com/gaearon/react-redux) te provee de la función [`dispatch`](Store.md#dispatch) para que la llames directamente.
 
-En único caso de uso para `bindActionCreatores` es cuando quieres pasar un creador de acciones a un componente que no sabe nada de Redux y no quieres pasarle [`dispatch`](./Store.md#dispatch) o el store de Redux.
+El único caso de uso para `bindActionCreatores` es cuando quieres pasar un creador de acciones a un componente que no sabe nada de Redux y no quieres pasarle [`dispatch`](./Store.md#dispatch) o el store de Redux.
 
-Por conveniencia, también puedes pasar una  sola función como primer argumento, y obtener una función devuelta.
+Por conveniencia, también puedes pasar una sola función como primer argumento, y obtener una función devuelta.
 
 #### Parametros
 
@@ -60,7 +60,7 @@ class TodoListContainer extends Component {
     // Nota: esto no funciona
     // TodoActionCreators.addTodo('Use Redux')
 
-    // Solamente estas llamando una función que crea una acción
+    // Solamente estás llamando una función que crea una acción
     // ¡También deberías despachar la acción!
 
     // Esto funcionaría
@@ -73,7 +73,7 @@ class TodoListContainer extends Component {
     let { todos, dispatch } = this.props
 
     // Acá hay un buen caso de uso para bindActionCreators:
-    // Quieres un componente hijo  que este completamente desatendido de Redux
+    // Quieres un componente hijo  que esté completamente desatendido de Redux
 
     let boundActionCreators = bindActionCreators(TodoActionCreators, dispatch)
     console.log(boundActionCreators)
@@ -88,7 +88,7 @@ class TodoListContainer extends Component {
     )
 
     // Una alternativa a bindActionCreators es enviar
-    // la función dispatch hacia abajo , pero entonces tu componente
+    // la función dispatch hacia abajo, pero entonces tu componente
     // hijo necesita importar los creadores de acciones y saber sobre ellos
 
     // return <TodoList todos={todos} dispatch={dispatch} />
@@ -102,6 +102,6 @@ export default connect(
 
 #### Consejos
 
-* Capaz te preguntes: ¿por qué no unimos los creadores de acciones a la instancia del store directamente, como en Flux? El problema es que eso no funciona en aplicaciones universales que deben renderizar en el servidor. Normalmente vas a querer tener una instancia del store por cada petición así puedes usarlas con diferentes datos, pero conectar los creadores de acciones durante su definición significa que estas atascado con un único instancia por petición.
+* Capaz te preguntes: ¿por qué no unimos los creadores de acciones a la instancia del store directamente, como en Flux? El problema es que eso no funciona en aplicaciones universales que deben renderizar en el servidor. Normalmente vas a querer tener una instancia del store por cada petición así puedes usarlas con diferentes datos, pero conectar los creadores de acciones durante su definición significa que estás atascado con una única instancia por petición.
 
 * Si usas ES5, en vez de usar la sintaxis `import * as` puedes simplemente pasar `require('./TodoActionCreators')` a `bindActionCreators` como primer argumento. Lo único que te tiene que importar es que los valores del argumento `actionCreators` sean funciones. El sistema de módulo no importa.
