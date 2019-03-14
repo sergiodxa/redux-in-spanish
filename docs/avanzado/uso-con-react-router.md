@@ -9,7 +9,7 @@ Así que deseas hacer enrutamiento en tu aplicación Redux. Puedes usar [React R
 
 ## Configuración de la URL de recuperación (*fallback*)
 
-Antes de integrar React Router, necesitamos configurar nuestro servidor de desarrollo. De hecho, nuestro servidor de desarrollo puede no ser consciente de las rutas declaradas en la configuración de React Router. Por ejemplo, si accede `/todos` y se refresca el navegador, su servidor de desarrollo debe ser configurado para servir `index.html` porque es una aplicación de una sola página (SPA). A continuación, le indicamos cómo habilitarlo con los servidores de desarrollo más populares.
+Antes de integrar React Router, necesitamos configurar nuestro servidor de desarrollo. De hecho, nuestro servidor de desarrollo puede no ser consciente de las rutas declaradas en la configuración de React Router. Por ejemplo, si accedes a `/todos` y se refresca el navegador, tu servidor de desarrollo debe ser configurado para servir `index.html` porque es una aplicación de una sola página (SPA). A continuación, te indicamos cómo habilitarlo con los servidores de desarrollo más populares.
 
 >### Nota sobre *Create React App*
 
@@ -34,15 +34,15 @@ Añade a tu archivo de configuración `webpack.config.dev.js` lo siguiente:
 
 ## Conectar React Router con Redux
 
-A lo largo de este capítulo, utilizaremos el ejemplo de listas [*To-dos*](https://github.com/reactjs/redux/tree/master/examples/todos). Le recomendamos que lo clone mientras lee este capítulo.
+A lo largo de este capítulo, utilizaremos el ejemplo de listas [*To-dos*](https://github.com/reactjs/redux/tree/master/examples/todos). Te recomendamos que lo clones mientras lees este capítulo.
 
-Primero tendremos que importar `<Router />` y `<Route />` de React Router. A continuación, le indicamos cómo hacerlo:
+Primero tendremos que importar `<Router />` y `<Route />` de React Router. A continuación, te indicamos cómo hacerlo:
 
 ```js
 import { Router, Route, browserHistory } from 'react-router';
 ```
 
-En una aplicación React, usualmente agruparás `<Route />` en `<Router />` para que cuando cambie la URL, `<Router />` coincida con recurso de sus rutas y procese los componentes configurados. `<Route />` se utiliza para asignar mapas de manera declarativa a la jerarquía de componentes de tu aplicación. Usted declarará en `path` la ruta utilizada en la URL y en `component` el único componente que se renderizará cuando la ruta coincida con la URL.
+En una aplicación React, usualmente agruparás `<Route />` en `<Router />` para que cuando cambie la URL, `<Router />` coincida con el recurso de sus rutas y procese los componentes configurados. `<Route />` se utiliza para asignar mapas de manera declarativa a la jerarquía de componentes de tu aplicación. Declararás en `path` la ruta utilizada en la URL y en `component` el único componente que se renderizará cuando la ruta coincida con la URL.
 
 ```js
 const Root = () => (
@@ -52,7 +52,7 @@ const Root = () => (
 );
 ```
 
-Sin embargo, en nuestra aplicación Redux todavía necesitaremos `<Provider />`. `<Provider />` es el componente de orden superior proporcionado por React Redux que le permite asociar Redux a React (ver [Uso con React](../basico/uso-con-react.md)).
+Sin embargo, en nuestra aplicación Redux todavía necesitaremos `<Provider />`. `<Provider />` es el componente de orden superior proporcionado por React Redux que te permite asociar Redux a React (ver [Uso con React](../basico/uso-con-react.md)).
 
 Importaremos el componente `<Provider />` de React Redux.
 
@@ -184,11 +184,11 @@ const Footer = () => (
 export default Footer
 ```
 
-Ahora, si hace clic en `<FilterLink />` verá que su URL cambiará entre `'/SHOW_COMPLETED'`, `'/ SHOW_ACTIVE'` y `'/'`. Incluso si retrocedes usando el navegador, se utilizará el historial de su navegador y efectivamente ira al URL anterior.
+Ahora, si haces clic en `<FilterLink />` verás que su URL cambiará entre `'/SHOW_COMPLETED'`, `'/ SHOW_ACTIVE'` y `'/'`. Incluso si retrocedes usando el navegador, se utilizará el historial de tu navegador y efectivamente irá al URL anterior.
 
 ## Leyendo desde la URL
 
-Actualmente, la lista de tareas no filtra incluso después de que se haya cambiado la URL. Esto se debe a que estamos filtrando desde `<VisibleTodoList />`, `mapStateToProps()` sigue vinculado al `state` y no a la URL. `MapStateToProps` tiene un segundo argumento opcional, `ownProps`, que es un objeto con todos los *props* pasados a `<VisibleTodoList />`
+Actualmente, la lista de tareas no filtra, incluso después de que se haya cambiado la URL. Esto se debe a que estamos filtrando desde `<VisibleTodoList />`, `mapStateToProps()` sigue vinculado al `state` y no a la URL. `MapStateToProps` tiene un segundo argumento opcional, `ownProps`, que es un objeto con todos los *props* pasados a `<VisibleTodoList />`
 
 #### `containers/VisibleTodoList.js`
 ```js
@@ -206,7 +206,7 @@ Cuando previamente escribimos: `<Route path="/(:filter)" component={App} />`, es
 
 La propiedad `params` es un objeto con cada parámetro especificado en la url. *Por ejemplo: `params` será igual a `{filter: 'SHOW_COMPLETED'}` si estamos navegando a `localhost:3000/SHOW_COMPLETED`. Ahora podemos leer la URL desde `<App>`.*
 
-Note que estamos usando [*ES6 destructuring*](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) en las propiedades para mover `params` a `<VisibleTodoList />`.
+Nota que estamos usando [*ES6 destructuring*](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) en las propiedades para mover `params` a `<VisibleTodoList />`.
 
 #### `components/App.js`
 ```js
@@ -225,10 +225,10 @@ const App = ({ params }) => {
 
 ## Próximos pasos
 
-Ahora que sabe cómo hacer el enrutamiento básico, puedes obtener más información sobre el [API React Router](https://github.com/reactjs/react-router/tree/v3/docs/)
+Ahora que sabes cómo hacer el enrutamiento básico, puedes obtener más información sobre el [API React Router](https://github.com/reactjs/react-router/tree/v3/docs/)
 
 >##### Nota sobre otras bibliotecas de enrutamiento
 
->*Redux Router* es una biblioteca experimental, que le permite mantener completamente el estado de su URL dentro de su store Redux. Tiene la misma API del API React Router pero tiene un apoyo de la comunidad más reducido que react-router.
+>*Redux Router* es una biblioteca experimental, que te permite mantener completamente el estado de tu URL dentro de su store Redux. Tiene la misma API del API React Router pero tiene un apoyo de la comunidad más reducido que react-router.
 
->*React Router Redux* crea un vínculo entre su aplicación redux y react-router y los mantiene sincronizados. Sin este vínculo, no podrá retroceder las acciones con usando *Time Travel*. A menos que lo necesite, React Router y Redux pueden funcionar completamente por separados.
+>*React Router Redux* crea un vínculo entre tu aplicación redux y react-router y los mantiene sincronizados. Sin este vínculo, no podrás retroceder las acciones usando *Time Travel*. A menos que lo necesites, React Router y Redux pueden funcionar completamente por separados.
