@@ -2,16 +2,16 @@
 
 Combina funciones de derecha a izquierda.
 
-Esta es una utilidad de programación funcional y es incluida en Redux por conveniencia.
+Esta es una utilidad de programación funcional y está incluida en Redux por conveniencia.
 Probablemente la quieras usar para aplicar múltiples [potenciadores de store](../glosario.md#potenciador-de-store) en serie.
 
 #### Argumentos
 
-1. (*argumentos*): Las funciones a combinar. Se espera que cada función acepte un único parámetro. El valor de devuelva va a ser usado como argumento a la función que este a su izquierda, y así. La única excepción es la que esté más a la derecha la cual puede recibir múltiples argumentos.
+1. (*argumentos*): Las funciones a combinar. Se espera que cada función acepte un único parámetro. El valor devuelto va a ser usado como argumento a la función que esté a su izquierda, y así. La única excepción es la que esté más a la derecha, la cual puede recibir múltiples argumentos.
 
 #### Regresa
 
-(*Función*): La función final obtenido de combinas las funciones indicadas de derecha a izquierda.
+(*Función*): La función final obtenida de combinar las funciones indicadas de derecha a izquierda.
 
 #### Ejemplo
 
