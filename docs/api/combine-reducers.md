@@ -27,7 +27,7 @@ Una convención popular es nombrar los reducers con el pedazo de estado que cont
 
 1. `reducers` (*Objeto*): Un objeto cuyos valores corresponden a diferentes funciones reductoras que necesitas combinar en uno solo. Revisa las notas debajo para ver algunas reglas que cada reducer debe seguir.
 
-> La primers documentación sugería usar la sintaxis de ES `import * as reducers` para obtener el objeto reducer. Esto fue una fuente de confusión, razón por la cual ahora recomendados exportar un único reducer obtenido usando `combineReducers()` en `reducers/index.js`. Se incluye un ejemplo debajo.
+> La primera documentación sugería usar la sintaxis de ES `import * as reducers` para obtener el objeto reducer. Esto fue una fuente de confusión, razón por la cual ahora recomendados exportar un único reducer obtenido usando `combineReducers()` en `reducers/index.js`. Se incluye un ejemplo debajo.
 
 #### Regresa
 
@@ -35,11 +35,11 @@ Una convención popular es nombrar los reducers con el pedazo de estado que cont
 
 #### Notas
 
-Esta función es medianamente opinionada y este hecha para evitar algunos error de principiantes. Es por eso que te fuerza a seguir ciertas reglas que no tendrías que seguir si escribieses tu reducer manualmente.
+Esta función es medianamente opinionada y está hecha para evitar algunos error de principiantes. Es por eso que te fuerza a seguir ciertas reglas que no tendrías que seguir si escribieses tu reducer manualmente.
 
-Cualquier reducer enviado a `combineReducers` debe satisfaces las siguientes reglas:
+Cualquier reducer enviado a `combineReducers` debe satisfacer las siguientes reglas:
 
-* Si no reconoce una acción, debe regresarel `state` recibido como primer argumento.
+* Si no reconoce una acción, debe regresar el `state` recibido como primer argumento.
 
 * Nunca debe devolver `undefined`. Es muy fácil hacer eso por error con un `return`, por eso `combineReducers` tira un error en vez de dejar que el error se manifieste en otra parte.
 
@@ -116,6 +116,6 @@ console.log(store.getState())
 
 #### Consejos
 
-* ¡Esta función para por conveniencia! Puedes crear tu propio `combineReducers` que [funcione diferente](https://github.com/acdlite/reduce-reducers), o incluso armar el objeto del estado en base a los reducers hijos manualmente y crear la función reductora principal explicitamente, como harías con cualquier otra función.
+* ¡Esta función para por conveniencia! Puedes crear tu propio `combineReducers` que [funcione diferente](https://github.com/acdlite/reduce-reducers), o incluso armar el objeto del estado en base a los reducers hijos manualmente y crear la función reductora principal explícitamente, como harías con cualquier otra función.
 
 * Puedes llamar `combineReducers` en cualquier punto de la jerarquía de reducers. No tiene que ocurrir al nivel superior. De hecho puedes usarlo para separar los reducers hijos que se volvieron muy complicados en reducers nietos independientes.
