@@ -1,6 +1,6 @@
 # Middleware
 
-Has visto los middleware en acción en el ejemplo [Async Actions](../avanzado/acciones-asincronas.md). Si has utilizado librerías de tipo *server-side* como [Express](http://expressjs.com/) y [Koa](http://koajs.com/), probablemente ya estes familiarizado con el concepto de *middleware*. En estos frameworks, el middleware es un código que se ejecuta entre el framework que recibe una solicitud, y el framework que genera una respuesta. Por ejemplo, a través de los middleware Express o Koa puede agregar encabezados *CORS*, realizar registro de eventos, compresión y más. La mejor característica de un middleware es que se puede ejecutar en cadena. Puedes utilizar múltiples middleware independientes de terceros en un solo proyecto.
+Has visto los middleware en acción en el ejemplo [Async Actions](../avanzado/acciones-asincronas.md). Si has utilizado librerías de tipo *server-side* como [Express](http://expressjs.com/) y [Koa](http://koajs.com/), probablemente ya estés familiarizado con el concepto de *middleware*. En estos frameworks, el middleware es un código que se ejecuta entre el framework que recibe una solicitud, y el framework que genera una respuesta. Por ejemplo, a través de los middleware Express o Koa puedes agregar encabezados *CORS*, realizar registro de eventos, compresión y más. La mejor característica de un middleware es que se puede ejecutar en cadena. Puedes utilizar múltiples middleware independientes de terceros en un solo proyecto.
 
 El mecanismo de middleware en Redux resuelve diferentes problemas cuando lo comparamos con los middleware en Express o Koa, pero se comporta de manera conceptualmente similar. **Proporciona un punto de extensión para terceros entre el envío de una acción y el momento en que alcanza el reductor.** La gente utiliza Redux middleware para el registro de eventos, informes de fallos, para mantener las llamadas a una API asíncrona, enrutamiento y más.
 
@@ -8,7 +8,7 @@ Este artículo provee una introducción a fondo para ayudarle a digerir el conce
 
 ## Entendiendo los middleware
 
-Mientras que los middleware se pueden utilizar para una variedad de cosas, incluyendo llamadas asíncronas a un API, es muy importante que usted entienda de dónde surgen. Le guiaremos a través del proceso de pensamiento que conduce al middleware, utilizando el registro de eventos (*logging*) y el informe de fallos como ejemplos.
+Mientras que los middleware se pueden utilizar para una variedad de cosas, incluyendo llamadas asíncronas a una API, es muy importante que entiendas de dónde surgen. Le guiaremos a través del proceso de pensamiento que conduce al middleware, utilizando el registro de eventos (*logging*) y el informe de fallos como ejemplos.
 
 ### Problema: Registo de eventos (*Logging*)
 
@@ -26,15 +26,15 @@ La solución más ingenua es simplemente registrar la acción y el siguiente est
 
 > ##### Nota
 
-> Si está utilizando [react-redux](https://github.com/gaearon/react-redux) o *bindings* similares, probablemente no tendrá acceso directo a la instancia de almacenamiento en sus componentes. Para los próximos párrafos, asuma que usted pasa el store de forma explícita.
+> Si estás utilizando [react-redux](https://github.com/gaearon/react-redux) o *bindings* similares, probablemente no tendrás acceso directo a la instancia de almacenamiento en sus componentes. Para los próximos párrafos, asuma que pasas el store de forma explícita.
 
-Digamos, usted invoca lo siguiente al crear un to-do:
+Digamos, invocas lo siguiente al crear un to-do:
 
 ```js
 store.dispatch(addTodo('Usar Redux'))
 ```
 
-Para registrar la acción y el estado, puede cambiarlo a algo como esto:
+Para registrar la acción y el estado, puedes cambiarlo a algo como esto:
 
 ```js
 let action = addTodo('Usar Redux')
@@ -48,7 +48,7 @@ Esto produce el efecto deseado, pero no querrás hacerlo una y otra vez.
 
 ### Intento #2: *Wrapping Dispatch*
 
-Puede extraer el registro en una función:
+Puedes extraer el registro en una función:
 
 ```js
 function dispatchAndLog(store, action) {
@@ -213,7 +213,7 @@ function logger(store) {
 }
 ```
 
-Esto es uno de esos momentos [“we need to go deeper”](http://knowyourmeme.com/memes/we-need-to-go-deeper), por lo que puede tomar un tiempo para que esto te haga sentido. La función cascada se siente intimidante. Las funciones de flecha ES6 hacen que este [*Currying*](https://en.wikipedia.org/wiki/Currying) sea mucho más fácil a la vista:
+Esto es uno de esos momentos [“we need to go deeper”](http://knowyourmeme.com/memes/we-need-to-go-deeper), por lo que puede tomar un tiempo para que esto tenga sentido. La función cascada se siente intimidante. Las funciones de flecha ES6 hacen que este [*Currying*](https://en.wikipedia.org/wiki/Currying) sea mucho más fácil a la vista:
 
 ```js
 const logger = store => next => action => {
@@ -324,7 +324,7 @@ store.dispatch(addTodo('Usar Redux'))
 
 ## Siete ejemplos
 
-Si su cabeza esta a reventar por la lectura de la sección anterior, imagine lo que fue escribirlo. Esta sección está destinada a ser una de relajación para usted y para mí, y ayudará a que sus engranajes giren.
+Si tu cabeza está por reventar por la lectura de la sección anterior, imagina lo que fue escribirlo. Esta sección está destinada a ser una de relajación para vos y para mí, y ayudará a que sus engranajes giren.
 
 Cada función a continuación es un middleware Redux válido. No son igualmente útiles, pero al menos son igualmente divertidos.
 
@@ -342,7 +342,7 @@ const logger = store => next => action => {
 }
 
 /**
- * Envia reportes de errores tan pronto el estado es actualizado y los listeners
+ * Envía reportes de errores tan pronto el estado es actualizado y los listeners
  * sean notificados.
  */
 const crashReporter = store => next => action => {
