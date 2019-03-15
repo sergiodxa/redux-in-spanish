@@ -1,4 +1,4 @@
-El [logo de Redux](./logo/) esta dedicado al dominio público y licensiado bajo [CC0]([CC0](http://creativecommons.org/publicdomain/zero/1.0/)).
+El [logo de Redux](./logo/) está dedicado al dominio público y licenciado bajo [CC0]([CC0](http://creativecommons.org/publicdomain/zero/1.0/)).
 Puedes copiar, modificar y distribuir, incluso con propósitos comerciales, sin pedir permiso.
 
 [Lee más sobre CC0.](http://creativecommons.org/publicdomain/zero/1.0/)
