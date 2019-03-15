@@ -1,6 +1,6 @@
 # Example: Reddit API
 
-This is the complete source code of the Reddit headline fetching example we built during the [advanced tutorial](README.md).
+Este es el código fuente completo del acopio de los titulares de Reddit que construimos durante el [tutorial avanzado](README.md).
 
 ## Entry Point
 
