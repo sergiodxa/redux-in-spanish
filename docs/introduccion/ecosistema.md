@@ -3,7 +3,7 @@ Redux es una librería pequeña, pero su API fue elegida cuidadosamente para per
 
 Para una lista completa de todo lo relacionado a Redux, recomendamos [Awesome Redux](https://github.com/xgrommx/awesome-redux). Contiene ejemplos, boilerplates, middlewares, librerías utilitarias y más.
 
-En esta página solo mostramos algunas de ellas que los colaboradores de Redux han seleccionado personalmente ¡No dejes que eso te desaliente a probar el resto! El ecosistema esta creciendo muy rápido, y tenemos un tiempo limitado para ver y probar todo. Considera estas como "elegidas por el staff", y no dudes en enviar un PR si haces algo increible con Redux.
+En esta página solo mostramos algunas de ellas que los colaboradores de Redux han seleccionado personalmente ¡No dejes que eso te desaliente a probar el resto! El ecosistema está creciendo muy rápido, y tenemos un tiempo limitado para ver y probar todo. Consideralas como "elegidas por el staff", y no dudes en enviar un PR si haces algo increíble con Redux.
 
 ## Aprendiendo Redux (en español)
 - [Introducción a Redux.js](https://medium.com/react-redux/introducci%C3%B3n-a-redux-js-8bdf4fe0751e) - Introducción a conceptos de Redux.js
@@ -11,7 +11,7 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [Middlewares en Redux.js](https://medium.com/react-redux/middlewares-en-redux-js-88081fcd6c91) - Explicación de como hacer middlewares propios para Redux.js
 - [Pruebas unitarias en Redux.js](https://medium.com/react-redux/pruebas-unitarias-en-redux-js-d7285c013123) - Ejemplos de como hacer pruebas a nuestro código de Redux.js.
 - [Ruteo en aplicaciones de Redux y React.js](https://medium.com/react-redux/ruteo-en-aplicaciones-de-redux-y-react-js-d62de452bf1b) - Explicación de como manejar las rutas de una aplicación hecha con Redux y React.js.
-- [Estructura de archivos Ducks para Redux.js](https://medium.com/react-redux/estructura-de-archivos-ducks-para-redux-js-36bb56a70cb3#.z7qq00d55) - Buena práctica de como organizar creadores de acciones, reducers y tipos de acciones en módulos.
+- [Estructura de archivos Ducks para Redux.js](https://medium.com/react-redux/estructura-de-archivos-ducks-para-redux-js-36bb56a70cb3#.z7qq00d55) - Buenas prácticas de cómo organizar creadores de acciones, reducers y tipos de acciones en módulos.
 - [Glosario de términos de Redux](https://medium.com/react-redux/glosario-de-términos-de-redux-c2bca005ca69) - Colección de términos usados en Redux junto a su explicación.
 
 ## Aprendiendo Redux (en inglés)
@@ -30,7 +30,7 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [Understanding Redux](http://www.youhavetolearncomputers.com/blog/2015/9/15/a-conceptual-overview-of-redux-or-how-i-fell-in-love-with-a-javascript-state-container) — Aprende los conceptos básicos de Redux
 - [Handcrafting an Isomorphic Redux Application (With Love)](https://medium.com/@bananaoomarang/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4) — Una guía para crear aplicaciones universales con rutas y data fetching
 - [Full-Stack Redux Tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) — Una guía completa de desarrollo TDD con Redux, React e Immutable
-- [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a#.l033pyr02) — Una guía en profundidad de como implementar middlewares de Redux
+- [Understanding Redux Middleware](https://medium.com/@meagle/understanding-87566abcfb7a#.l033pyr02) — Una guía en profundidad de cómo implementar middlewares de Redux
 - [A Simple Way to Route with Redux](http://jlongster.com/A-Simple-Way-to-Route-with-Redux) — Una introducción a Redux Simple Router
 
 ### Charlas
@@ -53,12 +53,12 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [redux-rx](https://github.com/acdlite/redux-rx) — Utilidades de RxJS para Redux, inlcuye un middleware para Observables
 - [redux-logger](https://github.com/fcomb/redux-logger) — Registra cada acción de Redux y el siguiente estado
 - [redux-immutable-state-invariant](https://github.com/leoasis/redux-immutable-state-invariant) — Advierto sobre modificaciones al estado en desarrollo
-- [redux-analytics](https://github.com/markdalgleish/redux-analytics) — Middleware de analiticas para Redux
+- [redux-analytics](https://github.com/markdalgleish/redux-analytics) — Middleware de analíticas para Redux
 - [redux-gen](https://github.com/weo-edu/redux-gen) — Middleware de generadores para Redux
 - [redux-saga](https://github.com/yelouafi/redux-saga) — Un modelo alternativo para efectos secundarios en aplicaciones de Redux
 
 ### Ruteo
-- [react-router-redux](https://github.com/rackt/react-router-redux) — Manten React Router y Redux sincronizados fácilmente
+- [react-router-redux](https://github.com/rackt/react-router-redux) — Mantén React Router y Redux sincronizados fácilmente
 - [redux-router](https://github.com/acdlite/redux-router) — Conecta Redux con React Router
 
 ### Componentes
@@ -66,19 +66,19 @@ En esta página solo mostramos algunas de ellas que los colaboradores de Redux h
 - [react-redux-form](https://github.com/davidkpiano/react-redux-form) — Crea formularios facilmente en React con Redux
 
 ### Potenciadores
-- [redux-batched-subscribe](https://github.com/tappleby/redux-batched-subscribe) — Customiza batching y debouncing a los suscriptos al store
+- [redux-batched-subscribe](https://github.com/tappleby/redux-batched-subscribe) — Personaliza batching y debouncing a los suscriptos al store
 - [redux-history-transitions](https://github.com/johanneslumpe/redux-history-transitions) — Transiciones basadas en History en acciones arbitrarias
-- [redux-optimist](https://github.com/ForbesLindesay/redux-optimist) — Aplicac acciones que luego pueden ser revertidas
+- [redux-optimist](https://github.com/ForbesLindesay/redux-optimist) — Aplica acciones que luego pueden ser revertidas
 - [redux-undo](https://github.com/omnidan/redux-undo) — Historial de acciones y deshacer/rehacer sin esfuerzo
 - [redux-ignore](https://github.com/omnidan/redux-ignore) — Ignora acciones de Redux
 - [redux-recycle](https://github.com/omnidan/redux-recycle) — Reinicia el estado de Redux en ciertas acciones
 - [redux-batched-actions](https://github.com/tshelburne/redux-batched-actions) — Despacha varias acciones con una sola notificación a los suscriptos
 - [redux-search](https://github.com/treasure-data/redux-search) — Automáticamente indexa recursos en un web worker y busca en ellos sin bloquear la aplicación
 - [redux-electron-store](https://github.com/samiskin/redux-electron-store) — Sincroniza el store de Redux entre varios procesos de Electron
-- [redux-loop](https://github.com/raisemarketplace/redux-loop) — Ejecuta acciones de forma secuencial retornandolas desde tus reducers
+- [redux-loop](https://github.com/raisemarketplace/redux-loop) — Ejecuta acciones de forma secuencial retornándolas desde tus reducers
 
 ### Utilidades
-- [reselect](https://github.com/faassen/reselect) — Selector de datos derivados eficiente inspirado por NuclearJS
+- [reselect](https://github.com/faassen/reselect) — Selector de datos derivados eficiente, inspirado por NuclearJS
 - [normalizr](https://github.com/gaearon/normalizr) — Normaliza respuestas de API anidades para consumirlas facilmente desde un reducer
 - [redux-actions](https://github.com/acdlite/redux-actions) — Disminuye el boilerplate al escribir reducers y creadores de acciones
 - [redux-act](https://github.com/pauldijou/redux-act) — Una librería opinionada para crear acciones y reducers
