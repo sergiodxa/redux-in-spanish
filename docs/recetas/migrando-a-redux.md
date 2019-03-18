@@ -9,9 +9,9 @@ Esto hace fácil migrar a o desde Redux.
 ## Desde Flux
 Los [reducers](../glosario.md#reducer) capturan "la esencia" de los Stores de Flux, así que es posible migrar gradualmente de un proyecto Flux existente a uno de Redux, ya sea que uses [Flummox](http://github.com/acdlite/flummox), [Alt](http://github.com/goatslacker/alt), [Flux tradicional](https://github.com/facebook/flux) o cualquier otra librería de Flux.
 
-También es posible hacer lo contrario y migrar de Redux a cualquier de estas siguiendo los siguiente pasos:
+También es posible hacer lo contrario y migrar de Redux a cualquiera de estos siguiendo los siguiente pasos:
 
-Tu proceso debería ser algo como esto:
+Tu proceso debería ser algo así:
 
 * Crea una función llamada `createFluxStore(reducer)` que cree un store de Flux compatible con tu aplicación actual a partir de un reducer. Internamente debería ser similar a la implementación de [`createStore`](../api/create-store.md) ([código fuente](https://github.com/rackt/redux/blob/master/src/createStore.js)) de Redux. Su función dispatch solo debería llamar al `reducer` por cada acción, guardar el siguiente estado y emitir el cambio.
 * Esto te permite gradualmente reescribir cada Store de Flux de tu aplicación como un reducer, pero todavía exportar `createFluxStore(reducer)` así el resto de tu aplicación no se entera de que esto está ocurriendo con los Stores de Flux.
@@ -21,4 +21,4 @@ Tu proceso debería ser algo como esto:
 * Finalmente, seguramente quieras usar cosas como middlewares para simplificar tu código asíncrono.
  
 ## Desde Backbone
-La capa de modelos de Backbone es bastante diferente de Redux, así que no recomendamos combinarlos. Si es posible, lo mejor es reescribir la capa de modelos de tu aplicación desde cero en vez de conectar Backbone a Redux. Igualmente, si no es posible reescribirlo, capaz debería usar [backbone-redux](https://github.com/redbooth/backbone-redux) para migrar gradualmente, y mantener tu Store de Redux sincronizado con los modelos y colecciones de Backbone.
+La capa de modelos de Backbone es bastante diferente de Redux, así que no recomendamos combinarlos. Si es posible, lo mejor es reescribir la capa de modelos de tu aplicación desde cero en vez de conectar Backbone a Redux. Igualmente, si no es posible reescribirlo, capaz deberías usar [backbone-redux](https://github.com/redbooth/backbone-redux) para migrar gradualmente, y mantener tu Store de Redux sincronizado con los modelos y colecciones de Backbone.
