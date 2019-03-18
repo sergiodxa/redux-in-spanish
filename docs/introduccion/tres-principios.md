@@ -3,7 +3,7 @@
 Redux puede ser descrito en tres principios fundamentales:
 
 ## Única fuente de la verdad
-**El [estado](glosario#estado) de toda tu aplicación esta almacenado en un árbol guardado en un único [store](glosario.md#store).**
+**El [estado](glosario#estado) de toda tu aplicación está almacenado en un árbol guardado en un único [store](glosario.md#store).**
 
 Esto hace fácil crear aplicaciones universales, ya que el estado en tu servidor puede ser serializado y enviado al cliente sin ningún esfuerzo extra. Como un único árbol de estado también hace más fácil depurar una aplicación; te permite también mantener el estado de la aplicación en desarrollo, para un ciclo de desarrollo más veloz. Algunas funcionalidades que históricamente han sido difíciles de implementar - como Deshacer/Rehacer, por ejemplo - se vuelven triviales si todo tu estado se guarda en un solo árbol.
 ```javascript
