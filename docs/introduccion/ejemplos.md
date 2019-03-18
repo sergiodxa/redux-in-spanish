@@ -29,7 +29,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este es el más básico ejemplo usando Redux junto a React. Por simpleza, vuelve a renderizar el componente de React manualmente cuando el store cambia. En un proyecto real, deberías usar algo con mejor rendimiento como [React Redux](https://github.com/reactjs/react-redux).
+Este es el ejemplo más básico usando Redux junto a React. Por simpleza, vuelve a renderizar el componente de React manualmente cuando el store cambia. En un proyecto real, deberías usar algo con mejor rendimiento como [React Redux](https://github.com/reactjs/react-redux).
 
 Este ejemplo incluye pruebas.
 
@@ -47,7 +47,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este es el mejor ejemplo para obtener un conocimiento más profundo de como las actualizaciones de estado funcionan en Redux. Muestra como los reducers pueden delegar el manejo de acciones a otros reducers, y como usar [React Redux](https://github.com/reactjs/react-redux) para generar componentes contenedores para tus componentes presentacionales.
+Este es el mejor ejemplo para obtener un conocimiento más profundo de como las actualizaciones de estado funcionan en Redux. Muestra cómo los reducers pueden delegar el manejo de acciones a otros reducers, y como usar [React Redux](https://github.com/reactjs/react-redux) para generar componentes contenedores para tus componentes presentacionales.
 
 Este ejemplo incluye pruebas.
 
@@ -65,7 +65,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este es una variación del ejemplo anterior. Es practicamente identico, pero además muestra como envolver tus reducers con [Redux Undo](https://github.com/omnidan/redux-undo) te permite agregar la funcionalidad de Deshacer/Rehacer a tu aplicaciones con una pocas líneas.
+Este es una variación del ejemplo anterior. Es prácticamente idéntico, pero además muestra cómo envolver tus reducers con [Redux Undo](https://github.com/omnidan/redux-undo) te permite agregar la funcionalidad de Deshacer/Rehacer a tus aplicaciones con unas pocas líneas.
 
 ## TodoMVC
 
@@ -81,7 +81,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este es el clásico ejemplo de [TodoMVC](http://todomvc.com/). Esta aquí por razones de comparación, pero cubre los mismos puntos que el ejemplo de Todos.
+Este es el clásico ejemplo de [TodoMVC](http://todomvc.com/). Está aquí por razones de comparación, pero cubre los mismos puntos que el ejemplo de To-dos.
 
 Este ejemplo incluye pruebas.
 
@@ -133,7 +133,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este ejemplo incluye leer desde un API asínrono, obtener datos en respuestas a la acciones del usuario, mostrar indicadores de cargando, cachear respuestas e invalidar la cache. Usa el middleware It uses [Redux Thunk](https://github.com/gaearon/redux-thunk) para encapsular efectos secundarios asíncronos.
+Este ejemplo incluye leer desde un API asíncrono, obtener datos en respuestas a la acciones del usuario, mostrar indicadores de cargando, cachear respuestas e invalidar la cache. Usa el middleware It uses [Redux Thunk](https://github.com/gaearon/redux-thunk) para encapsular efectos secundarios asíncronos.
 
 ## Universal
 
@@ -149,7 +149,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Esta es las más básica demostración de [renderizado en el servidor](../receras/render-en-el-servidor.md) con Redux y React. Muestra como preparar el estado inicial en el servidor y pasarlo al cliente así se inicia desde el estado existente.
+Esta es la más básica demostración de [renderizado en el servidor](../receras/render-en-el-servidor.md) con Redux y React. Muestra como preparar el estado inicial en el servidor y pasarlo al cliente así se inicia desde el estado existente.
 
 ## Real World
 
@@ -165,7 +165,7 @@ npm start
 open http://localhost:3000/
 ```
 
-Este es el ejemplo más avanzado. Es grande por diseño. Cubre como mantener entidades en una cache normalizada, implementando un middleware personalizado para llamadas a API, renderizando páginas parcialmente cargadas, paginación, cacheo de respeustas, mostrar mensajes de error y ruteo. Adicionalmente, incluye las Redux DevTools.
+Este es el ejemplo más avanzado. Es grande por diseño. Cubre como mantener entidades en una cache normalizada, implementando un middleware personalizado para llamadas a la API, renderizando páginas parcialmente cargadas, paginación, cacheo de respuestas, mostrar mensajes de error y ruteo. Adicionalmente, incluye las Redux DevTools.
 
 ## Más Ejemplos
 
