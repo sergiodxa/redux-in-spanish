@@ -1,8 +1,8 @@
 # Conceptos básicos
 
-Redux de por si es muy simple.
+Redux de por sí es muy simple.
 
-Imagine que el estado de su aplicación se describe como un simple objeto. Por ejemplo, el estado de una aplicación de tareas (TODO List) puede tener el siguiente aspecto:
+Imagine que el estado de tu aplicación se describe como un simple objeto. Por ejemplo, el estado de una aplicación de tareas (TODO List) puede tener el siguiente aspecto:
 
 ```js
 {
@@ -19,7 +19,7 @@ Imagine que el estado de su aplicación se describe como un simple objeto. Por e
 
 Este objeto es como un "modelo" excepto que no hay *setters*. Esto es así para que diferentes partes del código no puedan cambiar el estado arbitrariamente, causando errores difíciles de reproducir.
 
-Para cambiar algo en el estado, es necesario enviar una acción. Una acción es un simple objeto en JavaScript (observe cómo no introducimos ninguna magia) que describe lo que sucedió. A continuación mostramos algunos ejemplos de acciones:
+Para cambiar algo en el estado, es necesario enviar una acción. Una acción es un simple objeto en JavaScript (observa cómo no introducimos ninguna magia) que describe lo que sucedió. A continuación mostramos algunos ejemplos de acciones:
 
 ```js
 { type: 'ADD_TODO', text: 'Ir a nadar a la piscina' }
@@ -28,7 +28,7 @@ Para cambiar algo en el estado, es necesario enviar una acción. Una acción es 
 ```
 
 Hacer valer que cada cambio sea descrito como una acción nos permite tener un claro entendimiento de lo que está pasando en la aplicación. Si algo cambió, sabemos por qué cambió. Las acciones son como migas de pan (el rastro) de lo que ha sucedido.
-Finalmente, para juntar el estado y las acciones entre si, escribimos una función llamada reductor (reducer). Una vez más, nada de magia sobre él asunto, es sólo una función que toma el estado y la acción como argumentos y devuelve el siguiente estado de la aplicación.
+Finalmente, para juntar el estado y las acciones entre sí, escribimos una función llamada reductor (reducer). Una vez más, nada de magia sobre el asunto, es sólo una función que toma el estado y la acción como argumentos y devuelve el siguiente estado de la aplicación.
 Sería difícil escribir tal función para una aplicación grande, por lo que escribimos funciones más pequeñas que gestionan partes del estado:
 
 ```js
@@ -67,4 +67,4 @@ function todoApp(state = {}, action) {
 }
 ```
 
-Esto es básicamente toda la idea de Redux. Tenga en cuenta que no hemos utilizado ninguna API de Redux. Ya se incluyen algunas utilidades para facilitar este patrón, pero la idea principal es que usted describe cómo su estado se actualiza con el tiempo en respuesta a los objetos de acción, y el 90% del código que se escribe es simplemente JavaScript, sin uso de Redux en si mismo, sus APIs, o cualquier magia.
+Esto es básicamente toda la idea de Redux. Ten en cuenta que no hemos utilizado ninguna API de Redux. Ya se incluyen algunas utilidades para facilitar este patrón, pero la idea principal es que describas cómo su estado se actualiza con el tiempo en respuesta a los objetos de acción, y el 90% del código que se escribe es simplemente JavaScript, sin uso de Redux en sí mismo, sus APIs, o cualquier magia.
